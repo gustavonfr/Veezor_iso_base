@@ -1,0 +1,156 @@
+F1Witamy w Ubuntu!To jest instalator dla Ubuntu 12.04. Data
+kompilacji 20120424.1.
+
+Indeks pomocy
+
+KlawiszTemat
+
+<F1F1>   Ta strona - indeks pomocy.
+<F2F2>   Wymagania do instalacji Ubuntu.
+<F3F3>   Metody rozruchowe dla specjalnych sposobów korzystania z tego systemu.
+<F4F4>   Dodatkowe metody startu; odzyskiwanie uszkodzonego systemu.
+<F5F5>   Specjalne parametry rozruchu - przegląd.
+<F6F6>   Specjalne parametry uruchomienia dla nietypowych komputerów.
+<F7F7>   Specjalne parametry uruchomienia dla wybranych kontrolerów dysków.
+<F8F8>   Specjalne parametry uruchomienia do instalacji systemu.
+<F9F9>   Jak uzyskać pomoc.
+<F10F10>  Prawa autorskie i gwarancje.
+
+Naciśnij od F2 do F10, żeby obejrzeć szczegóły, albo Esc, aby opuścić pomoc.F2WYMAGANIA DO INSTALACJI UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Do instalacji standardowej wersji systemu Ubuntu wymagane jest co najmniej
+5GB wolnego miejsca, a dla minimalnej wersji serwerowej co najmniej 500MB. W
+zależności od przeznaczenia twojego systemu, system może potrzebować więcej
+miejsca, aby zainstalować dodatkowe pakiety.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Dziękujemy za wybranie Ubuntu!
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F3Sposoby uruchamianiaDostępne sposoby uruchomienia:
+
+Zainstaluj Ubuntu
+  Rozpocznij instalację -- to jest domyślna opcja.
+Przetestuj pamięć
+  Rozpocznij testowanie pamięci.
+
+("Ubuntu" można zastąpić innymi, pokrewnymi nazwami systemu operacyjnego. To
+standardowy tekst pomocy.)
+
+Aby użyć jednej z metod uruchamiania systemu, wybierz ją z menu za pomocą
+klawiszy kursora. Przyciśnij F4, aby wybrać alternatywną metodę uruchamiania
+i tryb instalacji. Przyciśnij F6, aby edytować parametry uruchamiania.
+Przyciśnij F6 ponownie, aby wybrać parametry uruchamiania z listy
+najczęściej używanych.
+
+Informacje jądra na temat uruchamiania systemu są ukrywane. Nie dotyczy to
+informacji krytycznych oraz trybu eksperta, w którym wyświetlane są
+wszystkie informacje.
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F4ODZYSKIWANIE USZKODZONEGO SYSTEMUPoniższych metod uruchomienia możesz użyć do odratowania istniejącej
+instalacji
+
+Odzyskaj uszkodzony system
+  Uruchom system w trybie ratunkowym.
+
+Aby użyć jednej z metod uruchamiania systemu, wybierz ją z menu za pomocą
+klawiszy kursora. Przyciśnij F4, aby wybrać alternatywną metodę uruchamiania
+i tryb instalacji. Przyciśnij F6, aby edytować parametry uruchamiania.
+Przyciśnij F6 ponownie, aby wybrać parametry uruchamiania z listy
+najczęściej używanych.
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F5Przegląd specjalnych parametrów uruchomieniaW niektórych systemach, aby je uruchomić, należy określić odpowiedni
+parametr przyciskając F6. Na przykład, Linux może nie być w stanie
+automatycznie wykryć twojego sprzętu, jeśli wcześniej nie wyraźnie nie
+określono jego położenia lub typu.
+
+Aby uzyskać więcej informacji o parametrach uruchomienia, których możesz
+użyć, naciśnij:
+
+<F6F6>   parametry uruchomienia dla nietypowych komputerów
+<F7F7>   parametry uruchomienia dla różnych kontrolerów dysków
+<F8F8>   parametry uruchomienia wykorzystywane przez program instalacyjny
+
+Wiele modułów jądra jest ładowanych dynamicznie przez program instalacyjny,
+ale parametry dla tych modułów nie mogą być podane w linii poleceń. Aby
+system zapytał o parametry modułów przed ich załadowaniem, uruchom system w
+trybie eksperta (patrz <F3F3>).
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F6SPECJALNE PARAMETRY URUCHAMIANIA - RÓŻNY SPRZĘTMożna użyć następujących parametrów uruchamiania poprzez przyciśnięcie F6, w
+połączeniu z metodą uruchamiania (zobacz <F3F3>). W przypadku używania
+liczb szesnastkowych należy użyć prefiksu 0x (np. 0x300).
+
+SPRZĘT                                 PARAMETR DO OKREŚLENIA
+
+IBM PS/1 lub ValuePoint (dysk IDE)     hd=cylindry,głowice,sektory
+Niektóre komputery IBM ThinkPad        floppy.floppy=thinkpad
+Ochrona zakresów portów I/O            reserve=baza,zakres[,...]
+Laptopy z problemami wyświetlania      vga=771
+Użyj pierwszego portu szeregowego z prędkością 9600 b/s
+                                       console=ttyS0,9600n8
+Wymuszenie użycia standardowego sterownika IDE
+                                       all_generic_ide=1
+
+Możliwe (tymczasowe) obejścia blokad lub innych błędów sprzętowych:
+
+wyłącz błędny routing przerwań APIC    noapic nolapic
+(częściowo) wyłącz ACPI                acpi=noirq lub acpi=off
+Wyłącz USB                             nousb
+odpytaj o przerwania                   irqpoll
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F7SPECJALNE PARAMETRY URUCHOMIENIA - RÓŻNE NAPĘDY DYSKÓWMożna użyć następujących parametrów uruchamiania poprzez przyciśnięcie F6, w
+połączeniu z metodą uruchamiania (zobacz <F3F3>).
+
+SPRZĘT                       PARAMETR DO OKREŚLENIA
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (enabled if non-zero)
+Hosty SCSI BusLogic          BusLogic.BusLogic=iobase
+Niektóre komputery DELL      aic7xxx.aic7xxx=no_probe
+
+Niniejsza lista jest niekompletna, więcej w pliku jądra kernel-
+parameters.txt.
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F8SPECJALNE PARAMETRY URUCHOMIENIA - PROGRAM INSTALACYJNYMożna użyć następujących parametrów uruchamiania poprzez przyciśnięcie F6, w
+połączeniu z metodą uruchamiania (zobacz <F3F3>). Te parametry określają
+zachowanie programu instalującego system.
+
+WYNIK                                   PARAMETR
+
+Wyłączenie framebuffera                 vga=normal fb=false
+Nie uruchamiaj PCMCIA                   hw-detect/start_pcmcia=false
+Wymuszenie statycznej konfiguracji sieci
+                                        netcfg/disable_dhcp=true
+Ustaw mapę klawiatury                   bootkbd=es
+Wybierz pulpit Kubuntu                  tasks=kubuntu-desktop
+Użyj motywu o wysokim kontraście        theme=dark
+Użyj terminala tty Braile'a             brltty=driver,device,texttable
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F9UZYSKIWANIE POMOCYJeśli nie możesz zainstalować systemu, nie panikuj! Zespół Ubuntu jest
+gotowy, aby Ci pomóc! Jesteśmy zwłaszcza zainteresowani problemami z
+instalacją, ponieważ zazwyczaj nie przytrafiają się tylko jednej osobie.
+Albo już słyszeliśmy o Twoim problemie i możemy podać sposób naprawienia,
+albo chcemy usłyszeć o problemie i wypracować z Tobą sposób jego
+naprawienia, tak by następny użytkownik, który napotka taki sam problem,
+mógł wykorzystać Twoje doświadczenia!
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc.F10PRAWA AUTORSKIE I GWARANCJEUbuntu jest chroniony prawem autorskim (C) 2004-2010 Canonical Ltd., i
+zawiera pracę wielu autorów i współpracowników.
+
+System Ubuntu można dowolnie rozpowszechniać. Po instalacji, dokładne
+warunki rozpowszechniania dla każdego pakietu są opisane w odpowiednim pliku
+/usr/share/doc/packagename/copyright.
+
+Ubuntu jest rozprowadzane BEZ ŻADNEJ GWARANCJI, w zakresie dopuszczalnym
+odpowiednimi prawami.
+
+Ten program instalacyjny jest oparty na instalatorze Debiana. Więcej
+informacji o projekcie Debian znajdziesz na stronie
+http://www.debian.org/.
+
+Naciśnij F1, aby przejść do indeksu pomocy, lub Esc, aby opuścić pomoc. 

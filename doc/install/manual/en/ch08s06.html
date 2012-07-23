@@ -1,0 +1,230 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>8.6. Compiling a New Kernel</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch08.html" title="Chapter 8. Next Steps and Where to Go From Here">
+<link rel="prev" href="ch08s05.html" title="8.5. Setting Up Your System To Use E-Mail">
+<link rel="next" href="ch08s07.html" title="8.7. Recovering a Broken System">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">8.6. Compiling a New Kernel</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch08s05.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 8. Next Steps and Where to Go From Here</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch08s07.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="8.6. Compiling a New Kernel">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="kernel-baking"></a>8.6. Compiling a New Kernel</h2></div></div></div>
+<p>
+
+Why would someone want to compile a new kernel? It is often not
+necessary since the default kernel shipped with Ubuntu handles most
+configurations. Also, Ubuntu often offers several alternative kernels.
+So you may want to check first if there is an alternative kernel image
+package that better corresponds to your hardware. However, it can be
+useful to compile a new kernel in order to:
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+
+handle special hardware needs, or hardware conflicts with the
+pre-supplied kernels
+
+</p></li>
+<li class="listitem"><p>
+
+use options of the kernel which are not supported in the pre-supplied
+kernels (such as high memory support)
+
+</p></li>
+<li class="listitem"><p>
+
+optimize the kernel by removing useless drivers to speed up boot time
+
+</p></li>
+<li class="listitem"><p>
+
+create a monolithic instead of a modularized kernel
+
+</p></li>
+<li class="listitem"><p>
+
+run an updated or development kernel
+
+</p></li>
+<li class="listitem"><p>
+
+learn more about linux kernels
+
+</p></li>
+</ul></div>
+<p>
+
+</p>
+<div class="sect2" title="8.6.1. Kernel Image Management">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3962112"></a>8.6.1. Kernel Image Management</h3></div></div></div>
+<p>
+
+Don't be afraid to try compiling the kernel.  It's fun and profitable.
+
+</p>
+<p>
+
+To compile a kernel the Debian/Ubuntu way, you need some packages:
+<code class="classname">fakeroot</code>, <code class="classname">kernel-package</code>,
+<code class="classname">linux-source-2.6</code>
+and a few others which are probably already installed (see
+<code class="filename">/usr/share/doc/kernel-package/README.gz</code> for the
+complete list).
+
+</p>
+<p>
+
+This method will make a .deb of your kernel source, and, if you have
+non-standard modules, make a synchronized dependent .deb of those
+too. It's a better way to manage kernel images;
+<code class="filename">/boot</code> will hold the kernel, the System.map, and a
+log of the active config file for the build.
+
+</p>
+<p>
+
+Note that you don't <span class="emphasis"><em>have</em></span> to compile your kernel
+the <span class="quote">“<span class="quote">Debian/Ubuntu way</span>”</span>; but we find that using the packaging system
+to manage your kernel is actually safer and easier.  In fact, you can get
+your kernel sources right from Linus instead of
+<code class="classname">linux-source-2.6</code>,
+yet still use the <code class="classname">kernel-package</code> compilation method.
+
+</p>
+<p>
+
+Note that you'll find complete documentation on using
+<code class="classname">kernel-package</code> under
+<code class="filename">/usr/share/doc/kernel-package</code>.  This section just
+contains a brief tutorial.
+
+</p>
+<p>
+
+Hereafter, we'll assume you have free rein over your machine and will
+extract your kernel source to somewhere in your home directory<sup>[<a name="idp3966696" href="#ftn.idp3966696" class="footnote">24</a>]</sup>. We'll also assume that your kernel version is
+3.2. Make sure you are in the directory to where you want to
+unpack the kernel sources, extract them using
+<strong class="userinput"><code>tar xjf /usr/src/linux-source-3.2.tar.bz2</code></strong>
+and change to the directory <code class="filename">linux-source-3.2</code>
+that will have been created.
+
+</p>
+<p>
+
+Now, you can configure your kernel.  Run <strong class="userinput"><code>make
+xconfig</code></strong> if X11 is installed, configured and being run; run
+<strong class="userinput"><code>make menuconfig</code></strong> otherwise (you'll need
+<code class="classname">libncurses5-dev</code> installed). Take the time to read
+the online help and choose carefully. When in doubt, it is typically
+better to include the device driver (the software which manages
+hardware peripherals, such as Ethernet cards, SCSI controllers, and so
+on) you are unsure about.  Be careful: other options, not related to a
+specific hardware, should be left at the default value if you do not
+understand them.  Do not forget to select <span class="quote">“<span class="quote">Kernel module loader</span>”</span>
+in <span class="quote">“<span class="quote">Loadable module support</span>”</span> (it is not selected by default).
+If not included, your Ubuntu installation will experience problems.
+
+</p>
+<p>
+
+Clean the source tree and reset the <code class="classname">kernel-package</code>
+parameters.  To do that, do <strong class="userinput"><code>make-kpkg clean</code></strong>.
+
+</p>
+<p>
+
+Now, compile the kernel:
+<strong class="userinput"><code>fakeroot make-kpkg --initrd --revision=custom.1.0 kernel_image</code></strong>.
+The version number of <span class="quote">“<span class="quote">1.0</span>”</span> can be changed at will; this is just
+a version number that you will use to track your kernel builds.
+Likewise, you can put any word you like in place of <span class="quote">“<span class="quote">custom</span>”</span>
+(e.g., a host name).  Kernel compilation may take quite a while, depending on
+the power of your machine.
+
+</p>
+<p>
+
+Once the compilation is complete, you can install your custom kernel
+like any package.  As root, do 
+<strong class="userinput"><code>dpkg -i
+../linux-image-3.2-<em class="replaceable"><code>subarchitecture</code></em>_custom.1.0_amd64.deb</code></strong>.
+The <em class="replaceable"><code>subarchitecture</code></em> part is an optional
+sub-architecture,
+
+depending on what kernel options you set.
+<strong class="userinput"><code>dpkg -i</code></strong> will install the
+kernel, along with some other nice supporting files.  For instance,
+the <code class="filename">System.map</code> will be properly installed
+(helpful for debugging kernel problems), and
+<code class="filename">/boot/config-3.2</code> will be installed,
+containing your current configuration set.  Your new
+kernel package is also clever enough to automatically update your boot
+loader to use the new kernel. If you have created a modules package,
+you'll need to install that package as well.
+
+</p>
+<p>
+
+It is time to reboot the system: read carefully any warning that the
+above step may have produced, then <strong class="userinput"><code>shutdown -r now</code></strong>.
+
+</p>
+<p>
+
+For more information on Debian/Ubuntu kernels and kernel compilation, see the
+<a class="ulink" href="http://kernel-handbook.alioth.debian.org/" target="_top">Debian Linux Kernel Handbook</a>.
+For more information on <code class="classname">kernel-package</code>, read
+the fine documentation in <code class="filename">/usr/share/doc/kernel-package</code>.
+
+</p>
+</div>
+<div class="footnotes">
+<br><hr width="100" align="left">
+<div class="footnote"><p><sup>[<a id="ftn.idp3966696" href="#idp3966696" class="para">24</a>] </sup>
+
+There are other locations where you can extract kernel sources and build
+your custom kernel, but this is easiest as it does not require special
+permissions.
+
+</p></div>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch08s05.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch08.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch08s07.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">8.5. Setting Up Your System To Use E-Mail </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 8.7. Recovering a Broken System</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

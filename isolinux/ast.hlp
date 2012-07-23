@@ -1,0 +1,153 @@
+F1¡Bienllegáu/ada a Ubuntu!Esti ye un sistema d'instalación pa Ubuntu
+12.04. Compilóse'l 20120424.1.
+
+ÍNDIZ DE L'AYUDA
+
+CLAVE  TEMA
+
+<F1F1>   Esta páxina, l'índiz del ficheru d'ayuda.
+<F2F2>   Prerrequisitos pa la instalación de Ubuntu.
+<F3F3>   Métodos d'arranque pa formes especiales d'usar esti sistema.
+<F4F4>   Métodos d'arranque adicional; recuperar un sistema cayíu.
+<F5F5>   Parámetros específicos d'arranque, vista de páxaru
+<F6F6>   Parámetros específicos d'arranque pa máquines específiques.
+<F7F7>   Parámetros específicos d'arranque pa los controladores de discos esbillaos.
+<F8F8>   Parámetros específicos d'arranque pal sistema d'instalación.
+<F9F9>   Cómo tener ayuda.
+<F10F10>  Copyrights y garantíes
+
+Calca ente F2 y F10 pa los detalles, o Escape pa colar de l'ayuda.F2PRERREQUISITOS PA INSTALAR UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Tienes de tener espaciu nel discu duru pa criar una partición nueva del
+discu de polo menos 5 Xigabytes pa instalar un sistema Ubuntu estandar
+d'escritoriu o polo menos 500 megabytes pa una instalación de sirvidor
+mínima. Vas necesitar más espaciu en discu pa instalar paquetes adicionales,
+dependiendo de que que quieras facer col to nuevu sistema Ubuntu.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+¡Gracies por escoyer Ubuntu!
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F3DAMBOS MÉTODOSDambos métodos tan disponibles:
+
+Instalar Ubuntu
+  Aniciar la instalación -- esta ye la opción predeterminada.
+Preba de memoria
+  Facer una preba de memoria
+
+("Ubuntu" pue camudase por otros nomes de sistemes operativos rellacionaos.
+Esti testu d'ayuda ye xenéricu.)
+
+Pa emplegar ún d'estos métodos d'arranque, esbíllalu del menú coles tecles
+del cursor. Calca F4 pa esbillar moos d'entamu ya instalación alternativos.
+Calca F6 pa camudar los parámetros d'arranque. Calca F6 otra vuelta pa
+esbilla d'un menú de parámetros d'entamu d'emplegu veceru.
+
+Esceuto en mou espertu, tapecense los mensaxes non-críticos d'arranque del
+núcleu.
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F4RESCATANDO UN SISTEMA FRAÑÁUUsa ún d'esos métodos d'arranque pa rescatar una instalación esistente
+
+Rescatar un sistema frañáu
+  Arrancar en mou rescate.
+
+Pa emplegar ún d'estos métodos d'arranque, esbíllalu del menú coles tecles
+del cursor. Calca F4 pa esbillar moos d'entamu ya instalación alternativos.
+Calca F6 pa camudar los parámetros d'arranque. Calca F6 otra vuelta pa
+esbilla d'un menú de parámetros d'entamu d'emplegu veceru.
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F5PARÁMETROS D'ENTAMU ESPECIALES - VISTA XENERALPuede qu'haya qu'especificar en dalgún sistema un parámetru calcando F6
+p'arrancar el sistema. Por exemplu, Linux pue nun ser quién a autodetectar
+el to hardware, y necesites seique conseñar de mou esplícitu l'allugamientu
+o el tipu pa que lu reconoza.
+
+Pa más información tocante a los parámetros d'entamu que pues usar, calca:
+
+<F6F6>   parámetros d'entamu pa máquines especiales
+<F7F7>   parámetros d'entamu pa delles controladores de discu
+<F8F8>   parámetros d'entamu que entiende'l sistema d'instalación
+
+Abondos módulos del nucleu tán cargaos dinámicamente pol instalador, y los
+parámetros pa estos módulos nun  pueden pasase en llinia de comandu. Pa
+encamentar los parámetros al cargar los módulos, entra en mou espertu (ver
+<F3F3>).
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F6PARÁMETROS ESPECÍFICOS D'ARRANQUE - DELLOS MATERIALESPuedes emplegar los parámetros d'arranque que vienen darréu calcando en F6,
+amestáu col métodu d'arranque (ver <F3F3>). Si emplegues númberos
+hexadecimales, tienes qu'emplegar el prefixu 0x (exemplu : 0x300)
+
+HARDWARE                               PARÁMETROS A ESPECIFICAR
+
+IBM PS/1 o ValuePoint (discu IDE)      hd=cylinders,heads,sectors
+Dellos ThinkPads d'IBM                 floppy.floppy=thinkpad
+Protexer les rexones del puertu I/O    reserve=iobase,extent[,...]
+Portátiles con problemes de pantalla   vga=771
+Emplegar el primer puertu de seria a 9600 baudios
+                                       console=ttyS0,9600n8
+Forciar l'emplegu del driver IDE xenéricu
+                                       all_generic_ide=1
+
+Posibles soluciones temporales pa bloqueos u otros fallos del hardware:
+
+desactivar rutes d'interrupción defeutuoses nel APIC
+                                       noapic nolapic
+desactiva (en parte) ACPI              acpi=noirq or acpi=off
+desactiva l'USB                        nousb
+investigación de les interrupciones    irqpoll
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F7PARÁMETROS ESPECÍFICOS D'ARRANQUE - DELLOS LLECTORES DE DISCUPuedes emplegar los parámetros d'arranque que vienen darréu calcando en F6,
+amestáu col métodu d'arranque (ver <F3F3>).
+
+HARDWARE                     PARÁMETROS A ESPECIFICAR
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (enabled if non-zero)
+BusLogic SCSI Hosts          BusLogic.BusLogic=iobase
+Delles máquines DELL         aic7xxx.aic7xxx=no_probe
+
+Esta llista ta incompleta, consulta'l ficheru del nucleu 'kernel-
+parameters.txt' pa más información
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F8PARÁMETROS ESPECÍFICOS D'ARRANQUE - SISTEMA D'INSTALACIÓNPuedes emplegar los parámetros d'arranque que vienen darréu calcando en F6,
+amestáu col métodu d'arranque (ver <F3F3>). Estos parámetros remanen cómo
+trabaya l'instalador.
+
+RESULTÁU                                PARÁMETRU
+
+Desactivar el buffer d'imaxe            vga=normal fb=false
+Non arrancar el PCMCIA                  hw-detect/start_pcmcia=false
+Forzar la configuración de la rede estática
+                                        netcfg/disable_dhcp=true
+Afitar el mapa de tecláu                bootkbd=es
+Seleicionar l'escritoriu Kubuntu        tasks=kubuntu-desktop
+Usar tema de altu contraste             theme=dark
+Emplegar el mou braille                 brltty=driver,device,texttable
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F9OBTENER AYUDASi nun yes quien a instalar Ubuntu. ¡Asela ho, nun te desesperes! ¡L'equipu
+Ubuntu ta equí pa echate un gabitu! Tamos especialmente interesaos en
+recibir avisos de problemes d'instalación, porque normalmente nun suelen
+asocede-y a una única persona. De xuru yá escuchamos sobro'l so problema
+particular y podemos da-y una solución bien aína, o bien podemos estudiar el
+so casu y trabayar con vusté na so resolución, de mou que'l próximu usuariu
+que venga col mesmu problema se beneficie de la so experiencia.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda.F10COPYRIGHTS Y GARANTIESUbuntu ye Copyright (c) 2004-2010 Canonical Ltd., ya incorpora el trabayu de
+munchos otros autores y contribuyentes orixinales.
+
+El sistema Ubuntu distribúise llibremente y de baldre. Tres la instalación,
+los términos esautos de distribución de cada paquete descríbense nel
+correspondiente ficheru usr/share/doc/nomedelpaquete/copyright.
+
+Ubuntu úfrese ABSOLUTAMENTE ENSIN DENGUNA GARANTÍA, hasta au ta permitío
+poles lleis aplicables.
+
+El sistema d'instalación ta sofitáu nel instalador de Debian. Visite
+http://www.debian.org/ pa más detalles ya información sobro'l proyeutu
+Debian.
+
+Calca F1 pa l'índiz de l'ayuda, o Escape pa colar de l'ayuda. 

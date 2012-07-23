@@ -1,0 +1,137 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A.1. Booting the installer</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="apa.html" title="Appendix A. Installation Howto">
+<link rel="prev" href="apa.html" title="Appendix A. Installation Howto">
+<link rel="next" href="apas02.html" title="A.2. Installation">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">A.1. Booting the installer</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="apa.html">Prev</a> </td>
+<th width="60%" align="center">Appendix A. Installation Howto</th>
+<td width="20%" align="right"> <a accesskey="n" href="apas02.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="A.1. Booting the installer">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="howto-getting-images"></a>A.1. Booting the installer</h2></div></div></div>
+<p>
+
+For more information on where to get CDs, see <a class="xref" href="ch04s01.html" title="4.1. Official Ubuntu CD-ROMs">Section 4.1, “Official Ubuntu CD-ROMs”</a>.
+
+</p>
+<p>
+
+Some installation methods require other images than CD images.
+
+<a class="xref" href="ch04s02.html#where-files" title="4.2.1. Where to Find Installation Images">Section 4.2.1, “Where to Find Installation Images”</a> explains how to find images on Ubuntu
+mirrors.
+
+</p>
+<p>
+
+The subsections below will give the details about which images you should
+get for each possible means of installation.
+
+</p>
+<div class="sect2" title="A.1.1. CDROM">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="howto-getting-images-cdrom"></a>A.1.1. CDROM</h3></div></div></div>
+<p>
+
+Download the image for your architecture and burn it to a CD.
+<span>To boot the CD, you may need to change your BIOS
+configuration, as explained in <a class="xref" href="ch03s06.html#bios-setup" title="3.6.1. Invoking the BIOS Set-Up Menu">Section 3.6.1, “Invoking the BIOS Set-Up Menu”</a>.</span>
+
+
+</p>
+</div>
+<div class="sect2" title="A.1.2. USB memory stick">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="howto-getting-images-usb"></a>A.1.2. USB memory stick</h3></div></div></div>
+<p>
+
+It's also possible to install from removable USB storage devices. For
+example a USB keychain can make a handy Ubuntu install medium that you
+can take with you anywhere.
+
+</p>
+<p>
+
+The easiest way to prepare your USB memory stick is to download
+<code class="filename">netboot/boot.img.gz</code>, and use gunzip to extract the 8 MB
+image from that file. Write this image directly to your memory stick, which
+must be at least 8 MB in size. Of course this will destroy anything already
+on the memory stick.
+
+</p>
+<p>
+
+There are other, more flexible ways to set up a memory stick to use the
+Ubuntu installer.
+For details, see <a class="xref" href="ch04s03.html" title="4.3. Preparing Files for USB Memory Stick Booting">Section 4.3, “Preparing Files for USB Memory Stick Booting”</a>.
+
+</p>
+<p>
+
+Some BIOSes can boot USB storage directly, and some cannot. You may need to
+configure your BIOS to boot from a <span class="quote">“<span class="quote">removable drive</span>”</span> or even a
+<span class="quote">“<span class="quote">USB-ZIP</span>”</span> to get it to boot from the USB device. For helpful
+hints and details, see <a class="xref" href="ch05s01.html#usb-boot" title="5.1.3. Booting from USB Memory Stick">Section 5.1.3, “Booting from USB Memory Stick”</a>.
+
+</p>
+</div>
+<div class="sect2" title="A.1.3. Booting from network">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="howto-getting-images-netboot"></a>A.1.3. Booting from network</h3></div></div></div>
+<p>
+
+It's also possible to boot the Ubuntu installer completely from the net. The
+various methods to netboot depend on your architecture and netboot setup.
+The files in <code class="filename">netboot/</code> can be used to netboot the Ubuntu
+installer.
+
+</p>
+<p>
+
+The easiest thing to set up is probably PXE netbooting. Untar the
+file <code class="filename">netboot/pxeboot.tar.gz</code> into
+<code class="filename">/var/lib/tftpboot</code> or
+wherever is appropriate for your tftp server. Set up your DHCP server to pass
+filename <code class="filename">/pxelinux.0</code> to clients, and with luck
+everything will just work.
+For detailed instructions, see <a class="xref" href="ch04s05.html" title="4.5. Preparing Files for TFTP Net Booting">Section 4.5, “Preparing Files for TFTP Net Booting”</a>.
+
+</p>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="apa.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="apas02.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Appendix A. Installation Howto </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> A.2. Installation</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

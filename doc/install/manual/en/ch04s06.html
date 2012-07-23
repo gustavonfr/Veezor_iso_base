@@ -1,0 +1,441 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>4.6. Automatic Installation</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch04.html" title="Chapter 4. Obtaining System Installation Media">
+<link rel="prev" href="ch04s05.html" title="4.5. Preparing Files for TFTP Net Booting">
+<link rel="next" href="ch05.html" title="Chapter 5. Booting the Installation System">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">4.6. Automatic Installation</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch04s05.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 4. Obtaining System Installation Media</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch05.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="4.6. Automatic Installation">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="automatic-install"></a>4.6. Automatic Installation</h2></div></div></div>
+<p>
+
+For installing on multiple computers it's possible to do fully
+automatic installations using the Ubuntu Installer itself.
+
+</p>
+<div class="sect2" title="4.6.1. Automatic Installation Using the Ubuntu Installer">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="preseed"></a>4.6.1. Automatic Installation Using the Ubuntu Installer</h3></div></div></div>
+<p>
+
+The Ubuntu Installer supports automating installs via preconfiguration
+files. A preconfiguration file can be loaded from the network or from
+removable media, and used to fill in answers to questions asked during the
+installation process.
+
+</p>
+<p>
+
+Full documentation on preseeding including a working example that you can
+edit is in <a class="xref" href="apb.html" title="Appendix B. Automating the installation using preseeding">Appendix B, <i>Automating the installation using preseeding</i></a>.
+
+</p>
+</div>
+<div class="sect2" title="4.6.2. Automatic Installation Using Kickstart">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="kickstart"></a>4.6.2. Automatic Installation Using Kickstart</h3></div></div></div>
+<p>
+
+The Ubuntu installer has preliminary support for automating installs using
+Kickstart files, as designed by Red Hat for use in their Anaconda installer.
+This method is not as flexible as the preconfiguration file method above,
+but it requires less knowledge of how the installer works.
+
+</p>
+<p>
+
+This section documents only the basics, and differences between Anaconda and
+the Ubuntu installer. Refer to the
+<a class="ulink" href="http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/ch-kickstart2.html" target="_top">
+Red Hat documentation</a> for detailed instructions.
+
+</p>
+<p>
+
+To generate a Kickstart file, install the
+<code class="classname">system-config-kickstart</code> package and run
+<code class="filename">system-config-kickstart</code>. This offers you a graphical
+user interface to the various options available.
+
+</p>
+<p>
+
+Once you have a Kickstart file, you can edit it if necessary, and place it
+on a web, FTP, or NFS server, or copy it onto the installer's boot media.
+Wherever you place the file, you need to pass a parameter to the installer
+at boot time to tell it to use the file.
+
+</p>
+<p>
+
+To make the installer use a Kickstart file downloaded from a web or FTP
+server, add ks=http://url/to/ks.cfg or ks=ftp://url/to/ks.cfg respectively
+to the kernel boot parameters. This requires the installer to be able to set
+up the network via DHCP on the first connected interface without asking any
+questions; you may also need to add ksdevice=eth1 or similar if the
+installer fails to determine the correct interface automatically.
+
+</p>
+<p>
+
+Similarly, to make the installer use a Kickstart file on an NFS server, add
+ks=nfs:server:/path/to/ks.cfg to the kernel boot parameters. The method
+supported by Anaconda of adding a plain "ks" boot parameter to work out the
+location of the Kickstart file from a DHCP response is not yet supported by
+the Ubuntu installer.
+
+</p>
+<p>
+
+To place a Kickstart file on a CD, you would need to remaster the ISO image
+to include your Kickstart file, and add ks=cdrom:/path/to/ks.cfg to the
+kernel boot parameters. See the manual page for mkisofs for details.
+Alternatively, put the Kickstart file on a floppy, and add
+ks=floppy:/path/to/ks.cfg to the kernel boot parameters.
+
+</p>
+<div class="sect3" title="4.6.2.1. Additions">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3344232"></a>4.6.2.1. Additions</h4></div></div></div>
+<p>
+
+The Ubuntu installer supports a few extensions to Kickstart that were needed
+to support automatic installations of Ubuntu:
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+
+The <strong class="userinput"><code>rootpw</code></strong> command now takes the
+<strong class="userinput"><code>--disabled</code></strong> option to disable the root password. If
+this is used, the initial user will be given root privileges via
+<code class="filename">sudo</code>.
+
+</p></li>
+<li class="listitem">
+<p>
+
+A new <strong class="userinput"><code>user</code></strong> command has been added to control the
+creation of the initial user:
+
+</p>
+<div class="informalexample"><pre class="screen">
+user <em class="replaceable"><code>joe</code></em> --fullname "Joe User" --password iamjoe
+</pre></div>
+<p>
+
+The <strong class="userinput"><code>--disabled</code></strong> option prevents any non-root users
+from being created. The <strong class="userinput"><code>--fullname</code></strong> option specifies
+the user's full name, as opposed to the Unix username. The
+<strong class="userinput"><code>--password</code></strong> option supplies the user's password, by
+default in the clear (in which case make sure your Kickstart file is kept
+confidential!); the <strong class="userinput"><code>--iscrypted</code></strong> option may be used to
+state that the password is already MD5-hashed.
+
+</p>
+</li>
+<li class="listitem">
+<p>
+
+A new <strong class="userinput"><code>preseed</code></strong> command has been added to provide a
+convenient way to preseed additional items in the debconf database that are
+not directly accessible using the ordinary Kickstart syntax:
+
+</p>
+<div class="informalexample"><pre class="screen">
+preseed --owner gdm shared/default-x-display-manager select gdm
+</pre></div>
+<p>
+
+Note that if the value contains any special characters, then the value must
+be quoted, as follows:
+
+</p>
+<div class="informalexample"><pre class="screen">
+preseed preseed/late_command string "sed -i 's/foo/bar/g' /target/etc/hosts"
+</pre></div>
+<p>
+
+The <strong class="userinput"><code>--owner</code></strong> option sets the name of the package that
+owns the question; if omitted, it defaults to d-i, which is generally
+appropriate for items affecting the first stage of the installer. The three
+mandatory arguments are the question name, question type, and answer, in
+that order, just as would be supplied as input to the
+<code class="filename">debconf-set-selections</code> command.
+
+</p>
+</li>
+<li class="listitem"><p>
+
+As of Ubuntu 6.10, the <strong class="userinput"><code>keyboard</code></strong> option takes X layout
+names. To use an X keyboard variant, set this option to
+<strong class="userinput"><code>layout_variant</code></strong>, with appropriate values of
+<strong class="userinput"><code>layout</code></strong> and <strong class="userinput"><code>variant</code></strong>. For
+example, <strong class="userinput"><code>in_guj</code></strong> selects the Gujarati variant of the
+Indian layout.
+
+</p></li>
+<li class="listitem"><p>
+
+You may use the <span class="command"><strong>apt-install</strong></span> command to install packages
+in <strong class="userinput"><code>%post --nochroot</code></strong> scripts (although you might also
+choose to generate a <strong class="userinput"><code>%packages</code></strong> section in a
+<strong class="userinput"><code>%pre</code></strong> script and include it using
+<strong class="userinput"><code>%include</code></strong>). Note that this does not work if the
+post-installation script is run in the chroot environment.
+
+</p></li>
+</ul></div>
+<p>
+
+</p>
+</div>
+<div class="sect3" title="4.6.2.2. Missing features">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3356128"></a>4.6.2.2. Missing features</h4></div></div></div>
+<p>
+
+As yet, the Ubuntu installer only supports a subset of Kickstart's features.
+The following is a brief summary of features that are known to be missing:
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+
+LDAP, Kerberos 5, Hesiod, and Samba authentication.
+
+</p></li>
+<li class="listitem"><p>
+
+The <strong class="userinput"><code>auth --enablecache</code></strong> command to enable
+<code class="filename">nscd</code>.
+
+</p></li>
+<li class="listitem"><p>
+
+The <strong class="userinput"><code>bootloader --linear</code></strong>,
+<strong class="userinput"><code>--nolinear</code></strong>, and <strong class="userinput"><code>--lba32</code></strong>
+options for detailed LILO configuration.
+
+</p></li>
+<li class="listitem"><p>
+
+Upgrades. To upgrade from one Ubuntu release to another, use the facilities
+provided by <code class="filename">apt</code> and its frontends.
+
+</p></li>
+<li class="listitem"><p>
+
+Partitioning of multiple drives. Due to current limitations in the partition
+manager, it is only possible to partition a single drive.
+
+</p></li>
+<li class="listitem"><p>
+
+Using the <strong class="userinput"><code>device</code></strong> command to install extra kernel
+modules.
+
+</p></li>
+<li class="listitem"><p>
+
+Driver disks.
+
+</p></li>
+<li class="listitem"><p>
+
+Firewall configuration.
+
+</p></li>
+<li class="listitem"><p>
+
+Installation from an archive on a local hard disk or from an NFS archive.
+
+</p></li>
+<li class="listitem"><p>
+
+The <strong class="userinput"><code>lilocheck</code></strong> command to check for an existing LILO
+installation.
+
+</p></li>
+<li class="listitem"><p>
+
+The <strong class="userinput"><code>logvol --percent</code></strong>,
+<strong class="userinput"><code>--bytes-per-inode</code></strong>, and
+<strong class="userinput"><code>--fsoptions</code></strong> options for certain kinds of detailed
+Logical Volume Management (LVM) configuration. (LVM configuration in general
+is experimentally supported as of Ubuntu 9.04; please let us know about your
+experiences with it.)
+
+</p></li>
+<li class="listitem"><p>
+
+Restrictions of a partition to a particular disk or device, and
+specifications of the starting or ending cylinder for a partition.
+
+</p></li>
+<li class="listitem"><p>
+
+Checking a partition for bad sectors.
+
+</p></li>
+<li class="listitem"><p>
+
+RAID configuration.
+
+</p></li>
+<li class="listitem"><p>
+
+The <strong class="userinput"><code>xconfig --monitor</code></strong> option to use a specified
+monitor name.
+
+</p></li>
+<li class="listitem"><p>
+
+Most package groups. As special cases, the "Ubuntu Desktop" and "Kubuntu
+Desktop" groups install the standard Ubuntu or Kubuntu desktop systems
+respectively, and any group name not containing a space (for example,
+"ubuntu-desktop") causes packages with the corresponding Task: header in the
+Packages file to be installed.
+
+</p></li>
+<li class="listitem"><p>
+
+Exclusions in %packages sections are no longer supported as of Ubuntu 6.10,
+as a casualty of other improvements. You may need to use a %post script
+instead to remove unnecessary packages.
+
+</p></li>
+<li class="listitem"><p>
+
+Pre-installation scripts and non-chrooted post-installation scripts may only
+be shell scripts; other interpreters are not available at this point in the
+installation.
+
+</p></li>
+</ul></div>
+<p>
+
+</p>
+</div>
+<div class="sect3" title="4.6.2.3. Example">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3367136"></a>4.6.2.3. Example</h4></div></div></div>
+<p>
+
+Here is an example Kickstart file that can be used as a starting point:
+
+</p>
+<div class="informalexample"><pre class="screen">
+#
+#Generic Kickstart template for Ubuntu
+#Platform: x86 and x86-64
+#
+
+#System language
+lang en_US
+
+#Language modules to install
+langsupport en_US
+
+#System keyboard
+keyboard us
+
+#System mouse
+mouse
+
+#System timezone
+timezone America/New_York
+
+#Root password
+rootpw --disabled
+
+#Initial user (user with sudo capabilities) 
+user ubuntu --fullname "Ubuntu User" --password root4me2
+
+#Reboot after installation
+reboot
+
+#Use text mode install
+text
+
+#Install OS instead of upgrade
+install
+
+#Installation media
+cdrom
+#nfs --server=server.com --dir=/path/to/ubuntu/
+
+#System bootloader configuration
+bootloader --location=mbr 
+
+#Clear the Master Boot Record
+zerombr yes
+
+#Partition clearing information
+clearpart --all --initlabel 
+
+#Basic disk partition
+part / --fstype ext4 --size 1 --grow --asprimary 
+part swap --size 1024 
+part /boot --fstype ext4 --size 256 --asprimary 
+
+#Advanced partition
+#part /boot --fstype=ext4 --size=500 --asprimary
+#part pv.aQcByA-UM0N-siuB-Y96L-rmd3-n6vz-NMo8Vr --grow --size=1
+#volgroup vg_mygroup --pesize=4096 pv.aQcByA-UM0N-siuB-Y96L-rmd3-n6vz-NMo8Vr
+#logvol / --fstype=ext4 --name=lv_root --vgname=vg_mygroup --grow --size=10240 --maxsize=20480
+#logvol swap --name=lv_swap --vgname=vg_mygroup --grow --size=1024 --maxsize=8192
+
+#System authorization infomation
+auth  --useshadow  --enablemd5 
+
+#Network information
+network --bootproto=dhcp --device=eth0
+
+#Firewall configuration
+firewall --disabled --trust=eth0 --ssh 
+
+#Do not configure the X Window System
+skipx
+</pre></div>
+</div>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch04s05.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch05.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">4.5. Preparing Files for TFTP Net Booting </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 5. Booting the Installation System</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

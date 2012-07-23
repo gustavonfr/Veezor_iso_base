@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>C.3. Recommended Partitioning Scheme</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="apc.html" title="Appendix C. Partitioning for Ubuntu">
+<link rel="prev" href="apcs02.html" title="C.2. The Directory Tree">
+<link rel="next" href="apcs04.html" title="C.4. Device Names in Linux">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">C.3. Recommended Partitioning Scheme</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="apcs02.html">Prev</a> </td>
+<th width="60%" align="center">Appendix C. Partitioning for Ubuntu</th>
+<td width="20%" align="right"> <a accesskey="n" href="apcs04.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="C.3. Recommended Partitioning Scheme">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="idp4208144"></a>C.3. Recommended Partitioning Scheme</h2></div></div></div>
+<p>
+
+For new users, personal Ubuntu boxes, home systems, and other
+single-user setups, a single <code class="filename">/</code> partition (plus
+swap) is probably the easiest, simplest way to go.  However, if your
+partition is larger than around 6GB, choose ext3 as your partition
+type.  Ext2 partitions need periodic file system integrity checking,
+and this can cause delays during booting when the partition is large.
+
+</p>
+<p>
+
+For multi-user systems or systems with lots of disk space, it's best
+to put <code class="filename">/usr</code>, <code class="filename">/var</code>,
+<code class="filename">/tmp</code>, and <code class="filename">/home</code> each on
+their own partitions separate from the <code class="filename">/</code>
+partition.
+
+</p>
+<p>
+
+You might need a separate <code class="filename">/usr/local</code> partition if
+you plan to install many programs that are not part of the Ubuntu
+distribution.  If your machine will be a mail server, you might need
+to make <code class="filename">/var/mail</code> a separate partition.  Often,
+putting <code class="filename">/tmp</code> on its own partition, for instance
+20–50MB, is a good idea.  If you are setting up a server with lots
+of user accounts, it's generally good to have a separate, large
+<code class="filename">/home</code> partition.  In general, the partitioning
+situation varies from computer to computer depending on its uses.
+
+</p>
+<p>
+
+For very complex systems, you should see the
+<a class="ulink" href="http://www.tldp.org/HOWTO/Multi-Disk-HOWTO.html" target="_top">
+Multi Disk HOWTO</a>.  This contains in-depth information, mostly
+of interest to ISPs and people setting up servers.
+
+</p>
+<p>
+
+With respect to the issue of swap partition size, there are many
+views.  One rule of thumb which works well is to use as much swap as
+you have system memory. It also shouldn't be smaller than 16MB, in
+most cases.  Of course, there are exceptions to these rules. If you
+are trying to solve 10000 simultaneous equations on a machine with
+256MB of memory, you may need a gigabyte (or more) of swap.
+
+</p>
+<p>
+
+On 32-bit architectures (i386, m68k, 32-bit SPARC, and PowerPC), the
+maximum size of a swap partition is 2GB. That should be enough for
+nearly any installation.  However, if your swap requirements are this
+high, you should probably try to spread the swap across different
+disks (also called <span class="quote">“<span class="quote">spindles</span>”</span>) and, if possible, different SCSI or
+IDE channels.  The kernel will balance swap usage between multiple
+swap partitions, giving better performance.
+
+</p>
+<p>
+
+As an example, an older home machine might have 32MB of RAM and a
+1.7GB IDE drive on <code class="filename">/dev/hda</code>. There might be a
+500MB partition for another operating system on
+<code class="filename">/dev/hda1</code>, a 32MB swap partition on
+<code class="filename">/dev/hda3</code> and about 1.2GB on
+<code class="filename">/dev/hda2</code> as the Linux partition.
+
+</p>
+<p>
+
+For an idea of the space required by Ubuntu,
+check <a class="xref" href="apds03.html" title="D.3. Disk Space Needed">Section D.3, “Disk Space Needed”</a>.
+
+</p>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="apcs02.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="apc.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="apcs04.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">C.2. The Directory Tree </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> C.4. Device Names in Linux</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

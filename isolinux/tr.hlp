@@ -1,0 +1,155 @@
+F1Ubuntu sürümüne hoşgeldiniz!Bu, Ubuntu 12.04 için bir yükleme
+sistemidir. 20120424.1 tarihinde oluşturulmuştur.
+
+YARDIM DİZİNİ
+
+ANAHTARKONU
+
+<F1F1>   Bu sayfa, yardım dizini.
+<F2F2>   Ubuntu sürümünün kurulabilmesi için önkoşullar.
+<F3F3>   Bu sistemin kullanımının özel yolları için önyükleme yöntemleri.
+<F4F4>   Ek ön yükleme yöntemleri; bozuk bir sistemi kurtarır.
+<F5F5>   Özel önyükleme parametreleri; toplu bakış.
+<F6F6>   Özel makineler için özel önyükleme parametreleri.
+<F7F7>   Seçili disk denetleyicileri için özel önyükleme parametreleri.
+<F8F8>   Kurulum sistemi için özel önyükleme parametreleri.
+<F9F9>   Yardım alma yolları.
+<F10F10>  Telif hakları ve garantiler.
+
+Ayrıntılar için F2'den F10'a kadar bir tuşa veya yardımdan çıkmak için
+Escape tuşuna basın.F2UBUNTU KURULUMU İÇİN ÖNKOŞULLARYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Standart bir Ubuntu masaüstü sistemi kurulumu yapabilmeniz için, sabit
+diskinizde yeni bir disk bölümü oluşturmak üzere en az 5 gigabayt boş alana
+sahip olmanız ve ya minimal bir sunucu kurulumu için sabit diskinizde en az
+500 megabayt boş alana sahip olmanız gerekmektedir. Yeni Ubuntu sisteminizle
+ne yapmak istediğinize bağlı olarak, ek paketlerin kurulumu için daha fazla
+disk alanına gereksinim duyacaksınız.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Ubuntu'yu seçtiğiniz için teşekkür ederiz!
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F3ÖNYÜKLEME YÖNTEMLERİKullanılabilir önyükleme yöntemleri:
+
+Ubuntu'yu Yükle
+  Kurulumu başlat -- bu ön tanımlı seçenektir.
+Belleği sına
+  Bellek testi uygula.
+
+("Ubuntu" diğer ilgili işletim sistemi adları ile değiştirilebilir. Bu
+yardım metni geneldir.)
+
+Bu önyükleme yöntemlerinden birini kullanmak için, menüden imleç tuşları ile
+seçin. Alternatif başlangıç ve kurulum kiplerini seçmek için F4'e basın.
+Önyükleme parametrelerini düzenlemek için F6' ya basın. Daha yaygın
+önyükleme parametrelerinin kullanımı için F6'ya yeniden basarak menüden
+seçin.
+
+Uzman kipi hariç, kritik olmayan çekirdek önyükleme iletileri yazdırıldı.
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F4BOZUK BİR SİSTEM KURTARILIYORVarolan bir kurulumu kurtarmak için, bu önyükleme yöntemlerinden birini
+kullanın.
+
+Bozuk bir sistemi kurtar
+  Kurtarma kipini yükle.
+
+Bu önyükleme yöntemlerinden birini kullanmak için, menüden imleç tuşları ile
+seçin. Alternatif başlangıç ve kurulum kiplerini seçmek için F4'e basın.
+Önyükleme parametrelerini düzenlemek için F6' ya basın. Daha yaygın
+önyükleme parametrelerinin kullanımı için F6'ya yeniden basarak menüden
+seçin.
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F5ÖZEL ÖNYÜKLEME PARAMETRELERI - GENEL BAKIŞAz sayıda sistemde, sistemi önyüklemek için F6'ya basarak özel bir parametre
+belirtmeniz gerekebilir. Örneğin; Linux, donanımlarınızı otomatik
+algılayamayabilir ve bu donanımları tanıtabilmek için konumunu ve türünü
+açıkça belirtmek durumunda kalabilirsiniz.
+
+Kullanabileceğiniz önyükleme parametreleri hakkında daha fazla bilgi için
+basmanız gereken tuş:
+
+<F6F6>   özel makineler için önyükleme parametreleri
+<F7F7>   çeşitli disk denetleyicileri için önyükleme parametreleri
+<F8F8>   kurulum sistemi tarafından tanınan önyükleme parametreleri
+
+Çoğu çekirdek modülü, kurulum sırasında dinamik olarak yüklenir ve bu
+modüllerin parametreleri komut satırında verilemez. Modüller yüklendiğinde
+parametreleri elle girebilmek için uzman kipinde önyükleyin ( <F3F3>
+bağlantısına bakın).
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F6ÖZEL ÖNYÜKLEME PARAMETRELERI - ÇEŞİTLİ DONANIMLARÖnyükleme yöntemi bileşimiyle birlikte aşağıdaki önyükleme parametrelerini
+kullanabilirsiniz ( bakınız <F3F3>). Eğer onaltılık sayıları
+kullanıyorsanız, 0x önekini kullanmalısınız (örneğin; 0x300).
+
+DONANIM                                BELİRTME PARAMETRESİ
+
+IBM PS/1 veya ValuePoint (IDE disk)    hd=cylinders,heads,sectors
+Bazı IBM Thinkpad'ler                  floppy.floppy=thinkpad
+I/O port alanlarını koru               reserve=iobase,extent[,...]
+Ekran görüntü problemleri olan dizüstü bilgisayarlar
+                                       vga=771
+9600 baud'daki ilk seri portu kullan   konsol=ttyS0,9600n8
+IDE sürücüsü genel kullanımı için      all_generic_ide=1
+
+Bağlamalar veya diğer donanım hataları için olası (geçici) çözümler
+
+Hatalı APIC kesme yönlendirme aracını devre dışı bırak
+                                       noapic nolapic
+(Kısmen) ACPI devredışı                acpi=noirq ya da acpi=off
+USB devre dışı bırak                   usb yok
+Kesme yoklaması                        irqpoll
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F7ÖZEL ÖNYÜKLEME PARAMETRELERI - ÇEŞITLI DISK SÜRÜCÜLERIÖnyükleme yöntemi bileşimiyle birlikte aşağıdaki önyükleme parametrelerini
+kullanabilirsiniz ( bakınız <F3F3>).
+
+DONANIM                      BELİRTME PARAMETRESİ
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (eğer 0 değilse seçin)
+BusLogic SCSI Sunucuları     BusLogic.BusLogic=iobase
+Belirli DELL makineleri      aic7xxx.aic7xxx=no_probe
+
+Bu liste eksik, daha fazlası için kernel'in kernel-parameters.txt dosyasına
+bakınız.
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F8ÖZEL ÖNYÜKLEME PARAMATRELERI - YÜKLEME SISTEMIÖnyükleme yöntemi bileşimiyle birlikte aşağıdaki önyükleme parametrelerini
+kullanabilirsiniz ( bakınız <F3F3>). Bu parametreler yükleyicinin nasıl
+çalışacağını kontrol eder.
+
+SONUÇ                                   PARAMETRE
+
+Çerçeve hafızasını (frambuffer) seçilemez kıl
+                                        vga=normal fb=false
+PCMCIA'i başlatma                       hw-detect/start_pcmcia=false
+Statik ağ yapılandırmasını zorla        netcfg/disable_dhcp=true
+Klavye düzenini ayarla                  bootkbd=es
+Kubuntu masaüstünü seç                  tasks=kubuntu-masaüstü
+Yüksek kontrastlı tema kullan           theme=dark
+Braille tty kullan                      brltty=driver,device,texttable
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F9YARDIM ALMAKEğer Ubuntu'yu kuramazsanız, umutsuzluğa kapılmayın. Ubuntu takımı size
+yardıma hazır! Biz özellikle kurulum problemlerinizi duymak isteriz, çünkü
+genelde bunlar sadece bir kişiye olmuyor. Sizin belirli probleminizi ya
+daha önce duymuşuzdur ve çabuk bir çözüm sağlayabiliriz ya da sizinle
+birlikte çözmeye çalışmak isteriz ve aynı problemle karşılaşan bir sonraki
+kullanıcı ise sizin tecrübenizden yararlanabilir.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın.F10TELİFHAKLARI VE GARANTİLERUbuntu'nun telif hakları (C) 2004-2010 Canonical Ltd.'e aittir ve diğer
+orjinal yazarların ve katkıcıların çalışmalarını da bünyesinde barındırır.
+
+Ubuntu sistemi serbestçe tekrar dağıtılabilir. Kurulumdan sonra, her paket
+için tam dağıtım şartları, ilgili /usr/share/doc/paketadı/copyright
+dosyasında tanımlanır.
+
+Ubuntu, tatbik kanununca izin verilmiş boyutlarda TÜMÜYLE GARANTİ BELGESİZ
+olarak gelir.
+
+Bu kurulum sistemi Debian kurucusu tabanlıdır. Daha fazla detay ve Debian
+projesi hakkında bilgi için bkz: http://www.debian.org/.
+
+Yardım dizini için F1 tuşuna veya yardımdan çıkmak için Escape tuşuna basın. 

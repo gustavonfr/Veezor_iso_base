@@ -1,0 +1,156 @@
+F1Reciba a nosa benvida a Ubuntu!Este é un sistema de instalación para  Ubuntu
+12.04. Foi construído o 20120424.1.
+
+ÍNDICE DA AXUDA
+
+CLAVE  TEMA
+
+<F1F1>   Esta páxina, o índice da axuda
+<F2F2>   Prerrequisitos para instalar Ubuntu.
+<F3F3>   Métodos de arranque para as formas especiais de usar este sistema
+<F4F4>   Métodos de inicio adicionais; rescate dun sistema estragado.
+<F5F5>   Parámetros de inicio especiais, vista xeral.
+<F6F6>   Parámetros de inicio especiais para máquinas especiais.
+<F7F7>   Parámetros de inicio especiais para os controladores de disco seleccionados.
+<F8F8>   Parámetros de inicio especiais para o sistema de instalación.
+<F9F9>   Como obter axuda.
+<F10F10>  Dereitos de autoría e garantías.
+
+Prema entre F2 e F10 para obter detalles ou Escape para saír da axuda.F2PRERREQUISITOS PARA INSTALAR UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Debe ter espazo no disco ríxido para crear unha nova partición de disco de
+polo menos 5 Gigabytes para instalar un sistema Ubuntu estándar de
+escritorio ou polo menos 500 megabytes para unha instalación mínima de
+servidor. Necesitará máis espazo no disco para instalar paquetes adicionais,
+dependendo do que desexe facer co seu novo sistema Ubuntu.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Grazas por escoller Ubuntu!
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F3MÉTODOS DE INICIOMétodos de inicio dispoñíbeis:
+
+Instalar Ubuntu
+  Iniciar a instalación -- esta é a opción predeterminada
+Examinar a memoria
+  Realizar unha proba da memoria.
+
+(Pódese substituír «Ubuntu» polo nome doutros sistemas operativos
+relacionados. Este texto de axuda é xenérico).
+
+Para empregar un destes métodos de arranque, seleccióneo do menú coas teclas
+do cursor. Prema F4 para seleccionar modos de inicio e instalación
+alternativos. Prema F6 para modificar os parámetros de arranque. Prema F6 de
+novo para seleccionar dun menú de parámetros de inicio de uso frecuente.
+
+Agás en modo experto, as mensaxes de arranque do núcleo non críticas son
+suprimidas.
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F4RESCATE DUN SISTEMA ESTRAGADO.Utilice un destes métodos de inicio para rescatar unha instalación existente
+
+Rescatar un sistema estragado
+  Iniciar no modo de rescate.
+
+Para empregar un destes métodos de arranque, seleccióneo do menú coas teclas
+do cursor. Prema F4 para seleccionar modos de inicio e instalación
+alternativos. Prema F6 para modificar os parámetros de arranque. Prema F6 de
+novo para seleccionar dun menú de parámetros de inicio de uso frecuente.
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F5PARÁMETROS DE INICIO ESPECIAIS - VISTA XERALPode que nalgúns sistemas haxa que especificar un parámetro premendo F6 para
+iniciar o sistema. Por exemplo, pode que Linux non sexa quen de detectar
+automaticamente o hardware e que haxa que especificar explicitamente a súa
+localización ou tipo para que o recoñeza.
+
+Para obter máis información sobre os parámetros de inicio que pode usar,
+prema:
+
+<F6F6>   parámetros de inicio para máquinas especiais
+<F7F7>   parámetros de inicio para diversos controladores de disco
+<F8F8>   parámetros de inicio que entende o sistema de instalación
+
+O instalador carga dinamicamente moitos módulos do núcleo, e os parámetros
+para eses módulos non se poden especificar na liña de ordes. Para que se
+pidan os parámetros ao cargar os módulos, inicie en modo experto (vexa
+<F3F3>).
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F6PARÁMETROS DE INICIO ESPECIAIS - HARDWARE DIVERSOPode empregar os seguintes parámetros de arranque premendo F6 en combinación
+co método de arranque (vexa <F3F3>). Se emprega números hexadecimais ten
+que empregar o prefixo 0x (p.ex. 0x300).
+
+HARDWARE                               PARÁMETRO A ESPECIFICAR
+
+IBM PS/1 ou ValuePoint (disco IDE)     hd=cilindros,cabezas,sectores
+Algúns ThinkPads de IBM                floppy.floppy=thinkpad
+Protexer os rangos de portos de Entrada e Saída
+                                       reserve=iobase,extent[,...]
+Portátiles con problemas coa pantalla  vga=771
+Empregar o primeiro porto serie a 9600 baudios
+                                       console=ttyS0,9600n8
+Obrigar a que se utilice o controlador xenérico de IDE
+                                       all_generic_ide=1
+
+Pode ser posíbel (temporalmente) evitar retencións ou outros problemas de
+hardware:
+
+desactivar o enrutamento das interrupcións APIC problemáticas
+                                       noapic nolapic
+desactivar ACPI (parcialmente)         acpi=noirq ou acpi=off
+desactivar USB                         sen usb
+mostra de interrupcións                irqpoll
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F7PARÁMETROS DE INICIO ESPECIAIS - DIVERSOS CONTROLADORES DE DISCOPode empregar os seguintes parámetros de arranque premendo F6 en combinación
+co método de arranque (vexa <F3F3>).
+
+HARDWARE                     PARÁMETRO A ESPECIFICAR
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconectar]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (activado se non é cero)
+Hosts SCSI BusLogic          BusLogic.BusLogic=iobase
+Algunhas máquinas DELL       aic7xxx.aic7xxx=no_probe
+
+Esta lista está incompleta; consulte o ficheiro kernel-parameters.txt para
+obter máis información.
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F8PARÁMETROS DE INICIO ESPECIAIS - SISTEMA DE INSTALACIÓNPode empregar os seguintes parámetros de arranque premendo F6 en combinación
+co método de arranque (vexa <F3F3>). Estes parámetros controlan a maneira
+de traballar do instalador.
+
+RESULTADO                               PARÁMETRO
+
+Desactivar o framebuffer                vga=normal fb=false
+Non iniciar PCMCIA                      hw-detect/start_pcmcia=false
+Forzar a configuración dunha rede estática
+                                        netcfg/disable_dhcp=true
+Configurar o mapa do teclado            bootkbd=es
+Selecionar o escritorio de Kubuntu      tasks=kubuntu-desktop
+Usar o tema de alto contraste           theme=dark
+Usar unha consola Braille               brltty=driver,dispositivo,tabela
+de texto
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F9OBTER AXUDASe non pode instalar Ubuntu, non desespere! O equipo de Ubuntu está disposto
+a axudarlle! Estamos moi interesados en ter información sobre os problemas
+de instalación, porque normalmente non lle pasan a unha única persoa. Pode
+que xa teñamos información do seu problema concreto e o poidamos solucionar
+rapidamente. No caso contrario desexamos coñecelo e examinalo, así o
+seguinte usuario que se atope con el beneficiarase da súa experiencia!
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda.F10DEREITOS DE AUTORÍA E GARANTÍASUbuntu é Copyright (C) 2004-2010 Canonical Ltd. e incorpora o traballo
+doutros moitos autores orixinais e colaboradores.
+
+O sistema Ubuntu pódese redistribuir libremente. Unha vez instalado, os
+termos de distribución exactos de cada paquete aparecen descritos no
+ficheiro correspondente en /usr/share/doc/nome_do_paquete/copyright.
+
+Ubuntu ven sen ABSOLUTAMENTE NENGUNHA GARANTÍA, nos limites permitidos
+pola lexislación aplicábel.
+
+Este sistema de instalación baséase no instalador de Debian. Consulte
+http://www.debian.org/ para obter máis detalles e información sobre o
+proxecto Debian.
+
+Prema F1 para o índice da axuda ou Escape para saír da axuda. 

@@ -1,0 +1,304 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>4.3. Preparing Files for USB Memory Stick Booting</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch04.html" title="Chapter 4. Obtaining System Installation Media">
+<link rel="prev" href="ch04s02.html" title="4.2. Downloading Files from Ubuntu Mirrors">
+<link rel="next" href="ch04s04.html" title="4.4. Preparing Files for Hard Disk Booting">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">4.3. Preparing Files for USB Memory Stick Booting</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch04s02.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 4. Obtaining System Installation Media</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch04s04.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="4.3. Preparing Files for USB Memory Stick Booting">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="boot-usb-files"></a>4.3. Preparing Files for USB Memory Stick Booting</h2></div></div></div>
+<p>
+
+There are two installation methods possible when booting from USB stick.
+The first is to install completely from the network. The second is to
+also copy a CD image onto the USB stick and use that as a source for
+packages, possibly in combination with a mirror. This second method is
+the more common.
+
+</p>
+<p>
+
+For the first installation method you'll need to download an installer
+image from the <code class="filename">netboot</code> directory (at the location
+mentioned in <a class="xref" href="ch04s02.html#where-files" title="4.2.1. Where to Find Installation Images">Section 4.2.1, “Where to Find Installation Images”</a>) and use the
+<span class="quote">“<span class="quote">flexible way</span>”</span> explained below to copy the files to the USB
+stick.
+
+</p>
+<p>
+
+Installation images for the second installation method can be found in
+the <code class="filename">hd-media</code> directory and either the <span class="quote">“<span class="quote">easy
+way</span>”</span> or the <span class="quote">“<span class="quote">flexible way</span>”</span> can be used to copy the
+image to the USB stick. For this installation method you will also need
+to download a CD image. The installation image and the CD image must be
+based on the same release of <code class="classname">debian-installer</code>. If they do not match you are likely
+to get errors<sup>[<a name="idp3261632" href="#ftn.idp3261632" class="footnote">4</a>]</sup> during the installation.
+
+</p>
+<p>
+
+To prepare the USB stick, you will need a system where GNU/Linux is
+already running and where USB is supported. With current GNU/Linux systems
+the USB stick should be automatically recognized when you insert it. If
+it is not you should check that the usb-storage kernel module is loaded.
+When the USB stick is inserted, it will be mapped to a device named
+<code class="filename">/dev/sdX</code>, where the <span class="quote">“<span class="quote">X</span>”</span> is a letter
+in the range a-z. You should be able to see to which device the USB
+stick was mapped by running the command <span class="command"><strong>dmesg</strong></span> after
+inserting it. To write to your stick, you may have to turn off its write
+protection switch.
+
+</p>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p>
+
+The procedures described in this section will destroy anything already
+on the device! Make very sure that you use the correct device name for
+your USB stick. If you use the wrong device the result could be that all
+information on for example a hard disk could be lost.
+
+</p>
+</div>
+<p>
+
+Note that the USB stick should be at least 8 MB in size. If you follow
+<a class="xref" href="ch04s03.html#usb-copy-flexible" title="4.3.2. Copying the files — the flexible way">Section 4.3.2, “Copying the files — the flexible way”</a> and want to include an Ubuntu ISO
+image on the stick, you will need enough space for the ISO as well.
+
+</p>
+<div class="sect2" title="4.3.1. Copying the files — the easy way">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="usb-copy-easy"></a>4.3.1. Copying the files — the easy way</h3></div></div></div>
+<p>
+
+There is an all-in-one file
+<span><a class="ulink" href="http://archive.ubuntu.com/ubuntu/dists/precise/main/installer-amd64/current//images/netboot/boot.img.gz" target="_top">netboot/boot.img.gz</a></span>
+
+which contains all the installer files (including the kernel)
+<span>as well as <code class="classname">syslinux</code> and its
+configuration file.</span>
+
+
+</p>
+<p>
+
+To use this image simply extract it directly to a partition on your USB
+stick:
+
+</p>
+<div class="informalexample"><pre class="screen">
+# zcat boot.img.gz &gt; /dev/<em class="replaceable"><code>sdX1</code></em>
+</pre></div>
+<p>
+
+</p>
+</div>
+<div class="sect2" title="4.3.2. Copying the files — the flexible way">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="usb-copy-flexible"></a>4.3.2. Copying the files — the flexible way</h3></div></div></div>
+<p>
+
+If you like more flexibility or just want to know what's going on, you
+should use the following method to put the files on your stick. One
+advantage of using this method is that — if the capacity of your
+USB stick is large enough — you have the option of copying a
+full CD ISO image to it.
+
+</p>
+<div class="sect3" title="4.3.2.1. Partitioning the USB stick">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3269568"></a>4.3.2.1. Partitioning the USB stick</h4></div></div></div>
+<p>
+
+We will show how to set up the memory stick to use the first partition,
+instead of the entire device.
+
+</p>
+<div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+
+Since most USB sticks come pre-configured with a single FAT16
+partition, you probably won't have to repartition or reformat the
+stick.  If you have to do that anyway, use <span class="command"><strong>cfdisk</strong></span>
+or any other partitioning tool to create a FAT16 partition<sup>[<a name="idp3271120" href="#ftn.idp3271120" class="footnote">5</a>]</sup>, and then create the filesystem using:
+
+</p>
+<div class="informalexample"><pre class="screen">
+# mkdosfs /dev/<em class="replaceable"><code>sdX1</code></em>
+</pre></div>
+<p>
+
+Take care that you use the correct device name for your USB stick. The
+<span class="command"><strong>mkdosfs</strong></span> command is contained in the
+<code class="classname">dosfstools</code> Ubuntu package.
+
+</p>
+</div>
+<p>
+
+In order to start the kernel after booting from the USB stick, we will
+put a boot loader on the stick. Although any boot loader
+(e.g. <code class="classname">lilo</code>) should work, it's convenient to use
+<code class="classname">syslinux</code>, since it uses a FAT16 partition and can
+be reconfigured by just editing a text file. Any operating system
+which supports the FAT file system can be used to make changes to the
+configuration of the boot loader.
+
+</p>
+<p>
+
+To put <code class="classname">syslinux</code> on the FAT16 partition on your USB
+stick, install the <code class="classname">syslinux</code> and
+<code class="classname">mtools</code> packages on your system, and do:
+
+</p>
+<div class="informalexample"><pre class="screen">
+# syslinux /dev/<em class="replaceable"><code>sdX1</code></em>
+</pre></div>
+<p>
+
+Again, take care that you use the correct device name. The partition
+must not be mounted when starting <span class="command"><strong>syslinux</strong></span>. This
+procedure writes a boot sector to the partition and creates the file
+<code class="filename">ldlinux.sys</code> which contains the boot loader code.
+
+</p>
+</div>
+<div class="sect3" title="4.3.2.2. Adding the installer image">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3276240"></a>4.3.2.2. Adding the installer image</h4></div></div></div>
+<p>
+
+Mount the partition
+(<strong class="userinput"><code>mount /dev/<em class="replaceable"><code>sdX1</code></em> /mnt</code></strong>)
+and copy the following installer image files to the stick:
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+
+<code class="filename">vmlinuz</code> or <code class="filename">linux</code> (kernel binary)
+
+</p></li>
+<li class="listitem"><p>
+
+<code class="filename">initrd.gz</code> (initial ramdisk image)
+
+</p></li>
+</ul></div>
+<p>
+
+You can choose between either the regular version or the graphical version
+of the installer. The latter can be found in the <code class="filename">gtk</code>
+subdirectory. If you want to rename the files, please note that
+<code class="classname">syslinux</code> can only process DOS (8.3) file names.
+
+</p>
+<p>
+
+Next you should create a <code class="filename">syslinux.cfg</code> configuration
+file, which at a bare minimum should contain the following two lines (change
+the name of the kernel binary to <span class="quote">“<span class="quote"><code class="filename">linux</code></span>”</span>
+if you used a <code class="filename">netboot</code> image):
+
+</p>
+<div class="informalexample"><pre class="screen">
+default vmlinuz
+append initrd=initrd.gz
+</pre></div>
+<p>
+
+For the graphical installer you should add
+<strong class="userinput"><code>video=vesa:ywrap,mtrr vga=788</code></strong> to the second line.
+
+</p>
+<p>
+
+If you used an <code class="filename">hd-media</code> image, you should now copy an
+Ubuntu ISO image<sup>[<a name="idp3282376" href="#ftn.idp3282376" class="footnote">6</a>]</sup> onto the stick. When you are done, unmount the USB memory stick
+(<strong class="userinput"><code>umount /mnt</code></strong>).
+
+</p>
+</div>
+</div>
+<div class="sect2" title="4.3.3. Booting the USB stick">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3284816"></a>4.3.3. Booting the USB stick</h3></div></div></div>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p>
+
+If your system refuses to boot from the memory stick, the stick may
+contain an invalid master boot record (MBR). To fix this, use the
+<span class="command"><strong>install-mbr</strong></span> command from the package
+<code class="classname">mbr</code>:
+
+</p>
+<div class="informalexample"><pre class="screen">
+# install-mbr /dev/<em class="replaceable"><code>sdX</code></em>
+</pre></div>
+<p>
+
+</p>
+</div>
+</div>
+<div class="footnotes">
+<br><hr width="100" align="left">
+<div class="footnote"><p><sup>[<a id="ftn.idp3261632" href="#idp3261632" class="para">4</a>] </sup>
+The error message that is most likely to be displayed is that no kernel
+modules can be found. This means that the version of the kernel module
+udebs included on the CD image is different from the version of the
+running kernel.
+</p></div>
+<div class="footnote"><p><sup>[<a id="ftn.idp3271120" href="#idp3271120" class="para">5</a>] </sup>
+Don't forget to set the <span class="quote">“<span class="quote">bootable</span>”</span> bootable flag.
+</p></div>
+<div class="footnote"><p><sup>[<a id="ftn.idp3282376" href="#idp3282376" class="para">6</a>] </sup>
+You can use either a businesscard, a netinst or a full CD image (see
+<a class="xref" href="ch04s01.html" title="4.1. Official Ubuntu CD-ROMs">Section 4.1, “Official Ubuntu CD-ROMs”</a>). Be sure to select one that fits.
+Note that the <span class="quote">“<span class="quote">netboot <code class="filename">mini.iso</code></span>”</span> image is
+not usable for this purpose.
+</p></div>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch04s02.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch04s04.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">4.2. Downloading Files from Ubuntu Mirrors </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 4.4. Preparing Files for Hard Disk Booting</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

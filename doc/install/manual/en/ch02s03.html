@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>2.3. Purchasing Hardware Specifically for GNU/Linux</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch02.html" title="Chapter 2. System Requirements">
+<link rel="prev" href="ch02s02.html" title="2.2. Devices Requiring Firmware">
+<link rel="next" href="ch02s04.html" title="2.4. Installation Media">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">2.3. Purchasing Hardware Specifically for GNU/Linux</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch02s02.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 2. System Requirements</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch02s04.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="2.3. Purchasing Hardware Specifically for GNU/Linux">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="idp97752"></a>2.3. Purchasing Hardware Specifically for GNU/Linux</h2></div></div></div>
+<p>
+
+There are several vendors, who ship systems with Debian or other
+distributions of GNU/Linux
+<a class="ulink" href="http://www.debian.org/distrib/pre-installed" target="_top">pre-installed</a>. You might pay more
+for the privilege, but it does buy a level of peace of mind, since you can
+be sure that the hardware is well-supported by GNU/Linux.
+
+</p>
+<p>
+
+If you do have to buy a machine with Windows bundled, carefully read
+the software license that comes with Windows; you may be able to
+reject the license and obtain a rebate from your vendor.  Searching
+the Internet for <span class="quote">“<span class="quote">windows refund</span>”</span> may get you some useful
+information to help with that.
+
+</p>
+<p>
+
+Whether or not you are purchasing a system with Linux bundled, or even
+a used system, it is still important to check that your hardware is
+supported by the Linux kernel.  Check if your hardware is listed in
+the references found above.  Let your salesperson (if any) know that
+you're shopping for a Linux system.  Support Linux-friendly hardware
+vendors.
+
+</p>
+<div class="sect2" title="2.3.1. Avoid Proprietary or Closed Hardware">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp100216"></a>2.3.1. Avoid Proprietary or Closed Hardware</h3></div></div></div>
+<p>
+
+Some hardware manufacturers simply won't tell us how to write drivers
+for their hardware. Others won't allow us access to the documentation
+without a non-disclosure agreement that would prevent us from
+releasing the Linux source code.
+
+</p>
+<p>
+
+Since we haven't been granted access to the documentation on these
+devices, they simply won't work under Linux. You can help by asking
+the manufacturers of such hardware to release the documentation. If
+enough people ask, they will realize that the free software community
+is an important market.
+
+</p>
+</div>
+<div class="sect2" title="2.3.2. Windows-specific Hardware">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp101464"></a>2.3.2. Windows-specific Hardware</h3></div></div></div>
+<p>
+
+A disturbing trend is the proliferation of Windows-specific modems and
+printers. In some cases these are specially designed to be operated by
+the Microsoft Windows operating system and bear the legend <span class="quote">“<span class="quote">WinModem</span>”</span>
+or <span class="quote">“<span class="quote">Made especially for Windows-based computers</span>”</span>. This
+is generally done by removing the embedded processors of the hardware
+and shifting the work they do over to a Windows driver that is run by
+your computer's main CPU. This strategy makes the hardware less
+expensive, but the savings are often <span class="emphasis"><em>not</em></span> passed on to the
+user and this hardware may even be more expensive than equivalent
+devices that retain their embedded intelligence.
+
+</p>
+<p>
+
+You should avoid Windows-specific hardware for two reasons. The first
+is that the manufacturers do not generally make the resources
+available to write a Linux driver. Generally, the hardware and
+software interface to the device is proprietary, and documentation is
+not available without a non-disclosure agreement, if it is available
+at all. This precludes it being used for free software, since free
+software writers disclose the source code of their programs. The
+second reason is that when devices like these have had their embedded
+processors removed, the operating system must perform the work of the
+embedded processors, often at <span class="emphasis"><em>real-time</em></span> priority,
+and thus the CPU is not available to run your programs while it is
+driving these devices. Since the typical Windows user does not
+multi-process as intensively as a Linux user, the manufacturers hope
+that the Windows user simply won't notice the burden this hardware
+places on their CPU.  However, any multi-processing operating system,
+even Windows 2000 or XP, suffers from degraded performance when
+peripheral manufacturers skimp on the embedded processing power of
+their hardware.
+
+</p>
+<p>
+
+You can help improve this situation by encouraging these manufacturers
+to release the documentation and other resources necessary for us to
+program their hardware, but the best strategy is simply to avoid this
+sort of hardware until it is listed as working in the
+<a class="ulink" href="http://www.tldp.org/HOWTO/Hardware-HOWTO.html" target="_top">Linux Hardware Compatibility HOWTO</a>.
+
+</p>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch02s02.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch02.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch02s04.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">2.2. Devices Requiring Firmware </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 2.4. Installation Media</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

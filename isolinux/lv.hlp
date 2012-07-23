@@ -1,0 +1,163 @@
+F1Esiet sveicināti Ubuntu!Šī ir Ubuntu 12.04 instalācijas sistēma. Tā
+būvēta 20120424.1.
+
+PALĪDZĪBAS SATURA RĀDĪTĀJS
+
+POGA   TĒMA
+
+<F1F1>   Šī lapa, palīdzības satura rādītājs.
+<F2F2>   Priekšnosacījumi Ubuntu instalēšanai.
+<F3F3>   Palaišanas metodes īpašiem šīs sistēmas lietojumiem.
+<F4F4>   Papildus palaišanas metodes; bojātas sistēmas darbības atjaunošana.
+<F5F5>   Speciālie palaišanas parametri, pārskats.
+<F6F6>   Speciālie palaišanas parametri īpašām mašīnām.
+<F7F7>   Speciālie palaišanas parametri atsevišķiem disku kontrolieriem.
+<F8F8>   Speciālie palaišanas parametri instalācijas sistēmai.
+<F9F9>   Kā sameklēt palīdzību.
+<F10F10>  Autortiesības un garantijas.
+
+Spiediet no F2 līdz F10, lai uzzinātu sīkāk, vai arī Escape, lai izietu no
+palīdzības.F2PRASĪBAS UBUNTU INSTALĒŠANAIYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Uz cietā diska vajag vismaz 5 gigabaitu vietu, lai izveidotu standarta
+Ubuntu darbvirsmas sistēmu, vai vismaz 500 megabaitus minimālai servera
+instalācijai. Jums vajadzēs vairāk vietas, lai instalētu papildu pakotnes,
+kas ir atkarīgs no tā, ko vēlaties darīt ar savu jauno Ubuntu sistēmu.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Paldies, ka izvēlējāties Ubuntu!
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F3PALAIŠANAS METODESPieejamās palaišanas metodes:
+
+Instalēt Ubuntu
+  Sākt instalēšanu -- šī ir noklusējuma izvēle.
+Pārbaudīt atmiņu
+  Izpildīt operatīvās atmiņas testu.
+
+("Ubuntu" var tikt aizvietots ar radniecīgu operētājsistēmu nosaukumiem. Šis
+palīdzības teksts ir vispārīgs.)
+
+Lai izvēlētos kādu no šīm palaišanas metodēm, izmantojiet kursora taustiņus.
+Spiediet F4, lai izvēlētos alternatīvas palaišanas un instalācijas metodes.
+Spiediet F6, lai rediģētu palaišanas parametrus. Spiediet F6 vēlreiz, lai
+izvēlētos no bieži lietotajiem palaišanas parametriem.
+
+Izņemot eksperta režīmu, nekritiskie kodola ielādes ziņojumi netiks rādīti.
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F4Bojātas sistēmas atjaunošanaLietojiet kādu no šīm palaišanas metodēm sistēmas atjaunošanai
+
+Atjaunot bojātu sistēmu
+  Palaist atjaunošanas režīmu.
+
+Lai izvēlētos kādu no šīm palaišanas metodēm, izmantojiet kursora taustiņus.
+Spiediet F4, lai izvēlētos alternatīvas palaišanas un instalācijas metodes.
+Spiediet F6, lai rediģētu palaišanas parametrus. Spiediet F6 vēlreiz, lai
+izvēlētos no bieži lietotajiem palaišanas parametriem.
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F5SPECIĀLIE PALAIŠANAS PARAMETRI - PĀRSKATSDažās sistēmās var būt jānorāda parametrs, spiežot F6, lai palaistu sistēmu.
+Piemēram, ja Linux neizdodas automātiski noteikt jūsu aparatūru, jums var
+būt jānorāda tās atrašanās vieta vai tips, lai tā tiktu atpazīta.
+
+Lai iegūtu vairāk informācijas par pieejamajiem palaišanas parametriem,
+spiediet:
+
+<F6F6>   palaišanas parametri speciālām mašīnām
+<F7F7>   palaišanas parametri dažādiem disku kontrolieriem
+<F8F8>   palaišanas parametri, kurus saprot uzstādīšanas sistēma
+
+Instalators daudzus kodola moduļus ielādē dinamiski, un šo moduļu
+parametrusnevar norādīt komandrindā. Lai ievadītu parametrus moduļu ielādes
+laikā, palaidiet sistēmu eksperta (expert) režīmā (skatiet <F3F3>).
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F6SPECIĀLIE PALAIŠANAS PARAMETRI - DAŽĀDA APARATŪRAJūs varat lietot šos palaišanas parametrus kopā ar palaišanas metodi,
+spiežot F6 (skat. <F3F3>). Ja lietojat heksadecimālskaitļus, sākumā
+jāpievieno 0x (piem., 0x300).
+
+APARATŪRA                              NORĀDĀMAIS PARAMETRS
+
+IBM PS/1 vai ValuePoint (IDE disks)    hd=cilindri,galviņas,
+sektori
+Daži IBM ThinkPad tipa klēpjdatori     floppy.floppy=thinkpad
+Aizsargāt I/O (izejas/ieejas) portu reģionus
+                                       reserve=iobase,extent[,...]
+Klēpjdatori ar ekrānu attēlošanas problēmām
+                                       vga=771
+Izmantot pirmo seriālo portu ar 9600 bodiem
+                                       console=ttyS0,9600n8
+Forsēta vispārējā IDE draivera izmantošana
+                                       all_generic_ide=1
+
+Iespējamie (pagaidu) risinājumi nobloķēšanai vai arī cita veida aparatūras
+kļūdām:
+
+izslēgt kļūdainu APIC pārtraukumu maršrutēšanu
+                                       noapic nolapic
+(daļēji) izslēgt ACPI                  acpi=noirq vai acpi=off
+izslēgt USB                            nousb
+meklēt pārtraukumus                    irqpoll
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F7SPECIĀLIE PALAIŠANAS PARAMETRI - DAŽĀDI DISKDZIŅIJūs varat lietot šos palaišanas parametrus kopā ar palaišanas metodi,
+spiežot F6 (skat. <F3F3>).
+
+APARATŪRA                    NORĀDĀMAIS PARAMETRS
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (aktivizēts, ja nav nulle)
+BusLogic SCSI hosti          BusLogic.BusLogic=iobase
+Konkrētas DELL mašīnas       aic7xxx.aic7xxx=no_probe
+
+Šis saraksts nav pilnīgs. Lasiet kernel-parameters.txt failu, lai uzzinātu
+vairāk.
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F8SPECIĀLIE PALAIŠANAS PARAMETRI - UZSTĀDĪŠANAS SISTĒMAJūs varat lietot šos palaišanas parametrus kopā ar palaišanas metodi,
+spiežot F6 (skat. <F3F3>). Šie parametri kontrolē, kā darbojas
+instalators
+
+REZULTĀTS                               PARAMETRS
+
+Izslēgt kadru buferi                    vga=normal fb=false
+Nestartēt PCMCIA sistēmu                hw-detect/start_pcmcia=false
+Forsēt statisku tīkla konfigurāciju     netcfg/disable_dhcp=true
+Iestatīt tastūras karti                 bootkbd=es
+Izvēlieties Kubuntu darbvirsmu          tasks=kubuntu-desktop
+Izmantot augsta kontrasta tēmu          theme=dark
+Lietot Braila izvadi uz tty             brltty=driver,device,texttable
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F9SAMEKLĒT PALĪDZĪBUJa jūs nevarat uzstādīt Ubuntu, nekrītiet panikā! Ubuntu komanda ir gatava
+jums palīdzēt! Mēs esam īpaši ieinteresēti dzirdēt par instalēšanas
+problēmām, tāpēc ka parasti tās nepiemeklē tikai vienu personu. Mēs vai nu
+esam jau dzirdējuši par jūsu konkrēto problēmu un varam piedāvāt ātru
+labojumu, vai arī mēs vēlētos par to dzirdēt vairāk un strādāt kopā ar jums
+pie tās, lai to atrisinātu; lai nākošais lietotājs, kurš saskarsies ar tādu
+pašu problēmu, varētu iegūt risinājumu no jūsu pieredzes.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības.F10AUTORTIESĪBAS UN GARANTIJASUbuntu autortiesības (C) 2004. - 2010. gads, Canonical Ltd. Tas iekļauj arī
+daudzu citu autoru un atbalstītāju darbu.
+
+Ubuntu sistēma ir brīvi izplatāma. Pēc instalēšanas katras pakotnes tiešie
+izplatīšanas noteikumi ir aprakstīti attiecīgajā pakotnes failā
+/usr/share/doc/packagename/copyright.
+
+Par Ubuntu programmatūru netiek dotas NEKĀDAS GARANTIJAS līdz likumā
+pieļaujamām robežām.
+
+Šī instalēšanas sistēma ir bāzēta uz Debian instalatora. Skatieties
+http://www.debian.org/, lai iegūtu plašāku informāciju par Debian
+projektu.
+
+Spiediet F1, lai skatītu palīdzības satura rādītāju, vai Escape, lai izietu
+no palīdzības. 

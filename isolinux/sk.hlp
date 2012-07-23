@@ -1,0 +1,151 @@
+F1Vitajte v Ubuntu!Toto je inštalačný systém Ubuntu 12.04. Bol
+zostavený 20120424.1.
+
+OBSAH POMOCNÍKA
+
+KĽÚČ   TÉMA
+
+<F1F1>   Táto strana, obsah pomocníka
+<F2F2>   Požiadavky na inštaláciu Ubuntu.
+<F3F3>   Spôsoby spustenia pre špeciálne použitia tohto systému.
+<F4F4>   Ďalšie metódy štartovania; záchrana poškodeného systému.
+<F5F5>   Špeciálne zavádzacie parametre, prehľad.
+<F6F6>   Špeciálne zavádzacie parametre pre špeciálne počítače.
+<F7F7>   Špeciálne zavádzacie parametre pre vybrané ovládače disku.
+<F8F8>   Špeciálne zavádzacie parametre pre inštalačný systém.
+<F9F9>   Ako získať pomoc.
+<F10F10>  Autorské práva a záruky.
+
+Stlačením F2 až F10 zobrazíte podrobnosti. Stlačením Escape ukončíte
+pomocníka.F2POŽIADAVKY PRE INŠTALÁCIU UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Na štandardnú inštaláciu Ubuntu potrebujete najmenej 5 GB voľného miesta na
+vytvorenie novej oblasti na disku, prípadne aspoň 500 MB na minimálnu
+serverovú inštaláciu. Pri inštalovaní ďalších balíkov budete potrebovať viac
+miesta v závislosti od toho čo s novým Ubuntu plánujete robiť.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Ďakujeme, že ste si vybrali Ubuntu!
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F3METÓDY ZAVÁDZANIADostupné metódy zavádzania:
+
+Inštalovať Ubuntu
+  Spustiť inštaláciu - toto je predvolená voľba.
+Otestovať pamäť
+  Vykoná test pamäte.
+
+(„Ubuntu“ možno nahradiť názvami iných súvisiacich operačných systémov.
+Tento text je všeobecný.)
+
+Jednu z týcho štartoavcích metód môžete použiť, keď ju zvolíte z menu
+pomocou kláves šípok. Stlačením F4 zvolíte alternatívne režimy spustenia a
+inštalácie. Stlačením F6 môžete upraviť štartovacie parametre. Opätovným
+stlačením F6 si môžete vybrať z menu často používaných štartovacích
+parametrov.
+
+Nekritické hlásenia jadra sú potlačené všade okrem režimu pre expertov.
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F4ZÁCHRANA POŠKODENÉHO SYSTÉMUPoužite jednu s týchto metód na záchranu existujúcej inštalácie
+
+Záchrana poškodeného systému
+  Naštartovať v záchrannom režime.
+
+Jednu z týcho štartoavcích metód môžete použiť, keď ju zvolíte z menu
+pomocou kláves šípok. Stlačením F4 zvolíte alternatívne režimy spustenia a
+inštalácie. Stlačením F6 môžete upraviť štartovacie parametre. Opätovným
+stlačením F6 si môžete vybrať z menu často používaných štartovacích
+parametrov.
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F5ŠPECIÁLNE PARAMETRE ZAVÁDZANIA - PREHĽADNa niektorých systémoch je potrebné zadať parameter stlačením F6, aby bolo
+možné zaviesť systém. Napríklad, Linux nemusí detekovať váš hardvér, a preto
+by ste museli presne zadať jeho umiestnenie alebo typ, aby bol správne
+rozoznaný.
+
+Ak chcete zistiť, aké zavádzacie parametre môžete použiť, stlačte:
+
+<F6F6>   zavádzacie parametre pre špeciálne počítače
+<F7F7>   zavádzacie parametre pre rozličné ovládače disku
+<F8F8>   zavádzacie parametre pre inštalačný systém
+
+Množstvo modulov jadra dynamicky načítava inštalátor, preto parametre týchto
+modulov nemožno zadať na príkazovom riadku. Ak chcete byť požiadaní o
+parametre po tom, ako sa moduly načítajú, spustite systém v expertnom režime
+(pozri <F3F3>).
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F6ŠPECIÁLNE PARAMETRE ZAVÁDZANIA - ROZLIČNÝ HARDVÉRMôžete použiť nasledovné parametre zavádzania stlačením klávesu F6, v
+kombinácii s metódou zavádzania (pozri <F3F3>). Ak použijete
+hexadecimálne čísla, musíte použiť predponu 0x (napr., 0x300).
+
+HARDVÉR                                ŠPECIFIKOVAŤ PARAMETER
+
+IBM PS/1 alebo ValuePoint (IDE disk)   hd=cylindrov,hláv,sektorov
+Niektoré IBM ThinkPady                 floppy.floppy=thinkpad
+Chrániť oblasti V/V portov             reserve=iobase,rozsah[,...]
+Notebooky s problémami s obrazom       vga=771
+Použiť prvý sériový port s rýchlosťou 9600 baudov
+                                       console=ttyS0,9600n8
+Vynútiť použitie všeobecného ovládača IDE
+                                       all_generic_ide=1
+
+Možné (dočasné) obídenie zamrznutí alebo iných hardvérových chýb:
+
+vypnúť chybné smerovanie prerušení APIC
+                                       noapic nolapic
+(čiastočne) vypnúť ACPI                acpi=noirq alebo acpi=off
+vypnúť USB                             nousb
+pravidelná kontrola prerušení (poll)   irqpoll
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F7ŠPECIÁLNE PARAMETRE ZAVÁDZANIA - ROZLIČNÉ DISKOVÉ JEDNOTKYMôžete použiť nasledovné parametre zavádzania stlačením klávesu F6, v
+kombinácii s metódou zavádzania (pozri <F3F3>).
+
+HARDVÉR                      ŠPECIFIKOVAŤ PARAMETER
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,znovupripojiť]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,rýchlosťdma]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (enabled if non-zero)
+BusLogic SCSI Hosts          BusLogic.BusLogic=iobase
+Rôzne počítače DELL          aic7xxx.aic7xxx=no_probe
+
+Tento zoznam nie je úplný, pozri podrobnosti v súbore jadra kernel-
+parameters.txt
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F8ŠPECIÁLNE PARAMETRE ZAVÁDZANIA - INŠTALAČNÝ SYSTÉMMôžete použiť nasledovné parametre zavádzania stlačením klávesu F6, v
+kombinácii s metódou zavádzania (pozri <F3F3>). Tieto parametre riadia
+funkcie inštalátora.
+
+VÝSLEDOK                                PARAMETER
+
+Vypnúť framebuffer                      vga=normal fb=false
+Nespustiť PCMCIA                        hw-detect/start_pcmcia=false
+Spustiť konfiguráciu statickej siete    netcfg/disable_dhcp=true
+Nastaviť rozloženie klávesnice          bootkbd=es
+Vyberte pracovné prostredie Kubuntu     tasks=kubuntu-desktop
+Použiť kontrastný vzhľad                theme=dark
+Použiť Braillovu konzolu                brltty=ovládač,zariadenie,tabuľkatextu
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F9ZÍSKANIE POMOCIAk nemôžete nainštalovať Ubuntu, nezúfajte! T9m Ubuntu je pripravený pomôcť
+vám! Obzvlášť nás zaujímaju problémy pri inštalácii, pretože vo všeobecnosti
+sa nestávajú len jednému človeku. Buď sme už o vašom konkrétnom probléme
+počuli a môžeme vykonať rýchlu nápravu alebo by sme sa o ňom radi dozvedeli
+a radi si ho s vami prešli, čím vaše skúsenosti poslúžia ďalšiemu
+používateľovi, ktorý na rovnaký problém narazí.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka.F10AUTORSKÉ PRÁVA A ZÁRUKYUbuntu je Copyright (C) 2004-2010 Canonical Ltd., a obsahuje prácu mnohých
+ostatných pôvodných autorov a prispievateľov
+
+Systém Ubuntu je voľne šíriteľný. Po inštalácii nájdete presné podmienky
+šírenia každého z balíkov v zodpovedajúcom súbore v
+/usr/share/doc/názovbalíka/copyright.
+
+Ubuntu neposkytuje ABSOLÚTNE ŽIADNU ZÁRUKU do rozsahu aký umožňuje
+aplikovateľné právo.
+
+Tento inštalačný systém je založený na inštalátore systému Debian. Pozrite
+http://www.debian.sk/ pre viac podrobností a informácií o projekte Debian.
+
+Stlačením F1 zobrazíte obsah pomocníka. Stlačením Escape ukončíte pomocníka. 

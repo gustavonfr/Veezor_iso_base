@@ -1,0 +1,156 @@
+F1¡Bienvenido/a a Ubuntu!Este es un sistema de instalación para Ubuntu
+12.04. Compilado el 20120424.1.
+
+ÍNDICE DE LA AYUDA
+
+CLAVE  TEMA
+
+<F1F1>   Esta página, el índice de la ayuda.
+<F2F2>   Requisitos previos para instalar Ubuntu.
+<F3F3>   Métodos de arranque para maneras especiales de usar este sistema.
+<F4F4>   Métodos de arranque adicionales; rescatar un sistema dañado.
+<F5F5>   Parámetros especiales de arranque; visión general.
+<F6F6>   Parámetros especiales de arranque para máquinas especiales.
+<F7F7>   Parámetros especiales de arranque para controladoras de disco específicas.
+<F8F8>   Parámetros especiales de arranque para el sistema de instalación.
+<F9F9>   Cómo conseguir ayuda.
+<F10F10>  Copyrights y garantías.
+
+Pulse de F2 a F10 para detalles, o Esc para salir de la ayuda.F2REQUISITOS PREVIOS PARA INSTALAR UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Debe tener espacio en el disco duro para crear una nueva partición de disco
+de al menos 5 Gigabytes para instalar un sistema Ubuntu estándar de
+escritorio o por lo menos 500 megabytes para una instalación de servidor
+mínima. Necesitará más espacio en disco para instalar paquetes adicionales,
+dependiendo de lo que desee hacer con su nuevo sistema Ubuntu.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+¡Gracias por elegir Ubuntu!
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F3MÉTODOS DE ARRANQUEMétodos de arranque disponibles:
+
+Instalar Ubuntu
+  Iniciar la instalación -- esta es la opción predeterminada.
+Test de memoria
+  Realizar una comprobación de la memoria.
+
+("Ubuntu" puede ser sustituido por otros nombres de sistemas operativos
+relacionados. Este texto de ayuda es genérico.)
+
+Para usar uno de esos métodos de arranque, selecciónelo en el menú con las
+teclas del cursor. Pulse F4 para seleccionar otros modos de instalación y
+arranque alternativos. Pulse F6 para editar los parámetros de arranque.
+Pulse F6 de nuevo para seleccionarlos desde un menú con los parámetros de
+arranque más comunes.
+
+Excepto en el modo experto, se suprimen los mensajes no críticos de arranque
+del núcleo.
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F4RESCATAR UN SISTEMA DAÑADOUse uno de los métodos de arranque para rescatar una instalación existente
+
+Recuperar un sistema dañado
+  Arrancar en modo de rescate.
+
+Para usar uno de esos métodos de arranque, selecciónelo en el menú con las
+teclas del cursor. Pulse F4 para seleccionar otros modos de instalación y
+arranque alternativos. Pulse F6 para editar los parámetros de arranque.
+Pulse F6 de nuevo para seleccionarlos desde un menú con los parámetros de
+arranque más comunes.
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F5PARÁMETROS ESPECIALES DE ARRANQUE - VISIÓN GENERALEn algunos sistemas, puede que necesite especificar un parámetro pulsando F6
+para poder arrancar el sistema. Por ejemplo, puede que Linux no sea capaz de
+autodetectar su hardware, y tenga que especificar explícitamente su
+ubicación o su tipo para que lo pueda reconocer.
+
+Para más información sobre los parámetros de arranque que puede usar, pulse:
+
+<F6F6>   parámetros de arranque para máquinas especiales
+<F7F7>   parámetros de arranque para varias controladoras de disco
+<F8F8>   parámetros de arranque que entiende el sistema de instalación
+
+El instalador carga dinámicamente muchos módulos del núcleo, y los
+parámetros para esos módulos no se pueden especificar en la línea de
+órdenes. Para que se le soliciten los parámetros cuando se carguen los
+módulos, arranque en modo experto (vea <F3F3>).
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F6PARÁMETROS ESPECIALES DE ARRANQUE - HARDWARE VARIADOPuede usar los siguientes parámetros de arranque pulsando F6, en combinación
+con el método de arranque (vea <F3F3>). Si usa números hexadecimales,
+tendrá que usar el prefijo 0x (p.ej. 0x300).
+
+HARDWARE                               PARÁMETRO A ESPECIFICAR
+
+IBM PS/1 o ValuePoint (disco IDE)      hd=cilindros,cabezas,sectores
+Algunos IBM ThinkPads                  floppy.floppy=thinkpad
+Proteger rangos de puertos de E/S      reserve=iobase,extent[,...]
+Portátiles con problemas de pantalla   vga=771
+Usar el primer puerto serie a 9600 baudios
+                                       console=ttyS0,9600n8
+Forzar el uso del controlador IDE genérico
+                                       all_generic_ide=1
+
+Posibles soluciones temporales para bloqueos u otros fallos del hardware:
+
+desactivar rutas de interrupción defectuosas en el APIC
+                                       noapic nolapic
+desactivar (parcialmente) el ACPI      acpi=noirq o acpi=off
+desactivar el USB                      nousb
+sondeos para las interrupciones        irqpoll
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F7PARÁMETROS ESPECIALES DE ARRANQUE - UNIDADES DE DISCO VARIADASPuede usar los siguientes parámetros de arranque pulsando F6, en combinación
+con el método de arranque (vea <F3F3>).
+
+HARDWARE                     PARÁMETRO A ESPECIFICAR
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,velocidad_dma]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (se activa si no es cero)
+Hosts BusLogic SCSI          BusLogic.BusLogic=iobase
+Algunas máquinas DELL        aic7xxx.aic7xxx=no_probe
+
+Esta lista está incompleta; consulte el archivo kernel-parameters.txt del
+núcleo para más información.
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F8PARÁMETROS ESPECIALES DE ARRANQUE - SISTEMA DE INSTALACIÓNPuede usar los siguientes parámetros de arranque pulsando F6, en combinación
+con el método de arranque (vea <F3F3>). Estos parámetros controlan cómo
+trabaja el instalador.
+
+RESULTADO                               PARÁMETRO
+
+Desactivar el framebuffer               vga=normal fb=false
+No arrancar el PCMCIA                   hw-detect/start_pcmcia=false
+Forzar la configuración estática de la red
+                                        netcfg/disable_dhcp=true
+Establecer el mapa de teclado           bootkbd=es
+Seleccionar el escritorio Kubuntu       tasks=kubuntu-desktop
+Usar tema de alto contraste             theme=dark
+Usar una terminal Braille               brltty=controlador,dispositivo,tabla_de_texto
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F9OBTENER AYUDASi no puede instalar Ubuntu, ¡no desespere! El equipo de Ubuntu está listo
+para ayudarle. Estamos especialmente interesados en recibir avisos de
+problemas de instalación, porque normalmente no suelen ocurrirle a una
+única persona. Seguramente ya escuchamos sobre su problema particular y
+podemos darle una solución rápida, o bien podemos estudiar su problema y
+trabajar con usted en su resolución, de manera que el próximo usuario que
+venga con el mismo problema se beneficie de su experiencia.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda.F10COPYRIGHTS Y GARANTÍASUbuntu es Copyright (c) 2004-2010 Canonical Ltd., e incorpora el trabajo de
+muchos otros autores y contribuyentes originales.
+
+El sistema Ubuntu se distribuye libremente de forma gratuita. Tras la
+instalación, los términos exactos de distribución de cada paquete se
+describen en el correspondiente archivo
+usr/share/doc/nombredelpaquete/copyright.
+
+Ubuntu se proporciona ABSOLUTAMENTE SIN NINGUNA GARANTÍA, hasta donde está
+permitido por las leyes aplicables.
+
+El sistema de instalación está basado en el instalador de Debian. Visite
+http://www.debian.org/ para más detalles e información sobre el proyecto
+Debian.
+
+Pulse F1 para ir al índice de la ayuda, o Esc para salir de la ayuda. 

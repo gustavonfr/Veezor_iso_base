@@ -1,0 +1,364 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ubuntu Installation Guide</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<meta name="description" content="This document contains installation instructions for the Ubuntu 12.04 system (codename Precise Pangolin), for the AMD64 (amd64) architecture. It also contains pointers to more information and information on how to make the most of your new Ubuntu system. ">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="next" href="pr01.html" title="Installing Ubuntu 12.04 “Precise Pangolin” For amd64">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Ubuntu Installation Guide</th></tr>
+<tr>
+<td width="20%" align="left"> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="pr01.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div lang="en" class="book" title="Ubuntu Installation Guide">
+<div class="titlepage">
+<div>
+<div><h1 class="title">
+<a name="idp1563392"></a>Ubuntu Installation Guide</h1></div>
+<div><p class="copyright">Copyright © 2004, 2005, 2006, 2007, 2008, 2009 the Debian Installer team</p></div>
+<div><p class="copyright">Copyright © 2004, 2005, 2006, 2007, 2008, 2009, 2010 Canonical Ltd.</p></div>
+<div><div class="legalnotice" title="Legal Notice">
+<a name="idp2512632"></a><p>
+
+This manual is free software; you may redistribute it and/or modify it
+under the terms of the GNU General Public License. Please refer to the
+license in <a class="xref" href="apf.html" title="Appendix F. GNU General Public License">Appendix F, <i>GNU General Public License</i></a>.
+
+</p>
+</div></div>
+<div><div class="abstract" title="Abstract">
+<p class="title"><b>Abstract</b></p>
+<p>
+This document contains installation instructions for the Ubuntu
+12.04 system (codename <span class="quote">“<span class="quote"><span class="quote">‘<span class="quote">Precise Pangolin</span>’</span></span>”</span>),
+for the <span>AMD64</span> (<span class="quote">“<span class="quote">amd64</span>”</span>)
+architecture.  It also contains pointers to more information and
+information on how to make the most of your new Ubuntu system.
+</p>
+<p>
+
+
+
+</p>
+</div></div>
+</div>
+<hr>
+</div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="preface"><a href="pr01.html">Installing Ubuntu 12.04 <span class="quote">“<span class="quote">Precise Pangolin</span>”</span> For amd64</a></span></dt>
+<dt><span class="chapter"><a href="ch01.html">1. Welcome to Ubuntu</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch01s01.html">1.1. What is Ubuntu?</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="ch01s01.html#idp2909416">1.1.1. Sponsorship by Canonical</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="ch01s02.html">1.2. What is Debian?</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="ch01s02.html#ubuntu-and-debian">1.2.1. Ubuntu and Debian</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="ch01s03.html">1.3. What is GNU/Linux?</a></span></dt>
+<dt><span class="sect1"><a href="ch01s04.html">1.4. Getting Ubuntu</a></span></dt>
+<dt><span class="sect1"><a href="ch01s05.html">1.5. Getting the Newest Version of This Document</a></span></dt>
+<dt><span class="sect1"><a href="ch01s06.html">1.6. Organization of This Document</a></span></dt>
+<dt><span class="sect1"><a href="ch01s07.html">1.7. About Copyrights and Software Licenses
+    </a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch02.html">2. System Requirements</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch02s01.html">2.1. Supported Hardware</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch02s01.html#idp1400976">2.1.1. Supported Architectures</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#idp2612176">2.1.2. CPU, Main Boards, and Video Support</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#laptops">2.1.3. Laptops</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#idp2055936">2.1.4. Multiple Processors</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#gfx">2.1.5. Graphics Card Support</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#network-cards">2.1.6. Network Connectivity Hardware</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#braille-displays">2.1.7. Braille Displays</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#hardware-speech-synthesis">2.1.8. Hardware Speech Synthesis</a></span></dt>
+<dt><span class="sect2"><a href="ch02s01.html#supported-peripherals">2.1.9. Peripherals and Other Hardware</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch02s02.html">2.2. Devices Requiring Firmware</a></span></dt>
+<dt><span class="sect1"><a href="ch02s03.html">2.3. Purchasing Hardware Specifically for GNU/Linux</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch02s03.html#idp100216">2.3.1. Avoid Proprietary or Closed Hardware</a></span></dt>
+<dt><span class="sect2"><a href="ch02s03.html#idp101464">2.3.2. Windows-specific Hardware</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch02s04.html">2.4. Installation Media</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch02s04.html#idp1315256">2.4.1. CD-ROM/DVD-ROM</a></span></dt>
+<dt><span class="sect2"><a href="ch02s04.html#idp1318632">2.4.2. Hard Disk</a></span></dt>
+<dt><span class="sect2"><a href="ch02s04.html#idp1319360">2.4.3. USB Memory Stick</a></span></dt>
+<dt><span class="sect2"><a href="ch02s04.html#idp1320432">2.4.4. Network</a></span></dt>
+<dt><span class="sect2"><a href="ch02s04.html#idp1322432">2.4.5. Un*x or GNU system</a></span></dt>
+<dt><span class="sect2"><a href="ch02s04.html#idp1323936">2.4.6. Supported Storage Systems</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch02s05.html">2.5. Memory and Disk Space Requirements</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch03.html">3. Before Installing Ubuntu</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch03s01.html">3.1. Overview of the Installation Process</a></span></dt>
+<dt><span class="sect1"><a href="ch03s02.html">3.2. Back Up Your Existing Data!</a></span></dt>
+<dt><span class="sect1"><a href="ch03s03.html">3.3. Information You Will Need</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch03s03.html#idp1346160">3.3.1. Documentation</a></span></dt>
+<dt><span class="sect2"><a href="ch03s03.html#fsohi">3.3.2. Finding Sources of Hardware Information</a></span></dt>
+<dt><span class="sect2"><a href="ch03s03.html#idp3159216">3.3.3. Hardware Compatibility</a></span></dt>
+<dt><span class="sect2"><a href="ch03s03.html#idp3163072">3.3.4. Network Settings</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch03s04.html">3.4. Meeting Minimum Hardware Requirements</a></span></dt>
+<dt><span class="sect1"><a href="ch03s05.html">3.5. Pre-Partitioning for Multi-Boot Systems</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="ch03s05.html#idp3189088">3.5.1. Partitioning From DOS or Windows</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="ch03s06.html">3.6. Pre-Installation Hardware and Operating System Setup</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch03s06.html#bios-setup">3.6.1. Invoking the BIOS Set-Up Menu</a></span></dt>
+<dt><span class="sect2"><a href="ch03s06.html#boot-dev-select">3.6.2. Boot Device Selection</a></span></dt>
+<dt><span class="sect2"><a href="ch03s06.html#idp3231992">3.6.3. Miscellaneous BIOS Settings</a></span></dt>
+<dt><span class="sect2"><a href="ch03s06.html#hardware-issues">3.6.4. Hardware Issues to Watch Out For</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="ch04.html">4. Obtaining System Installation Media</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch04s01.html">4.1. Official Ubuntu CD-ROMs</a></span></dt>
+<dt><span class="sect1"><a href="ch04s02.html">4.2. Downloading Files from Ubuntu Mirrors</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="ch04s02.html#where-files">4.2.1. Where to Find Installation Images</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="ch04s03.html">4.3. Preparing Files for USB Memory Stick Booting</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch04s03.html#usb-copy-easy">4.3.1. Copying the files — the easy way</a></span></dt>
+<dt><span class="sect2"><a href="ch04s03.html#usb-copy-flexible">4.3.2. Copying the files — the flexible way</a></span></dt>
+<dt><span class="sect2"><a href="ch04s03.html#idp3284816">4.3.3. Booting the USB stick</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch04s04.html">4.4. Preparing Files for Hard Disk Booting</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="ch04s04.html#files-lilo">4.4.1. Hard disk installer booting using <span class="command"><strong>LILO</strong></span> or
+  <span class="command"><strong>GRUB</strong></span></a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="ch04s05.html">4.5. Preparing Files for TFTP Net Booting</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch04s05.html#dhcpd">4.5.1. Setting up a DHCP server</a></span></dt>
+<dt><span class="sect2"><a href="ch04s05.html#tftp-bootp">4.5.2. Setting up a BOOTP server</a></span></dt>
+<dt><span class="sect2"><a href="ch04s05.html#tftpd">4.5.3. Enabling the TFTP Server</a></span></dt>
+<dt><span class="sect2"><a href="ch04s05.html#tftp-images">4.5.4. Move TFTP Images Into Place</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch04s06.html">4.6. Automatic Installation</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch04s06.html#preseed">4.6.1. Automatic Installation Using the Ubuntu Installer</a></span></dt>
+<dt><span class="sect2"><a href="ch04s06.html#kickstart">4.6.2. Automatic Installation Using Kickstart</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="ch05.html">5. Booting the Installation System</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch05s01.html">5.1. Booting the Installer on <span>AMD64</span></a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch05s01.html#idp3375048">5.1.1. Booting from a CD-ROM</a></span></dt>
+<dt><span class="sect2"><a href="ch05s01.html#boot-initrd">5.1.2. Booting from Linux Using <span class="command"><strong>LILO</strong></span> or
+  <span class="command"><strong>GRUB</strong></span></a></span></dt>
+<dt><span class="sect2"><a href="ch05s01.html#usb-boot">5.1.3. Booting from USB Memory Stick</a></span></dt>
+<dt><span class="sect2"><a href="ch05s01.html#boot-tftp">5.1.4. Booting with TFTP</a></span></dt>
+<dt><span class="sect2"><a href="ch05s01.html#boot-screen">5.1.5. The Boot Screen</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch05s02.html">5.2. Accessibility</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch05s02.html#idp3415312">5.2.1. USB Braille Displays</a></span></dt>
+<dt><span class="sect2"><a href="ch05s02.html#idp3417400">5.2.2. Serial Braille Displays</a></span></dt>
+<dt><span class="sect2"><a href="ch05s02.html#idp3421840">5.2.3. Hardware Speech Synthesis</a></span></dt>
+<dt><span class="sect2"><a href="ch05s02.html#idp3424584">5.2.4. Board Devices</a></span></dt>
+<dt><span class="sect2"><a href="ch05s02.html#idp3427136">5.2.5. High-Contrast Theme</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch05s03.html">5.3. Boot Parameters</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="ch05s03.html#installer-args">5.3.1. Ubuntu Installer Parameters</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="ch05s04.html">5.4. Troubleshooting the Installation Process</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch05s04.html#unreliable-cd">5.4.1. CD-ROM Reliability</a></span></dt>
+<dt><span class="sect2"><a href="ch05s04.html#idp3515208">5.4.2. Boot Configuration</a></span></dt>
+<dt><span class="sect2"><a href="ch05s04.html#i386-boot-problems">5.4.3. Common <span>AMD64</span> Installation Problems</a></span></dt>
+<dt><span class="sect2"><a href="ch05s04.html#kernel-msgs">5.4.4. Interpreting the Kernel Startup Messages</a></span></dt>
+<dt><span class="sect2"><a href="ch05s04.html#problem-report">5.4.5. Reporting Installation Problems</a></span></dt>
+<dt><span class="sect2"><a href="ch05s04.html#submit-bug">5.4.6. Submitting Installation Reports</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="ch06.html">6. Using the Ubuntu Installer</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch06s01.html">6.1. How the Installer Works</a></span></dt>
+<dt><span class="sect1"><a href="ch06s02.html">6.2. Components Introduction</a></span></dt>
+<dt><span class="sect1"><a href="ch06s03.html">6.3. Using Individual Components</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch06s03.html#di-setup">6.3.1. Setting up Ubuntu Installer and Hardware Configuration</a></span></dt>
+<dt><span class="sect2"><a href="ch06s03.html#di-partition">6.3.2. Partitioning and Mount Point Selection</a></span></dt>
+<dt><span class="sect2"><a href="ch06s03.html#di-install-base">6.3.3. Installing the Base System</a></span></dt>
+<dt><span class="sect2"><a href="ch06s03.html#di-user-setup">6.3.4. Setting Up Users And Passwords</a></span></dt>
+<dt><span class="sect2"><a href="ch06s03.html#di-install-software">6.3.5. Installing Additional Software</a></span></dt>
+<dt><span class="sect2"><a href="ch06s03.html#di-make-bootable">6.3.6. Making Your System Bootable</a></span></dt>
+<dt><span class="sect2"><a href="ch06s03.html#di-finish">6.3.7. Finishing the Installation</a></span></dt>
+<dt><span class="sect2"><a href="ch06s03.html#di-miscellaneous">6.3.8. Miscellaneous</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch06s04.html">6.4. Loading Missing Firmware</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch06s04.html#idp3859216">6.4.1. Preparing a medium</a></span></dt>
+<dt><span class="sect2"><a href="ch06s04.html#idp3863120">6.4.2. Firmware and the Installed System</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="ch07.html">7. Booting Into Your New Ubuntu System</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch07s01.html">7.1. The Moment of Truth</a></span></dt>
+<dt><span class="sect1"><a href="ch07s02.html">7.2. Mounting encrypted volumes</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch07s02.html#mount-dm-crypt">7.2.1. dm-crypt</a></span></dt>
+<dt><span class="sect2"><a href="ch07s02.html#mount-loop-aes">7.2.2. loop-AES</a></span></dt>
+<dt><span class="sect2"><a href="ch07s02.html#crypto-troubleshooting">7.2.3. Troubleshooting</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch07s03.html">7.3. Log In</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch08.html">8. Next Steps and Where to Go From Here</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch08s01.html">8.1. Shutting down the system</a></span></dt>
+<dt><span class="sect1"><a href="ch08s02.html">8.2. If You Are New to Unix</a></span></dt>
+<dt><span class="sect1"><a href="ch08s03.html">8.3. Orienting Yourself to Ubuntu</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch08s03.html#idp3911344">8.3.1. Ubuntu Packaging System</a></span></dt>
+<dt><span class="sect2"><a href="ch08s03.html#idp3918344">8.3.2. Application Version Management</a></span></dt>
+<dt><span class="sect2"><a href="ch08s03.html#idp3919080">8.3.3. Cron Job Management</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch08s04.html">8.4. Further Reading and Information</a></span></dt>
+<dt><span class="sect1"><a href="ch08s05.html">8.5. Setting Up Your System To Use E-Mail</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch08s05.html#mail-default">8.5.1. Default E-Mail Configuration</a></span></dt>
+<dt><span class="sect2"><a href="ch08s05.html#mail-outgoing">8.5.2. Sending E-Mails Outside The System</a></span></dt>
+<dt><span class="sect2"><a href="ch08s05.html#config-mta">8.5.3. Configuring the Exim4 Mail Transport Agent</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch08s06.html">8.6. Compiling a New Kernel</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="ch08s06.html#idp3962112">8.6.1. Kernel Image Management</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="ch08s07.html">8.7. Recovering a Broken System</a></span></dt>
+</dl></dd>
+<dt><span class="appendix"><a href="apa.html">A. Installation Howto</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="apas01.html">A.1. Booting the installer</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="apas01.html#howto-getting-images-cdrom">A.1.1. CDROM</a></span></dt>
+<dt><span class="sect2"><a href="apas01.html#howto-getting-images-usb">A.1.2. USB memory stick</a></span></dt>
+<dt><span class="sect2"><a href="apas01.html#howto-getting-images-netboot">A.1.3. Booting from network</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="apas02.html">A.2. Installation</a></span></dt>
+<dt><span class="sect1"><a href="apas03.html">A.3. And finally…</a></span></dt>
+</dl></dd>
+<dt><span class="appendix"><a href="apb.html">B. Automating the installation using preseeding</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="apbs01.html">B.1. Introduction</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="apbs01.html#preseed-methods">B.1.1. Preseeding methods</a></span></dt>
+<dt><span class="sect2"><a href="apbs01.html#preseed-limitations">B.1.2. Limitations</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="apbs02.html">B.2. Using preseeding</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="apbs02.html#preseed-loading">B.2.1. Loading the preconfiguration file</a></span></dt>
+<dt><span class="sect2"><a href="apbs02.html#preseed-bootparms">B.2.2. Using boot parameters to preseed questions</a></span></dt>
+<dt><span class="sect2"><a href="apbs02.html#preseed-auto">B.2.3. Auto mode</a></span></dt>
+<dt><span class="sect2"><a href="apbs02.html#preseed-aliases">B.2.4. Aliases useful with preseeding</a></span></dt>
+<dt><span class="sect2"><a href="apbs02.html#preseed-dhcp">B.2.5. Using a DHCP server to specify preconfiguration files</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="apbs03.html">B.3. Creating a preconfiguration file</a></span></dt>
+<dt><span class="sect1"><a href="apbs04.html">B.4. Contents of the preconfiguration file (for precise)</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="apbs04.html#preseed-l10n">B.4.1. Localization</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-network">B.4.2. Network configuration</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-network-console">B.4.3. Network console</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-mirror">B.4.4. Mirror settings</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-time">B.4.5. Clock and time zone setup</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-partman">B.4.6. Partitioning</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-base-installer">B.4.7. Base system installation</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-account">B.4.8. Account setup</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-apt">B.4.9. Apt setup</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-pkgsel">B.4.10. Package selection</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-bootloader">B.4.11. Boot loader installation</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-finish">B.4.12. Finishing up the installation</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-X">B.4.13. X configuration</a></span></dt>
+<dt><span class="sect2"><a href="apbs04.html#preseed-other">B.4.14. Preseeding other packages</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="apbs05.html">B.5. Advanced options</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="apbs05.html#preseed-hooks">B.5.1. Running custom commands during the installation</a></span></dt>
+<dt><span class="sect2"><a href="apbs05.html#preseed-seenflag">B.5.2. Using preseeding to change default values</a></span></dt>
+<dt><span class="sect2"><a href="apbs05.html#preseed-chainload">B.5.3. Chainloading preconfiguration files</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="appendix"><a href="apc.html">C. Partitioning for Ubuntu</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="apcs01.html">C.1. Deciding on Ubuntu Partitions and Sizes</a></span></dt>
+<dt><span class="sect1"><a href="apcs02.html">C.2. The Directory Tree</a></span></dt>
+<dt><span class="sect1"><a href="apcs03.html">C.3. Recommended Partitioning Scheme</a></span></dt>
+<dt><span class="sect1"><a href="apcs04.html">C.4. Device Names in Linux</a></span></dt>
+<dt><span class="sect1"><a href="apcs05.html">C.5. Ubuntu Partitioning Programs</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="apcs05.html#idp4241280">C.5.1. Partitioning for <span>AMD64</span></a></span></dt></dl></dd>
+</dl></dd>
+<dt><span class="appendix"><a href="apd.html">D. Random Bits</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="apds01.html">D.1. Linux Devices</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="apds01.html#device-mouse">D.1.1. Setting Up Your Mouse</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="apds02.html">D.2. Disk Space Needed for Tasks</a></span></dt>
+<dt><span class="sect1"><a href="apds03.html">D.3. Disk Space Needed</a></span></dt>
+<dt><span class="sect1"><a href="apds04.html">D.4. Installing Ubuntu from a Unix/Linux System</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="apds04.html#idp4313896">D.4.1. Getting Started</a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4319600">D.4.2. Install <span class="command"><strong>debootstrap</strong></span></a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4328000">D.4.3. Run <span class="command"><strong>debootstrap</strong></span></a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4333664">D.4.4. Configure The Base System</a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4361704">D.4.5. Install a Kernel</a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4366096">D.4.6. Set up the Boot Loader</a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4380424">D.4.7. Finishing touches</a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4383360">D.4.8. Create a User</a></span></dt>
+<dt><span class="sect2"><a href="apds04.html#idp4388512">D.4.9. Install the Ubuntu Desktop</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="apds05.html">D.5. Installing Ubuntu over Parallel Line IP (PLIP)</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="apds05.html#idp4394704">D.5.1. Requirements</a></span></dt>
+<dt><span class="sect2"><a href="apds05.html#idp4397872">D.5.2. Setting up source</a></span></dt>
+<dt><span class="sect2"><a href="apds05.html#idp4400656">D.5.3. Installing target</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="apds06.html">D.6. Installing Ubuntu using PPP over Ethernet (PPPoE)</a></span></dt>
+<dt><span class="sect1"><a href="apds07.html">D.7. The Graphical Installer</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="apds07.html#gtk-using">D.7.1. Using the graphical installer</a></span></dt></dl></dd>
+</dl></dd>
+<dt><span class="appendix"><a href="ape.html">E. Administrivia</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="apes01.html">E.1. About This Document</a></span></dt>
+<dt><span class="sect1"><a href="apes02.html">E.2. Contributing to This Document</a></span></dt>
+<dt><span class="sect1"><a href="apes03.html">E.3. Major Contributions</a></span></dt>
+<dt><span class="sect1"><a href="apes04.html">E.4. Trademark Acknowledgement</a></span></dt>
+</dl></dd>
+<dt><span class="appendix"><a href="apf.html">F. GNU General Public License</a></span></dt>
+</dl>
+</div>
+<div class="list-of-tables">
+<p><b>List of Tables</b></p>
+<dl>
+<dt>3.1. <a href="ch03s03.html#idp3145456">Hardware Information Needed for an Install</a>
+</dt>
+<dt>3.2. <a href="ch03s04.html#idp3169800">Recommended Minimum System Requirements</a>
+</dt>
+</dl>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left"> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="pr01.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top"> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right" valign="top"> Installing Ubuntu 12.04 <span class="quote">“<span class="quote">Precise Pangolin</span>”</span> For amd64</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3.6. Pre-Installation Hardware and Operating System Setup</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch03.html" title="Chapter 3. Before Installing Ubuntu">
+<link rel="prev" href="ch03s05.html" title="3.5. Pre-Partitioning for Multi-Boot Systems">
+<link rel="next" href="ch04.html" title="Chapter 4. Obtaining System Installation Media">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">3.6. Pre-Installation Hardware and Operating System Setup</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch03s05.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 3. Before Installing Ubuntu</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch04.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="3.6. Pre-Installation Hardware and Operating System Setup">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="pre-install-bios-setup"></a>3.6. Pre-Installation Hardware and Operating System Setup</h2></div></div></div>
+<p>
+
+This section will walk you through pre-installation hardware setup, if
+any, that you will need to do prior to installing Ubuntu.  Generally,
+this involves checking and possibly changing firmware settings for
+your system.  The <span class="quote">“<span class="quote">firmware</span>”</span> is the core software used by the
+hardware; it is most critically invoked during the bootstrap process
+(after power-up). Known hardware issues affecting the reliability of
+Ubuntu on your system are also highlighted.
+
+</p>
+<div class="sect2" title="3.6.1. Invoking the BIOS Set-Up Menu">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="bios-setup"></a>3.6.1. Invoking the BIOS Set-Up Menu</h3></div></div></div>
+<p>
+
+BIOS provides the basic functions needed to boot your machine to allow
+your operating system to access your hardware.  Your system probably
+provides a BIOS setup menu, which is used to configure the BIOS.
+Before installing, you <span class="emphasis"><em>must</em></span> ensure that your BIOS
+is set up correctly; not doing so can lead to intermittent crashes or
+an inability to install Ubuntu.
+
+</p>
+<p>
+
+The rest of this section is lifted from the
+<a class="ulink" href="http://www.faqs.org/faqs/pc-hardware-faq/part1/" target="_top">http://www.faqs.org/faqs/pc-hardware-faq/part1/</a>, answering the question, <span class="quote">“<span class="quote">How do I
+enter the CMOS configuration menu?</span>”</span>.  How you access the BIOS (or
+<span class="quote">“<span class="quote">CMOS</span>”</span>) configuration menu depends on who wrote your BIOS
+software:
+
+</p>
+<div class="variablelist"><dl>
+<dt><span class="term">AMI BIOS</span></dt>
+<dd><p>
+
+<span class="keycap"><strong>Delete</strong></span> key during the POST (power on self test)
+
+</p></dd>
+<dt><span class="term">Award BIOS</span></dt>
+<dd><p>
+
+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Esc</strong></span>, or <span class="keycap"><strong>Delete</strong></span> key during the POST
+
+</p></dd>
+<dt><span class="term">DTK BIOS</span></dt>
+<dd><p>
+
+<span class="keycap"><strong>Esc</strong></span> key during the POST
+
+</p></dd>
+<dt><span class="term">IBM PS/2 BIOS</span></dt>
+<dd><p>
+
+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Insert</strong></span>
+after
+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Delete</strong></span>
+
+</p></dd>
+<dt><span class="term">Phoenix BIOS</span></dt>
+<dd><p>
+
+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Esc</strong></span>
+or
+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>S</strong></span>
+or
+<span class="keycap"><strong>F1</strong></span>
+
+</p></dd>
+</dl></div>
+<p>
+
+Information on invoking other BIOS routines can be found in
+<a class="ulink" href="http://www.tldp.org/HOWTO/Hard-Disk-Upgrade/install.html" target="_top">http://www.tldp.org/HOWTO/Hard-Disk-Upgrade/install.html</a>.
+
+</p>
+<p>
+
+Some <span>AMD64</span> machines don't have a CMOS configuration menu in the
+BIOS.  They require a software CMOS setup program.  If you don't have
+the Installation and/or Diagnostics diskette for your machine, you can
+try using a shareware/freeware program.  Try looking in
+<a class="ulink" href="ftp://ftp.simtel.net/pub/simtelnet/msdos/" target="_top">ftp://ftp.simtel.net/pub/simtelnet/msdos/</a>.
+
+</p>
+</div>
+<div class="sect2" title="3.6.2. Boot Device Selection">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="boot-dev-select"></a>3.6.2. Boot Device Selection</h3></div></div></div>
+<p>
+
+Many BIOS setup menus allow you to select the devices that will be
+used to bootstrap the system. Set this to look for a bootable
+operating system on <code class="filename">A:</code> (the first floppy disk),
+then optionally the first CD-ROM device (possibly appearing as
+<code class="filename">D:</code> or <code class="filename">E:</code>), and then from
+<code class="filename">C:</code> (the first hard disk).  This setting enables
+you to boot from either a floppy disk or a CD-ROM, which are the two
+most common boot devices used to install Ubuntu.
+
+</p>
+<p>
+
+If you have a newer SCSI controller and you have a CD-ROM device
+attached to it, you are usually able to boot from the CD-ROM.  All you
+have to do is enable booting from a CD-ROM in the SCSI-BIOS of your
+controller.
+
+</p>
+<p>
+
+Another popular option is to boot from a USB storage device (also called
+a USB memory stick or USB key). Some BIOSes can boot directly from a USB
+storage device, but some cannot. You may need to configure your BIOS to boot
+from a <span class="quote">“<span class="quote">Removable drive</span>”</span> or even from <span class="quote">“<span class="quote">USB-ZIP</span>”</span> to
+get it to boot from the USB device.
+
+</p>
+<p>
+
+Here are some details about how to set the boot order. Remember to
+reset the boot order after Linux is installed, so that you restart
+your machine from the hard drive.
+
+</p>
+<div class="sect3" title="3.6.2.1. Changing the Boot Order on IDE Computers">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ctbooi"></a>3.6.2.1. Changing the Boot Order on IDE Computers</h4></div></div></div>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>
+
+As your computer starts, press the keys to enter the BIOS
+utility. Often, it is the <span class="keycap"><strong>Delete</strong></span> key. However,
+consult the hardware documentation for the exact keystrokes.
+
+</p></li>
+<li class="listitem">
+<p>
+
+Find the boot sequence in the setup utility. Its location depends on
+your BIOS, but you are looking for a field that lists drives.
+
+</p>
+<p>
+
+
+Common entries on IDE machines are C, A, cdrom or A, C, cdrom.
+
+</p>
+<p>
+
+
+C is the hard drive, and A is the floppy drive.
+
+</p>
+</li>
+<li class="listitem"><p>
+
+Change the boot sequence setting so that the CD-ROM or the
+floppy is first. Usually, the <span class="keycap"><strong>Page Up</strong></span> or
+<span class="keycap"><strong>Page Down</strong></span> keys cycle
+through the possible choices.
+
+</p></li>
+<li class="listitem"><p>
+
+Save your changes. Instructions on the screen tell you how to
+save the changes on your computer.
+
+</p></li>
+</ol></div>
+</div>
+<div class="sect3" title="3.6.2.2. Changing the Boot Order on SCSI Computers">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ctboos"></a>3.6.2.2. Changing the Boot Order on SCSI Computers</h4></div></div></div>
+<p>
+
+</p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<p>
+
+As your computer starts, press the keys to enter the SCSI setup
+utility.
+
+</p>
+<p>
+
+You can start the SCSI setup utility after the memory check and
+the message about how to start the BIOS utility displays when you
+start your computer.
+
+</p>
+<p>
+
+The keystrokes you need depend on the utility. Often, it is
+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>F2</strong></span>.
+However, consult your hardware documentation for the
+exact keystrokes.
+
+</p>
+</li>
+<li class="listitem"><p>
+
+Find the utility for changing the boot order.
+
+</p></li>
+<li class="listitem"><p>
+
+Set the utility so that the SCSI ID of the CD drive is first on
+the list.
+
+</p></li>
+<li class="listitem"><p>
+
+Save your changes. Instructions on the screen tell you how to
+save the changes on your computer. Often, you must press
+<span class="keycap"><strong>F10</strong></span>.
+
+</p></li>
+</ol></div>
+<p>
+
+</p>
+</div>
+</div>
+<div class="sect2" title="3.6.3. Miscellaneous BIOS Settings">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3231992"></a>3.6.3. Miscellaneous BIOS Settings</h3></div></div></div>
+<div class="sect3" title="3.6.3.1. CD-ROM Settings">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="cd-settings"></a>3.6.3.1. CD-ROM Settings</h4></div></div></div>
+<p>
+
+Some BIOS systems (such as Award BIOS) allow you to automatically set
+the CD speed.  You should avoid that, and instead set it to, say, the
+lowest speed.  If you get <strong class="userinput"><code>seek failed</code></strong> error
+messages, this may be your problem.
+
+</p>
+</div>
+<div class="sect3" title="3.6.3.2. Extended vs. Expanded Memory">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3233608"></a>3.6.3.2. Extended vs. Expanded Memory</h4></div></div></div>
+<p>
+
+If your system provides both ex<span class="emphasis"><em>ten</em></span>ded and
+ex<span class="emphasis"><em>pan</em></span>ded memory, set it so that there is as much
+extended and as little expanded memory as possible. Linux requires
+extended memory and cannot use expanded memory.
+
+</p>
+</div>
+<div class="sect3" title="3.6.3.3. Virus Protection">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3234752"></a>3.6.3.3. Virus Protection</h4></div></div></div>
+<p>
+
+Disable any virus-warning features your BIOS may provide. If you have
+a virus-protection board or other special hardware, make sure it is
+disabled or physically removed while running GNU/Linux. These aren't
+compatible with GNU/Linux; moreover, due to the file system
+permissions and protected memory of the Linux kernel, viruses are
+almost unheard of<sup>[<a name="idp3235496" href="#ftn.idp3235496" class="footnote">3</a>]</sup>.
+
+</p>
+</div>
+<div class="sect3" title="3.6.3.4. Shadow RAM">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3236296"></a>3.6.3.4. Shadow RAM</h4></div></div></div>
+<p>
+
+Your motherboard may provide <span class="emphasis"><em>shadow RAM</em></span> or BIOS
+caching. You may see settings for <span class="quote">“<span class="quote">Video BIOS Shadow</span>”</span>,
+<span class="quote">“<span class="quote">C800-CBFF Shadow</span>”</span>, etc. <span class="emphasis"><em>Disable</em></span>
+all shadow RAM.  Shadow
+RAM is used to accelerate access to the ROMs on your motherboard and
+on some of the controller cards. Linux does not use these ROMs once it
+has booted because it provides its own faster 32-bit software in place
+of the 16-bit programs in the ROMs. Disabling the shadow RAM may make
+some of it available for programs to use as normal memory.  Leaving
+the shadow RAM enabled may interfere with Linux access to hardware
+devices.
+
+</p>
+</div>
+<div class="sect3" title="3.6.3.5. Memory Hole">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3238072"></a>3.6.3.5. Memory Hole</h4></div></div></div>
+<p>
+
+If your BIOS offers something like <span class="quote">“<span class="quote">15–16 MB Memory
+Hole</span>”</span>, please disable that. Linux expects to find memory there if
+you have that much RAM.
+
+</p>
+<p>
+
+We have a report of an Intel Endeavor motherboard on which there is an
+option called <span class="quote">“<span class="quote">LFB</span>”</span> or <span class="quote">“<span class="quote">Linear Frame Buffer</span>”</span>.
+This had two settings: <span class="quote">“<span class="quote">Disabled</span>”</span> and <span class="quote">“<span class="quote">1
+Megabyte</span>”</span>. Set it to <span class="quote">“<span class="quote">1 Megabyte</span>”</span>.
+When disabled, the installation floppy was not read correctly, and the
+system eventually crashed. At this writing we don't understand what's
+going on with this particular device — it just worked with that
+setting and not without it.
+
+</p>
+</div>
+<div class="sect3" title="3.6.3.6. Advanced Power Management">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="idp3240872"></a>3.6.3.6. Advanced Power Management</h4></div></div></div>
+<p>
+
+If your motherboard provides Advanced Power Management (APM),
+configure it so that power management is controlled by APM. Disable
+the doze, standby, suspend, nap, and sleep modes, and disable the hard
+disk's power-down timer.  Linux can take over control of these modes,
+and can do a better job of power-management than the BIOS.
+
+</p>
+</div>
+</div>
+<div class="sect2" title="3.6.4. Hardware Issues to Watch Out For">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="hardware-issues"></a>3.6.4. Hardware Issues to Watch Out For</h3></div></div></div>
+<p title="USB BIOS support and keyboards"><b>USB BIOS support and keyboards. </b>
+
+If you have no AT-style keyboard and only a USB model, you may need
+to enable legacy AT keyboard emulation in your BIOS setup. Only do this if
+the installation system fails to use your keyboard in USB mode. Conversely,
+for some systems (especially laptops) you may need to disable legacy USB
+support if your keyboard does not respond.
+Consult your main board manual and look in the BIOS for <span class="quote">“<span class="quote">Legacy
+keyboard emulation</span>”</span> or <span class="quote">“<span class="quote">USB keyboard support</span>”</span> options.
+
+</p>
+</div>
+<div class="footnotes">
+<br><hr width="100" align="left">
+<div class="footnote"><p><sup>[<a id="ftn.idp3235496" href="#idp3235496" class="para">3</a>] </sup>
+
+After installation you can enable Boot Sector protection if you
+want. This offers no additional security in Linux but if you also run
+Windows it may prevent a catastrophe. There is no need to tamper with
+the Master Boot Record (MBR) after the boot manager has been set up.
+
+</p></div>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch03s05.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch03.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch04.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">3.5. Pre-Partitioning for Multi-Boot Systems </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 4. Obtaining System Installation Media</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

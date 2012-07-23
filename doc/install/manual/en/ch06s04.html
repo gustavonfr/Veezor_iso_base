@@ -1,0 +1,193 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>6.4. Loading Missing Firmware</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch06.html" title="Chapter 6. Using the Ubuntu Installer">
+<link rel="prev" href="ch06s03.html" title="6.3. Using Individual Components">
+<link rel="next" href="ch07.html" title="Chapter 7. Booting Into Your New Ubuntu System">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">6.4. Loading Missing Firmware</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch06s03.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 6. Using the Ubuntu Installer</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch07.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="6.4. Loading Missing Firmware">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="loading-firmware"></a>6.4. Loading Missing Firmware</h2></div></div></div>
+<p>
+
+As described in <a class="xref" href="ch02s02.html" title="2.2. Devices Requiring Firmware">Section 2.2, “Devices Requiring Firmware”</a>, some devices require
+firmware to be loaded. In most cases the device will not work at all
+if the firmware is not available; sometimes basic functionality is not
+impaired if it is missing and the firmware is only needed to enable
+additional features.
+
+</p>
+<p>
+
+If a device driver requests firmware that is not available, <code class="classname">debian-installer</code> will
+display a dialog offering to load the missing firmware. If this option
+is selected, <code class="classname">debian-installer</code> will scan available devices for either loose firmware
+files or packages containing firmware. If found, the firmware will be
+copied to the correct location (<code class="filename">/lib/firmware</code>) and
+the driver module will be reloaded.
+
+</p>
+<div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+
+Which devices are scanned and which file systems are supported depends on
+the architecture, the installation method and the stage of the installation.
+Especially during the early stages of the installation, loading the firmware
+is most likely to succeed from a FAT-formatted floppy disk or USB stick.
+<span>On i386 and amd64 firmware can also be loaded from an
+MMC or SD card.</span>
+
+</p>
+</div>
+<p>
+
+Note that it is possible to skip loading the firmware if you know the
+device will also function without it, or if the device is not needed during
+the installation.
+
+</p>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p>
+
+Support for loading firmware is still relatively basic and is likely to
+be improved in future releases of the installer. Currently <code class="classname">debian-installer</code> will
+for example not display any warning if you choose to load missing firmware,
+but the requested firmware is not found.
+Please report any issues you encounter by filing an installation report
+(see <a class="xref" href="ch05s04.html#submit-bug" title="5.4.6. Submitting Installation Reports">Section 5.4.6, “Submitting Installation Reports”</a>).
+
+</p>
+</div>
+<div class="sect2" title="6.4.1. Preparing a medium">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3859216"></a>6.4.1. Preparing a medium</h3></div></div></div>
+<p>
+
+Although in some cases the firmware can also be loaded from a partition on
+a hard disk, the most common method to load firmware will be from some
+removable medium such as a floppy disk or a USB stick.
+The firmware files or packages must be placed in either the root directory
+or a directory named <code class="filename">/firmware</code> of the file system on
+the medium. The recommended file system to use is FAT as that is most
+certain to be supported during the early stages of the installation.
+
+</p>
+<p>
+
+Tarballs containing current packages for the most common firmware are
+available from:
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+<a class="ulink" href="http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/" target="_top">http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a>
+</p></li></ul></div>
+<p>
+
+Just download the tarball for the correct release and unpack it to the file
+system on the medium.
+
+</p>
+<p>
+
+If the firmware you need is not included in the tarball, you can also
+download specific firmware packages from the (non-free section of the)
+archive. The following overview should list most available firmware
+packages but is not guaranteed to be complete and may also contain
+non-firmware packages:
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+<a class="ulink" href="http://packages.debian.org/search?keywords=firmware" target="_top">http://packages.debian.org/search?keywords=firmware</a>
+</p></li></ul></div>
+<p>
+
+</p>
+<p>
+
+It is also possible to copy individual firmware files to the medium. Loose
+firmware could be obtained for example from an already installed system or
+from a hardware vendor.
+
+</p>
+</div>
+<div class="sect2" title="6.4.2. Firmware and the Installed System">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3863120"></a>6.4.2. Firmware and the Installed System</h3></div></div></div>
+<p>
+
+Any firmware loaded during the installation will be copied automatically
+to the installed system. In most cases this will ensure that the device
+that requires the firmware will also work correctly after the system is
+rebooted into the installed system. However, if the installed system runs
+a different kernel version from the installer there is a slight chance that
+the firmware cannot be loaded due to version skew.
+
+</p>
+<p>
+
+If the firmware was loaded from a firmware package, <code class="classname">debian-installer</code> will also install
+this package for the installed system and will automatically add the non-free
+section of the package archive in APT's <code class="filename">sources.list</code>.
+This has the advantage that the firmware should be updated automatically if
+a new version becomes available.
+
+</p>
+<p>
+
+If loading the firmware was skipped during the installation, the relevant
+device will probably not work with the installed system until the firmware
+(package) is installed manually.
+
+</p>
+<div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+
+If the firmware was loaded from loose firmware files, the firmware copied to
+the installed system will <span class="emphasis"><em>not</em></span> be automatically updated
+unless the corresponding firmware package (if available) is installed after
+the installation is completed.
+
+</p>
+</div>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch06s03.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch06.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch07.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">6.3. Using Individual Components </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 7. Booting Into Your New Ubuntu System</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

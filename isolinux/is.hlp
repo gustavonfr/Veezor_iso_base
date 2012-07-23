@@ -1,0 +1,152 @@
+F1Velkomin(n) til Ubuntu!Þetta er uppsetningarkerfi fyrir Ubuntu
+12.04. Útgáfan var sett saman 20120424.1.
+
+HJÁLPARYFIRLIT
+
+LYKILL UMFJÖLLUNAREFNI
+
+<F1F1>   Þessi síða, hjálparyfirlitið.
+<F2F2>   Nauðsynlegt til að geta sett upp Ubuntu.
+<F3F3>   Ræsingaraðferðir til að geta notað kerfið á ýmsa sérstaka vegu.
+<F4F4>   Aukalegar ræsingaraðferðir; björgun á biluðu kerfi.
+<F5F5>   Yfirlit yfir sérstakar ræsingareglur.
+<F6F6>   Ræsireglur fyrir sérstakar vélar.
+<F7F7>   Ræsireglur fyrir valdar diskastýringar.
+<F8F8>   Ræsireglur fyrir uppsetningarkerfi.
+<F9F9>   Hvar er hægt að finna hjálp.
+<F10F10>  Höfundarréttur og ábyrgð.
+
+Ýttu á F2 í gegn að F10 fyrir nánari upplýsingar, eða Escape til að hætta í
+hjálpinni.F2KRÖFUR FYRIR UPPSETNINGU Á UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Þú þarft að hafa nægilegt laust pláss á harða disknum til að geta búið til
+nýja disksneið sem væri a.m.k. 5 gígabæti, til þess að geta sett upp
+venjulegt Ubuntu skjáborðsumhverfi eða a.m.k. 500 megabæti undir
+lágmarksuppsetningu á þjóni. Þú verður að eiga enn meira af diskplássi ef þú
+ætlar að setja upp mikið af aukapökkum, það fer allt eftir í hvað þú ætlar
+að nota Ubuntu stýrikerfið.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Takk fyrir að velja Ubuntu!
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F3RÆSINGARAÐFERÐIRMögulegar ræsingaraðferðir
+
+Setja upp Ubuntu
+  Byrja uppsetningu -- þetta er valið sjálfkrafa.
+Prófa minni
+  Framkvæma vinnsluminnisprófun
+
+("Ubuntu" má skipta út fyrir annað eins stýrikerfisnafn. Þessi hjálpartexti
+er almenns eðlis.)
+
+Til að notast við þessar ræsingaraðferðir, veljið það þá af valmynd með
+örvalyklunum. Smellið á F4 til að velja annarskonar ræsingar- og
+uppsetningarham. Smellið á F6 til að breyta ræsiregum. Smellið aftur á F6
+til að velja af valmynd með venjubundnum ræsireglum.
+
+Nema í sérfræðingsham, þá eru óvarhugaverðar kjarnatilkynningar kæfðar.
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F4BJÖRGUN Á BILUÐU KERFINotist við eina af þessum ræsiaðferðum til að bjarga því kerfi sem fyrir er.
+
+Bjarga biluðu kerfi
+  Ræsa upp í björgunarham.
+
+Til að notast við þessar ræsingaraðferðir, veljið það þá af valmynd með
+örvalyklunum. Smellið á F4 til að velja annarskonar ræsingar- og
+uppsetningarham. Smellið á F6 til að breyta ræsiregum. Smellið aftur á F6
+til að velja af valmynd með venjubundnum ræsireglum.
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F5SÉRSTAKAR RÆSINGARREGLUR - YFIRLITÍ nokkrum kerfum, þá gætirðu þurft að tilgreina reglu með því að smella á F6
+til að geta ræst kerfið. Til dæmis, þá gæti Linux  kannski ekki fundið
+vélbúnaðinn þinn sjálfvirkt, og þú gætir þurft að tilgreina staðsetningu eða
+gerð til að búnaðurinn þekkist.
+
+Fyrir ýtarlegri upplýsingar um hvaða ræsireglur þú getur notað, smelltu þá
+á:
+
+<F6F6>   ræsireglur fyrir sérstakar vélbúnað
+<F7F7>   ræsireglur fyrir ýmsar diskastýringar
+<F8F8>   ræsireglur sem eru viðurkenndar af uppsetningarkerfinu
+
+Margar kjarnaeiningar eru hlaðnar inn sjálfvirkt af uppsetningunni, og
+reglur fyrir þessar einingar er ekki hægt að stilla í skipanalínu. Til að fá
+kvaðningu fyrir reglu þegar eining er hlaðin, ræsið þá í sérfræðingsham (see
+<F3F3>).
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F6SÉRSTAKAR RÆSINGAREGLUR - ÝMISKONAR VÉLBÚNAÐURÞú getur notast við eftirfarandi ræsireglur með að ýta á F6, í sameiningu
+með ræsiaðferð (see <F3F3>). Ef þú notast við hex tölustafi þá verðurðu
+að notast við 0x forskeyti (t.d., 0x300).
+
+VÉLBÚNAÐUR                             TILGREINIÐ REGLU
+
+IBM PS/1 eða ValuePoint (IDE diskur)   hd=sívalningar,hausar,geirar
+Sumar IBM ThinkPad                     floppy.floppy=thinkpad
+Verja I/O tengi svæði                  reserve=iobase,extent[,...]
+Fartölvur með skjávandamál             vga=771
+Notist við fyrsta serial tengi á 9600 baud
+                                       console=ttyS0,9600n8
+Þvinga notkun á almennum IDE rekli     all_generic_ide=1
+
+Möguleg (tímabundinn) lausn fyrir ýmsum vélbúnaðarvandamálum:
+
+gera beiningu gallaðra APIC ígripa (interrupts) óvirka
+                                       noapic nolapic
+(að hluta til) gera ACPI óvirkt        acpi=noirq eða acpi=off
+afvirkja USB                           nousb
+athuga með ígrip (interrupts)          irqpoll
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F7SÉRSTAKAR RÆSINGAREGLUR - ÝMIS DRIFÞú getur notast við eftirfarandi ræsireglur með að ýta á F6, í sameiningu
+með ræsiaðferð (see <F3F3>).
+
+VÉLBÚNAÐUR                   TILGREINIÐ REGLU
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (virkt ef þetta er ekki
+núll)
+BusLogic SCSI Hýsingar       BusLogic.BusLogic=iobase
+Sumar Dell vélar             aic7xxx.aic7xxx=no_probe
+
+Þessi listi er ófullkominn, skoðið skrána kernel-parameters.txt fyrir rest.
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F8SÉRSTAKAR RÆSIREGLUR - UPPSETNINGARKERFIÞú getur notast við eftirfarandi ræsireglur með að ýta á F6, í sameiningu
+með ræsiaðferð (see <F3F3>). Þessar reglur stjórna hvernig
+uppsetningarforritið virkar.
+
+NIÐURSTÖÐUR                             REGLUR
+
+Afvirkja burðarbiðminni                 vga=normal fb=false
+Ekki gangsetja PCMCIA                   hw-detect/start_pcmcia=false
+Þvinga kyrrstæðar netstillingar         netcfg/disable_dhcp=true
+Stilla lyklaborðskort                   bootkbd=es
+Velja Kubuntu skjáborðið                tasks=kubuntu-desktop
+Nota þema með miklum birtuskilum        theme=dark
+Nota Blindraleturs útstöð               brltty=rekill,tæki,texttable
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F9SÆKJA HJÁLPEf þú getur ekki sett upp Ubuntu, ekki örvænta! Ubuntu teymið er tilbúið að
+aðstoða þig! Við erum mjög áhugasöm að heyra af uppsetningar vandamálum
+þínum, því sem regla þá hendir sama vandamál sjaldnast bara eina manneskju
+Við höfum annaðhvort heyrt af þínu tiltekna vandamáli og getum útfært
+lagfæringu auðveldlega, eða við mundum vilja heyra meira af því og vinna með
+þér að lausn, næsti notandi sem lendir í sama vandamáli mun græða á þinni
+reynslu!
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni.F10HÖFUNDARRÉTTUR OG ÁBYRGÐIRUbuntu er með höfundarréttarmerkinguna (C) 2004-2010 Canonical Ltd., og
+innifelur vinnu og framlög frá mörgum öðrum upprunalegum höfundum og
+sjálfboðaliðum.
+
+Ubuntu kerfið er dreift án endurgjalds Eftir uppsetningu, er að finna nánari
+upplýsingar um dreifingarskilmála hvers pakka fyrir sig í samsvarandi skrá
+/usr/share/doc/packagename/copyright.
+
+Ubuntu tekur ENGA ÁBYRGÐ Á NOTKUN, eins og lög leyfa.
+
+Þetta uppsetningarkerfi er byggt á Debian uppsetningar kerfi. Sjá
+http://www.debian.org/ fyrir ýtarlegri upplýsingar um Debian verkefnið.
+
+Ýttu á F1 fyrir hjálparyfirlitið, eða Escape til að hætta í hjálpinni. 

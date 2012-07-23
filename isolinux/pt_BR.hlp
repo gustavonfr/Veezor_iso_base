@@ -1,0 +1,156 @@
+F1Bem vindo à Ubuntu!Este é um sistema de instalação para o Ubuntu
+12.04. Ele foi compilado em 20120424.1.
+
+ÍNDICE DE AJUDA
+
+CHAVE  TÓPICO
+
+<F1F1>   Esta página, índice de ajuda.
+<F2F2>   Pré-requisitos para a instalação do Ubuntu.
+<F3F3>   Métodos especiais de inicialização para usar este sistema.
+<F4F4>   Métodos adicionais de inicialização; recuperar um sistema danificado.
+<F5F5>   Parâmetros especiais de inicialização, visão geral.
+<F6F6>   Parâmetros especiais de inicialização para máquinas especiais.
+<F7F7>   Parâmetros especiais de inicialização para controladores de disco
+selecionados.
+<F8F8>   Parâmetros especiais de inicialização para o sistema de instalação.
+<F9F9>   Como obter ajuda.
+<F10F10>  Direitos autorais e garantias.
+
+Pressione do F2 ao F10 para detalhes, ou Esc para sair da ajuda.F2PRÉ-REQUISITOS PARA A INSTALAÇÃO DO UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Você deve ter espaço no seu disco rígido para criar uma nova partição de
+disco de pelo 5 gigabytes para instalar o sistema Ubuntu estação de trabalho
+padrão ou pelo menos 500 megabytes para instalação  mínima de servidor. Você
+precisará de mais espaço em disco para instalar pacotes adicionais,
+dependendo do que você deseja fazer com seu novo sistema Ubuntu.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Obrigado por escolher o Ubuntu!
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F3MÉTODOS DE INICIALIZAÇÃOMétodos de inicialização disponíveis:
+
+Instalar Ubuntu
+  Iniciar instalação - Esta é a opção padrão
+Teste de memória
+  Executa o teste de memória.
+
+("Ubuntu" pode ser substituído por outros nomes de sistema operacional
+relacionados. Este texto de ajuda é genérico.)
+
+Para utilizar um desses métodos de inicialização, selecione-o do menu com as
+setas do teclado. Tecle F4 para selecionar a inicialização alternativa e os
+modos de instalação. Tecle F6 para editar os parâmetros de boot. Tecle F6
+novamente para selecionar do menu dos parâmetros de boot mais usados.
+
+Exceto no modo expert, mensagens de inicialização não-críticas serão
+suprimidas.
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F4RECUPERANDO UM SISTEMA DANIFICADOUse um destes métodos de inicialização para recuperar uma instalação
+existente
+
+Recuperar um sistema danificado
+  Iniciar em modo de recuperação.
+
+Para utilizar um desses métodos de inicialização, selecione-o do menu com as
+setas do teclado. Tecle F4 para selecionar a inicialização alternativa e os
+modos de instalação. Tecle F6 para editar os parâmetros de boot. Tecle F6
+novamente para selecionar do menu dos parâmetros de boot mais usados.
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F5PARÂMETROS ESPECIAIS DE INICIALIZAÇÃO - VISÃO GERALEm alguns sistemas, é preciso especificar um parâmetro teclando F6 para dar
+o boot no sistema. Por exemplo, o Linux pode não detectar o seu hardware
+automaticamente, sendo necessário você especificar a sua localização ou tipo
+para que ele possa ser reconhecido.
+
+Para mais informações sobre quais parâmetros de inicialização você pode
+usar, pressione:
+
+<F6F6>   parâmetros de inicialização para máquinas especiais
+<F7F7>   parâmetros de inicialização para diversos controladores de disco
+<F8F8>   parâmetros de inicialização entendidos pelo sistema de instalação
+
+Diversos módulos do kernel são carregados dinamicamente pelo instalador, e
+parâmetros para estes módulos não podem ser passados pela linha de comando.
+Para ser perguntado pelos parâmetros quando os módulos são carregados,
+inicie em modo avançado (veja <F3F3>).
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F6PARÂMETROS ESPECIAIS DE INICIALIZAÇÃO - HARDWARE DIVERSOVocê pode usar os parâmetros de boot abaixo teclando F6 em combinação com o
+método de boot (veja <F3F3>). Se você usar números hexadecimais, use o
+prefixo 0x (exemplo: 0x300).
+
+HARDWARE                               PARÂMETROS A ESPECIFICAR
+
+IBM PS/1 ou ValuePoint (disco IDE)     hd=cilindros,cabeças,setores
+Alguns ThinkPads IBM                   floppy.floppy=thinkpad
+Proteger intervalos de porta E/S       reserve=iobase,extent[,...]
+Laptops com problemas no vídeo         vga=771
+Use a primeira porta serial a 9600 bauds
+                                       console=ttyS0,9600n8
+Forçar uso de IDE genérico             all_generic_ide=1
+
+Eventuais (temporários) contornos para bloqueios ou outras falhas de
+hardware:
+
+desativar roteamento de interrupção buggy APIC
+                                       noapic nolapic
+desabilitar ACPI (parcialmente)        acpi=noirq ou acpi=off
+desativar USB                          nousb
+questionar interrupções                irqpoll
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F7PARÂMETROS ESPECIAIS DE INICIALIZAÇÃO - DRIVES DE DISCO DIVERSOSVocê pode usar os parâmetros de boot abaixo teclando F6 em combinação com o
+método de boot (veja <F3F3>).
+
+HARDWARE                     PARÂMETROS A ESPECIFICAR
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (habilitado se diferente de
+zero)
+Dispositivos SCSI BusLogic   BusLogic.BusLogic=iobase
+Certas máquinas DELL         aic7xxx.aic7xxx=no_probe
+
+Esta lista está incompleta, veja o arquivo kernel-parameters.txt do kernel
+para mais.
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F8PARÂMETROS ESPECIAIS DE INICIALIZAÇÃO - SISTEMA DE INSTALAÇÃOVocê pode usar os parâmetros de boot abaixo teclando F6 em combinação com o
+método de boot (veja <F3F3>). Estes parâmetros controlam como o
+instalador funciona.
+
+RESULTADO                               PARÂMETRO
+
+Desabilitar framebuffer                 vga=normal fb=false
+Não iniciar PCMCIA                      hw-detect/start_pcmcia=false
+Forçar configuração estática de rede    netcfg/disable_dhcp=true
+Definir mapa do teclado                 bootkbd=es
+Selecione o ambiente Kubuntu            tasks=kubuntu-desktop
+Usar o tema de alto contraste           theme=dark
+Use o tty em Braile                     brltty=driver,device,texttable
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F9OBTENDO AJUDASe você não conseguir instalar o Ubuntu, não entre em pânico! A equipe do
+Ubuntu está pronta pra ajudar! Nós estamos especialmente interessados em
+ouvir sobre problemas na instalação, porque em geral eles não acontecem para
+apenas uma pessoa. É provável que nós já ouvimos sobre seu problema e
+podemos ajudá-lo com uma resposta rápida, ou então nós gostaríamos de ouvir
+mais detalhes e trabalhar com você numa solução, para que o próximo usuário
+que tiver o mesmo problema se beneficie da sua experiência!
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Pressione F1 para o índice da ajuda, ou Esc para sair.F10DIREITOS AUTORAIS E GARANTIAS.Ubuntu é Copyright (C) 2004-2010 Canonical Ltd., e incorpora o trabalho de
+muitos outros autores originais e contribuidores.
+
+O sistema Ubuntu é livremente redistribuível. Depois da instalação, os
+termos exatos de distribuição para cada pacote estão descritos no
+correspondente arquivo /usr/share/doc/nomedopacote/copyright.
+
+O Ubuntu vem sem QUAISQUER GARANTIAS, ao limite permitido pela lei
+aplicável.
+
+Este sistema de instalação é baseado no instalador Debian. Veja
+http://www.debian.org/ para mais detalhes e informações sobre o projeto
+Debian.
+
+Pressione F1 para o índice da ajuda, ou Esc para sair. 

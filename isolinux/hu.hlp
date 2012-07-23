@@ -1,0 +1,157 @@
+F1Üdvözöljük a(z) Ubuntu telepítőben!Ez egy telepítő rendszer a(z) Ubuntu 12.04
+számára. Készült: 20120424.1.
+
+SÚGÓ TARTALOM
+
+BILLENTYŰTÉMA
+
+<F1F1>   Ez az oldal, a súgó tartalomjegyzéke.
+<F2F2>   A(z) Ubuntu telepítésének előfeltételei.
+<F3F3>   Indítási módok a rendszer speciális felhasználási lehetőségeihez.
+<F4F4>   További rendszerindítási módok; sérült rendszer helyreállítása.
+<F5F5>   Speciális rendszerindító paraméterek, áttekintés.
+<F6F6>   Speciális rendszerindító paraméterek különleges gépekhez.
+<F7F7>   Speciális rendszerindító paraméterek különböző lemezvezérlőkhöz.
+<F8F8>   Speciális rendszerindító paraméterek a rendszer telepítéséhez.
+<F9F9>   Hogyan kaphat segítséget.
+<F10F10>  Szerzői jogok és garancia.
+
+Nyomjon meg egy gombot F2-től F10-ig a részletekért, vagy Escape-et a
+kilépéshez.F2AZ UBUNTU TELEPÍTÉSÉNEK ELŐFELTÉTELEIYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Az általános asztali rendszer telepítéséhez egy legalább 5 gigabájtos, míg a
+minimális kiszolgáló változat telepítéséhez egy legalább 500 megabájtos
+partícióra lesz szüksége. További csomagok telepítése esetén még több helyre
+lesz szüksége attól függően, hogy mire kívánja használni az új Ubuntu
+rendszerét.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Köszönjük, hogy az Ubuntut választotta!
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F3RENDSZERINDÍTÁSI MÓDOKElérhető rendszerindítási módok:
+
+Az Ubuntu telepítése
+  A telepítés indítása -- Ez az alapértelmezés.
+Memóriateszt
+  Memóriateszt futtatása.
+
+(Az Ubuntu helyettesíthető más hasonló operációs rendszerek nevével. Ez a
+súgóüzenet általános.)
+
+Ezen rendszerindítási módok egyikének használatához válassza ki azt a
+kurzorbillentyűkkel. Nyomja meg az F4 billentyűt alternatív indítási és
+telepítési módok kiválasztásához. Az F6 segítségével a rendszerindítási
+paraméterek szerkeszthetők. Az F6 ismételt megnyomásával gyakran használt
+rendszerindítási paraméterek menüjéből választhat.
+
+A szakértői mód kivételével támogatottak a nem kritikus rendszerbetöltő
+üzenetek.
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F4SÉRÜLT RENDSZER MENTÉSEHasználja az alábbi rendszerindítási módok valamelyikét egy létező telepítés
+helyreállításához
+
+Sérült rendszer helyreállítása
+  Indítás helyreállítási módban.
+
+Ezen rendszerindítási módok egyikének használatához válassza ki azt a
+kurzorbillentyűkkel. Nyomja meg az F4 billentyűt alternatív indítási és
+telepítési módok kiválasztásához. Az F6 segítségével a rendszerindítási
+paraméterek szerkeszthetők. Az F6 ismételt megnyomásával gyakran használt
+rendszerindítási paraméterek menüjéből választhat.
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F5SPECIÁLIS RENDSZERINDÍTÁSI PARAMÉTEREK - ÁTTEKINTÉSNéhány rendszer elindításához speciális paramétereket kell megadnia az F6
+megnyomásával. Például a Linux lehetséges, hogy nem ismeri fel automatikusan
+a hardverét, ezért a felismeréshez saját kezűleg kell megadnia a helyét vagy
+típusát.
+
+A használható rendszerindítási paraméterekért nyomja meg ezt a gombot:
+
+<F6F6>   rendszerindítási paraméterek speciális gépekhez
+<F7F7>   rendszerindítási paraméterek különböző lemezvezérlőkhöz
+<F8F8>   a telepítő által megértett rendszerindító paraméterek
+
+A telepítő sok rendszermag-modult dinamikusan tölt be és ezekhez a
+modulokhoz nem lehet paramétereket megadni a parancssorból. Ha a modulok
+betöltésénél meg szeretné adni azok paramétereit, indítsa el a haladó módot
+(lásd <F3F3>).
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F6SPECIÁLIS RENDSZERINDÍTÓ PARAMÉTEREK - KÜLÖNBÖZŐ HARDVEREKA következő rendszerindítási paramétereket használhatja az F6 megnyomásával,
+a rendszerindítási móddal kombinálva (lásd: <F3F3>). Hexadecimális számok
+használata esetén használja a 0x előtagot (például: 0x300).
+
+HARDVER                                MEGADANDÓ PARAMÉTER
+
+IBM PS/1 vagy ValuePoint (IDE lemez)   hd=cylinders,heads,sectors
+Néhány IBM ThinkPad                    floppy.floppy=thinkpad
+I/O port régiók védelme                reserve=iobase,extent[,...]
+Képernyőmegjelenítési problémákkal küzdő laptopok
+                                       vga=771
+Az első soros port használata 9600 baud sebességgel
+                                       console=ttyS0,9600n8
+Az általános IDE meghajtó használatának kényszerítése
+                                       all_generic_ide=1
+
+Egyes esetekben lehetséges a különböző lefagyások vagy hardverhibák
+kikerülése.
+
+Hibás APIC megszakításvezérlés tiltása noapic nolapic
+ACPI (részleges) letiltása             acpi=noirq vagy acpi=off
+USB tiltása                            nousb
+Megszakítások lekérése                 irqpoll
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F7SPECIÁLIS RENDSZERINDÍTÓ PARAMÉTEREK - KÜLÖNBÖZŐ LEMEZMEGHAJTÓKA következő rendszerindítási paramétereket használhatja az F6 megnyomásával,
+a rendszerindítási móddal kombinálva (lásd: <F3F3>).
+
+HARDVER                      MEGADANDÓ PARAMÉTER
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (engedélyezve, ha nem nulla)
+BusLogic SCSI Hosts          BusLogic.BusLogic=iobase
+Bizonyos DELL gépek          aic7xxx.aic7xxx=no_probe
+
+Ez a lista nem teljes, további részletekért lásd a kernel-parameters.txt
+fájlt a kernel forrásában.
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F8SPECIÁLIS RENDSZERINDÍTÓ PARAMÉTEREK - TELEPÍTŐA következő rendszerindítási paramétereket használhatja az F6 megnyomásával,
+a rendszerindítási móddal kombinálva (lásd: <F3F3>). Ezek a paraméterek a
+telepítő működését szabályozzák.
+
+EREDMÉNY                                PARAMÉTER
+
+A framebuffer letiltása                 vga=normal fb=false
+Ne indítsa el a PCMCIA-t                hw-detect/start_pcmcia=false
+Statikus hálózati beállítás kényszerítése
+                                        netcfg/disable_dhcp=true
+Billentyűzetkiosztás megadása           bootkbd=hu
+A Kubuntu környezet kiválasztása        tasks=kubuntu-desktop
+Magas kontrasztú téma használata        theme=dark
+Braille terminál                        brltty=driver,device,texttable
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F9SEGÍTSÉG KÉRÉSEHa nem tudja telepíteni az Ubuntut, ne essen kétségbe! Az Ubuntu csapata
+kész segíteni Önnek! Különösen érdekelnek bennünket a telepítéssel
+kapcsolatos problémák, mivel ezek általában nem csak egy embernél okoznak
+gondot. Vagy hallottunk már erről a problémáról, és egy gyors javítással
+tudunk szolgálni, vagy pedig Önnel együtt megkeresnénk a forrását, így a
+következő felhasználó, akinél ilyen gond merül fel, profitálhat az Ön
+tapasztalataiból.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez.F10SZERZŐI JOGOK ÉS GARANCIAAz Ubuntu Copyright (C) 2004-2010 Canonical Ltd., és magába foglalja sok más
+eredeti szerző és közreműködő munkáját.
+
+Az Ubuntu rendszer szabadon terjeszthető. Telepítés után a különböző
+csomagokra vonatkozó terjesztési feltételeket elolvashatja a megfelelő
+fájlban: /usr/share/doc/csomagneve/copyright.
+
+Az Ubuntura nincs SEMMIFÉLE GARANCIA az alkalmazható törvények által
+engedélyezett mértékig.
+
+A telepítőrendszer alapja a Debian telepítő. További információért a Debian
+projekttel kapcsolatban keresse fel a http://www.debian.org/ címet
+
+Nyomja meg az F1-et a súgó tartalmához, vagy Escape-et a kilépéshez. 

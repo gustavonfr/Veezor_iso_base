@@ -1,0 +1,336 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3.5. Pre-Partitioning for Multi-Boot Systems</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch03.html" title="Chapter 3. Before Installing Ubuntu">
+<link rel="prev" href="ch03s04.html" title="3.4. Meeting Minimum Hardware Requirements">
+<link rel="next" href="ch03s06.html" title="3.6. Pre-Installation Hardware and Operating System Setup">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">3.5. Pre-Partitioning for Multi-Boot Systems</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch03s04.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 3. Before Installing Ubuntu</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch03s06.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="3.5. Pre-Partitioning for Multi-Boot Systems">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="non-debian-partitioning"></a>3.5. Pre-Partitioning for Multi-Boot Systems</h2></div></div></div>
+<p>
+
+Partitioning your disk simply refers to the act of breaking up your
+disk into sections. Each section is then independent of the others.
+It's roughly equivalent to putting up walls inside a house; if you add
+furniture to one room it doesn't affect any other room.
+
+</p>
+<p>
+
+If you already have an operating system on your system
+
+<span>
+(Windows 9x, Windows NT/2000/XP, OS/2, MacOS, Solaris, FreeBSD, …)
+</span>
+
+
+
+and want to stick Linux on the same disk, you will need to repartition
+the disk. Ubuntu requires its own hard disk partitions. It cannot be
+installed on Windows or MacOS partitions. It may be able to share some
+partitions with other Linux systems, but that's not covered here. At
+the very least you will need a dedicated partition for the Ubuntu
+root.
+
+</p>
+<p>
+
+You can find information about your current partition setup by using
+a partitioning tool for your current operating system<span>, such as fdisk or PartitionMagic</span>. Partitioning tools always
+provide a way to show existing partitions without making changes.
+
+</p>
+<p>
+
+In general, changing a partition with a file system already on
+it will destroy any information there. Thus you should always make
+backups before doing any repartitioning.  Using the analogy of the
+house, you would probably want to move all the furniture out of the
+way before moving a wall or you risk destroying it.
+
+</p>
+<p>
+
+If your computer has more than one hard disk, you may want to dedicate
+one of the hard disks completely to Ubuntu. If so, you don't need to
+partition that disk before booting the installation system; the
+installer's included partitioning program can handle the job nicely.
+
+</p>
+<p>
+
+If your machine has only one hard disk, and you would like to
+completely replace the current operating system with Ubuntu,
+you also can wait to partition as part of the installation process
+(<a class="xref" href="ch06s03.html#di-partition" title="6.3.2. Partitioning and Mount Point Selection">Section 6.3.2, “Partitioning and Mount Point Selection”</a>), after you have booted the
+installation system.  However this only works if you plan to boot the
+installer system from tapes, CD-ROM or files on a connected machine.
+Consider: if you boot from files placed on the hard disk, and then
+partition that same hard disk within the installation system, thus
+erasing the boot files, you'd better hope the installation is
+successful the first time around.  At the least in this case, you
+should have some alternate means of reviving your machine like the
+original system's installation tapes or CDs.
+
+</p>
+<p>
+
+If your machine already has multiple partitions, and enough space can
+be provided by deleting and replacing one or more of them, then you
+too can wait and use the Ubuntu installer's partitioning program. You
+should still read through the material below, because there may be
+special circumstances like the order of the existing partitions within
+the partition map, that force you to partition before installing
+anyway.
+
+</p>
+<p>
+
+If your machine has a FAT or NTFS filesystem, as used by DOS and Windows,
+you can wait and use Ubuntu installer's partitioning program to
+resize the filesystem.
+
+</p>
+<p>
+
+If none of the above apply, you'll need to partition your hard disk before
+starting the installation to create partitionable space for
+Ubuntu. If some of the partitions will be owned by other operating
+systems, you should create those partitions using native operating
+system partitioning programs. We recommend that you do
+<span class="emphasis"><em>not</em></span> attempt to create partitions for Ubuntu
+using another operating system's tools. Instead, you should just
+create the native operating system's partitions you will want to
+retain.
+
+</p>
+<p>
+
+If you are going to install more than one operating system on the same
+machine, you should install all other system(s) before proceeding with
+Linux installation. Windows and other OS installations may destroy
+your ability to start Linux, or encourage you to reformat non-native
+partitions.
+
+</p>
+<p>
+
+You can recover from these actions or avoid them, but installing
+the native system first saves you trouble.
+
+</p>
+<p>
+
+If you currently have one hard disk with one partition (a common setup
+for desktop computers), and you want to multi-boot the native
+operating system and Ubuntu, you will need to:
+
+  </p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>
+
+Back up everything on the computer.
+
+</p></li>
+<li class="listitem"><p>
+
+Boot from the native operating system installer media such as CD-ROM
+or tapes.
+
+
+
+</p></li>
+<li class="listitem"><p>
+
+Use the native partitioning tools to create native system
+partition(s). Leave either a place holder partition or free space for
+Ubuntu.
+
+</p></li>
+<li class="listitem"><p>
+
+Install the native operating system on its new partition.
+
+</p></li>
+<li class="listitem"><p>
+
+Boot back into the native system to verify everything's OK,
+    and to download the Ubuntu installer boot files.
+
+</p></li>
+<li class="listitem"><p>
+
+Boot the Ubuntu installer to continue installing Ubuntu.
+
+</p></li>
+</ol></div>
+<p>
+
+</p>
+<div class="sect2" title="3.5.1. Partitioning From DOS or Windows">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3189088"></a>3.5.1. Partitioning From DOS or Windows</h3></div></div></div>
+<p>
+
+If you are manipulating existing FAT or NTFS partitions, it is
+recommended that you either use the scheme below or native Windows or
+DOS tools.  Otherwise, it is not really necessary to partition from DOS
+or Windows; the Linux partitioning tools will generally do a better
+job.
+
+</p>
+<p>
+
+But if you have a large IDE disk, and are not using LBA addressing,
+overlay drivers (sometimes provided by hard disk manufacturers), or a
+new (post 1998) BIOS that supports large disk access extensions, then
+you must locate your Ubuntu boot partition carefully. In this case,
+you will have to put the boot partition into the first 1024 cylinders
+of your hard disk (usually around 524 megabytes, without BIOS
+translation). This may require that you move an existing FAT or NTFS
+partition.
+
+</p>
+<div class="sect3" title="3.5.1.1. Lossless Repartitioning When Starting From DOS, Win-32 or OS/2">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="lossless"></a>3.5.1.1. Lossless Repartitioning When Starting From DOS, Win-32 or OS/2
+   </h4></div></div></div>
+<p>
+
+One of the most common installations is onto a system that already
+contains DOS (including Windows 3.1), Win32 (such as Windows 95, 98, Me,
+NT, 2000, XP), or OS/2, and it is desired to put Ubuntu onto the same disk
+without destroying the previous system. Note that the installer supports
+resizing of FAT and NTFS filesystems as used by DOS and Windows. Simply
+start the installer and when you get to the partitioning step, select the
+option for <span class="guimenuitem">Manual</span>
+partitioning, select the partition to resize, and specify its new size.
+So in most cases you should not need to use the method described below.
+
+</p>
+<p>
+
+Before going any further, you should have decided how you will be
+dividing up the disk. The method in this section will only split a
+partition into two pieces. One will contain the original OS and the
+other will be used for Ubuntu.  During the installation of Ubuntu, you
+will be given the opportunity to use the Ubuntu portion of the disk as you
+see fit, i.e., as swap or as a file system.
+
+</p>
+<p>
+
+The idea is to move all the data on the partition to the beginning,
+before changing the partition information, so that nothing will be
+lost.  It is important that you do as little as possible between the
+data movement and repartitioning to minimize the chance of a file
+being written near the end of the partition as this will decrease the
+amount of space you can take from the partition.
+
+</p>
+<p>
+
+The first thing needed is a copy of <span class="command"><strong>fips</strong></span> which is
+available in the <code class="filename">tools/</code> directory on your nearest Ubuntu
+mirror. Unzip the archive and copy the files
+<code class="filename">RESTORRB.EXE</code>, <code class="filename">FIPS.EXE</code> and
+<code class="filename">ERRORS.TXT</code> to a bootable floppy.  A bootable floppy can
+be created using the command <code class="filename">sys a:</code> under DOS.
+<span class="command"><strong>fips</strong></span> comes with very good documentation which you may
+want to read.  You will definitely need to read the documentation if
+you use a disk compression driver or a disk manager.  Create the disk
+and read the documentation <span class="emphasis"><em>before</em></span> you defragment the disk.
+
+</p>
+<p>
+
+The next thing needed is to move all the data to the beginning of the
+partition. <span class="command"><strong>defrag</strong></span>, which comes standard with DOS 6.0 and
+later, can easily do the job.  See the <span class="command"><strong>fips</strong></span> documentation
+for a list of other software that may do the trick.  Note that if you
+have Windows 9x, you must run <span class="command"><strong>defrag</strong></span> from there, since
+DOS doesn't understand VFAT, which is used to support for long
+filenames, used in Windows 95 and higher.
+
+</p>
+<p>
+
+After running the defragmenter (which can take a while on a large
+disk), reboot with the <span class="command"><strong>fips</strong></span> disk you created in the
+floppy drive.  Simply type <code class="filename">a:\fips</code> and follow the directions.
+
+</p>
+<p>
+
+Note that there are many other partition managers out there, in
+case <span class="command"><strong>fips</strong></span> doesn't do the trick for you.
+
+</p>
+</div>
+<div class="sect3" title="3.5.1.2. Partitioning for DOS">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="partitioning-for-dos"></a>3.5.1.2. Partitioning for DOS</h4></div></div></div>
+<p>
+
+If you are partitioning for DOS drives, or changing the size of DOS
+partitions, using Linux tools, many people experience problems working
+with the resulting FAT partitions.  For instance, some have reported
+slow performance, consistent problems with <span class="command"><strong>scandisk</strong></span>, or
+other weird errors in DOS or Windows.
+
+</p>
+<p>
+
+Apparently, whenever you create or resize a partition for DOS use,
+it's a good idea to fill the first few sectors with zeros. You should do
+this prior to running DOS's <span class="command"><strong>format</strong></span> command by executing
+the following command from Linux:
+
+</p>
+<div class="informalexample"><pre class="screen">
+# dd if=/dev/zero of=/dev/hdXX bs=512 count=4
+</pre></div>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch03s04.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch03.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch03s06.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">3.4. Meeting Minimum Hardware Requirements </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 3.6. Pre-Installation Hardware and Operating System Setup</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

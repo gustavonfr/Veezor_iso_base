@@ -1,0 +1,154 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5.2. Accessibility</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch05.html" title="Chapter 5. Booting the Installation System">
+<link rel="prev" href="ch05s01.html" title="5.1. Booting the Installer on AMD64">
+<link rel="next" href="ch05s03.html" title="5.3. Boot Parameters">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">5.2. Accessibility</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch05s01.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 5. Booting the Installation System</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch05s03.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="5.2. Accessibility">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="boot-installer-accessibility"></a>5.2. Accessibility</h2></div></div></div>
+<p>
+
+Some users may need specific support because of e.g. some visual
+impairment.
+<span>USB braille displays are detected
+automatically, but most other</span>
+
+accessibility features have to be enabled manually.
+<span>On machines that support it, the boot menu emits a beep
+when it is ready to receive keystrokes.</span>
+Some boot parameters can <span>then</span> be appended to
+enable accessibility features. Note that on most architectures the boot
+loader interprets your keyboard as a QWERTY keyboard.
+
+</p>
+<div class="sect2" title="5.2.1. USB Braille Displays">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3415312"></a>5.2.1. USB Braille Displays</h3></div></div></div>
+<p>
+
+USB braille displays should be automatically detected. A textual version
+of the installer will then be automatically selected, and support for the
+braille display will be automatically installed on the target system.
+You can thus just press <span class="keycap"><strong>Enter</strong></span> at the boot menu.
+Once <code class="classname">brltty</code> is started, you can choose a braille
+table by entering the preference menu. Documentation on key
+bindings for braille devices is available on the <a class="ulink" href="http://www.mielke.cc/brltty/doc/drivers/" target="_top"><code class="classname">brltty</code> website</a>.
+
+</p>
+</div>
+<div class="sect2" title="5.2.2. Serial Braille Displays">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3417400"></a>5.2.2. Serial Braille Displays</h3></div></div></div>
+<p>
+
+Serial braille displays cannot safely be automatically detected
+(since that may damage some of them). You thus need to append the
+<strong class="userinput"><code>brltty=<em class="replaceable"><code>driver</code></em>,<em class="replaceable"><code>port</code></em>,<em class="replaceable"><code>table</code></em></code></strong>
+boot parameter to tell <code class="classname">brltty</code> which driver it
+should use. <em class="replaceable"><code>driver</code></em> should be replaced by the
+two-letter driver code for your terminal (see the
+<a class="ulink" href="http://www.mielke.cc/brltty/doc/Manual-BRLTTY/English/BRLTTY-11.html" target="_top">driver code list</a>).
+<em class="replaceable"><code>port</code></em> should be replaced by the name of the
+serial port the display is connected to, <strong class="userinput"><code>ttyS0</code></strong> is
+the default. <em class="replaceable"><code>table</code></em> is the name of the braille
+table to be used (see the <a class="ulink" href="http://www.mielke.cc/brltty/doc/Manual-BRLTTY/English/BRLTTY-6.html" target="_top">table code
+list</a>); the English table is the default. Note that the table can
+be changed later by entering the preference menu. Documentation on key
+bindings for braille devices is available on the <a class="ulink" href="http://www.mielke.cc/brltty/doc/drivers/" target="_top"><code class="classname">brltty</code> website</a>.
+
+</p>
+</div>
+<div class="sect2" title="5.2.3. Hardware Speech Synthesis">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3421840"></a>5.2.3. Hardware Speech Synthesis</h3></div></div></div>
+<p>
+
+Support for hardware speech synthesis devices is available only alongside
+support for graphical installer. You thus need to select the
+<span class="quote">“<span class="quote">Graphical install</span>”</span> entry in the boot menu.
+
+</p>
+<p>
+
+Hardware speech synthesis devices cannot be automatically detected. You
+thus need to append the
+<strong class="userinput"><code>speakup.synth=<em class="replaceable"><code>driver</code></em></code></strong>
+boot parameter to tell <code class="classname">speakup</code> which driver it should
+use. <em class="replaceable"><code>driver</code></em> should be replaced by the driver code
+for your device (see <a class="ulink" href="http://www.linux-speakup.org/spkguide.txt" target="_top">driver code
+list</a>). The textual version of the installer will then be
+automatically selected, and support for the speech synthesis device will be
+automatically installed on the target system.
+
+</p>
+</div>
+<div class="sect2" title="5.2.4. Board Devices">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3424584"></a>5.2.4. Board Devices</h3></div></div></div>
+<p>
+
+Some accessibility devices are actual boards that are plugged inside the
+machine and that read text directly from the video memory. To get them
+to work framebuffer support must be disabled by using the
+<strong class="userinput"><code>vga=normal</code></strong> <strong class="userinput"><code>fb=false</code></strong>
+boot parameter. This will however reduce the number of available languages.
+
+</p>
+<p>
+
+If desired a textual version of the bootloader can be activated before adding
+the boot parameter by typing <strong class="userinput"><code>h</code></strong> <span class="keycap"><strong>Enter</strong></span>.
+
+</p>
+</div>
+<div class="sect2" title="5.2.5. High-Contrast Theme">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3427136"></a>5.2.5. High-Contrast Theme</h3></div></div></div>
+<p>
+
+For users with low vision, the installer can use a high-contrast
+theme that makes it more readable. To enable it, append the
+<strong class="userinput"><code>theme=dark</code></strong> boot parameter.
+
+</p>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch05s01.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch05.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch05s03.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">5.1. Booting the Installer on <span>AMD64</span> </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 5.3. Boot Parameters</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

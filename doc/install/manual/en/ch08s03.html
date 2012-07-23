@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>8.3. Orienting Yourself to Ubuntu</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch08.html" title="Chapter 8. Next Steps and Where to Go From Here">
+<link rel="prev" href="ch08s02.html" title="8.2. If You Are New to Unix">
+<link rel="next" href="ch08s04.html" title="8.4. Further Reading and Information">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">8.3. Orienting Yourself to Ubuntu</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch08s02.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 8. Next Steps and Where to Go From Here</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch08s04.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="8.3. Orienting Yourself to Ubuntu">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="ubuntu-orientation"></a>8.3. Orienting Yourself to Ubuntu</h2></div></div></div>
+<p>
+
+Ubuntu is a little different from other distributions.  Even if you're
+familiar with Linux in other distributions, there are things you
+should know about Ubuntu to help you to keep your system in a good,
+clean state.  This chapter contains material to help you get oriented;
+it is not intended to be a tutorial for how to use Ubuntu, but just a
+very brief glimpse of the system for the very rushed.
+
+</p>
+<div class="sect2" title="8.3.1. Ubuntu Packaging System">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3911344"></a>8.3.1. Ubuntu Packaging System</h3></div></div></div>
+<p>
+
+The most important concept to grasp is the Ubuntu packaging system, which
+may be familiar to those who have already used Debian GNU/Linux.
+In essence, large parts of your system should be considered under the
+control of the packaging system.  These include:
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+
+<code class="filename">/usr</code> (excluding <code class="filename">/usr/local</code>)
+
+</p></li>
+<li class="listitem"><p>
+
+<code class="filename">/var</code> (you could make
+<code class="filename">/var/local</code> and be safe in there)
+
+</p></li>
+<li class="listitem"><p>
+
+<code class="filename">/bin</code>
+
+</p></li>
+<li class="listitem"><p>
+
+<code class="filename">/sbin</code>
+
+</p></li>
+<li class="listitem"><p>
+
+<code class="filename">/lib</code>
+
+</p></li>
+</ul></div>
+<p>
+
+For instance, if you replace <code class="filename">/usr/bin/perl</code>, that
+will work, but then if you upgrade your <code class="classname">perl</code>
+package, the file you put there will be replaced.  Experts can get
+around this by putting packages on <span class="quote">“<span class="quote">hold</span>”</span> in
+<span class="command"><strong>aptitude</strong></span>.
+
+</p>
+<p>
+
+One of the best installation methods is apt. You can use the command
+line version <span class="command"><strong>apt-get</strong></span>, the full-screen text version
+<span class="application">aptitude</span>, or the graphical version
+<span class="application">synaptic</span>.  Note apt will also let you merge
+main, contrib, and non-free so you can have export-restricted packages
+as well as standard versions.
+
+</p>
+</div>
+<div class="sect2" title="8.3.2. Application Version Management">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3918344"></a>8.3.2. Application Version Management</h3></div></div></div>
+<p>
+
+
+Alternative versions of applications are managed by update-alternatives. If
+you are maintaining multiple versions of your applications, read the
+update-alternatives man page.
+
+</p>
+</div>
+<div class="sect2" title="8.3.3. Cron Job Management">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp3919080"></a>8.3.3. Cron Job Management</h3></div></div></div>
+<p>
+
+Any jobs under the purview of the system administrator should be in
+<code class="filename">/etc</code>, since they are configuration files.  If you
+have a root cron job for daily, weekly, or monthly runs, put them in
+<code class="filename">/etc/cron.{daily,weekly,monthly}</code>.  These are
+invoked from <code class="filename">/etc/crontab</code>, and will run in
+alphabetic order, which serializes them.
+
+</p>
+<p>
+
+On the other hand, if you have a cron job that (a) needs to run as a
+special user, or (b) needs to run at a special time or frequency, you
+can use either <code class="filename">/etc/crontab</code>, or, better yet,
+<code class="filename">/etc/cron.d/whatever</code>.  These particular files
+also have an extra field that allows you to stipulate the user account
+under which the cron job runs.
+
+</p>
+<p>
+
+In either case, you just edit the files and cron will notice them
+automatically. There is no need to run a special command. For more
+information see cron(8), crontab(5), and
+<code class="filename">/usr/share/doc/cron/README.Debian</code>.
+
+</p>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch08s02.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch08.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch08s04.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">8.2. If You Are New to Unix </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 8.4. Further Reading and Information</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

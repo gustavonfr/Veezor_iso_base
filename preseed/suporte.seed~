@@ -1,0 +1,148 @@
+####################################################################
+# Installation Sources - Linux COE
+####################################################################
+
+# Where are we pulling bits from?
+#d-i     mirror/http/hostname    string us.archive.ubuntu.com
+#d-i     mirror/http/directory   string /ubuntu/
+#d-i     mirror/suite            string lucid
+
+# Post install APT setup
+
+#Desabilita o uso dos mirrors
+#d-i 	apt-setup/use_mirror boolean false
+
+#d-i     apt-setup/uri_type      select d-i
+#d-i     apt-setup/hostname      string us.archive.ubuntu.com
+#d-i     apt-setup/directory     string /ubuntu/
+d-i     apt-setup/another       boolean false
+d-i     finish-install/reboot_in_progress note
+d-i     prebaseconfig/reboot_in_progress        note
+
+#d-i	apt-setup/mirror/error	select	Change mirror
+#d-i	apt-setup/multiverse	boolean	false
+#d-i	apt-setup/restricted	boolean	false
+#d-i	apt-setup/universe	boolean	false
+#d-i     apt-setup/security-updates      boolean false
+#d-i 	apt-setup/security_host string
+
+#adicionei o main como false
+d-i	apt-setup/main		boolean	false
+#d-i	archive-copier/desktop-task	string	
+#d-i	archive-copier/ship-task	string	
+
+# Ingles por default para "language,country e locale"
+d-i debian-installer/locale string en_US
+
+#Ingles por default (separado)
+#d-i debian-installer/language string en
+#d-i debian-installer/country string US
+#d-i debian-installer/locale string en_US.UTF-8
+
+#Desabilita a escolha do teclado e seleciona o padrão "us"
+#d-i console-setup/ask_detect boolean false
+d-i keyboard-configuration/layoutcode string us
+#d-i console-keymaps-at/keymap us
+d-i console-setup/layoutcode us
+#d-i keyboard-configuration/modelcode SKIP
+
+#Parte de rede(ip estatico)
+d-i netcfg/choose_interface select auto
+d-i netcfg/disable_dhcp boolean true
+d-i netcfg/dhcp_failed note
+d-i netcfg/dhcp_options select Configure network manually
+
+d-i netcfg/get_nameservers string 192.168.50.1
+d-i netcfg/get_ipaddress string 192.168.50.50
+d-i netcfg/get_netmask string 255.255.255.0
+d-i netcfg/get_gateway string 192.168.50.1
+d-i netcfg/confirm_static boolean true
+
+#Proxy
+d-i mirror/http/proxy string
+
+#Nome do maquina
+d-i netcfg/get_hostname string suporte
+d-i netcfg/get_domain string localdomain
+
+#Timezone
+d-i time/zone string US/Eastern
+d-i clock-setup/utc-auto boolean true
+
+#Partitioning
+d-i partman/choose_partition select Finish partitioning and write changes to disk
+d-i partman/confirm_write_new_label boolean true
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+d-i partman-auto/method string regular
+d-i partman-auto/expert_recipe string                         \
+      suporte ::                                              \
+              100 125 500 ext3                                \
+                      $primary{ } $bootable{ }                \
+                      method{ format } format{ }              \
+                      use_filesystem{ } filesystem{ ext3 }    \
+                      mountpoint{ /boot }                     \
+              .                                               \
+              2000 9765 20000 ext3                     	      \
+                      method{ format } format{ }              \
+                      use_filesystem{ } filesystem{ ext3 }    \
+                      mountpoint{ / }                         \
+              .                                               \
+              250 750 1000 ext3                       	      \
+                      method{ format } format{ }              \
+                      use_filesystem{ } filesystem{ ext3 }    \
+                      mountpoint{ /tmp }                      \
+              .                                               \
+	      500 1000 -1 ext3                       	      \
+                      method{ format } format{ }              \
+                      use_filesystem{ } filesystem{ ext3 }    \
+                      mountpoint{ /var }                      \
+              . 					         
+	      256 512 50% linux-swap                           \
+                      method{ swap } format{ }                \
+              .
+
+#Kernel
+d-i base-installer/kernel/image     select  linux-image-2.6.32-21-generic
+d-i base-installer/kernel/override-image string linux-image-2.6.32-21-generic
+
+# Only install basic language packs. Let tasksel ask about tasks.
+d-i pkgsel/language-pack-patterns string
+# No language support packages.
+d-i pkgsel/install-language-support boolean false
+
+#Usuario root/usuario normal com senha padrao
+d-i passwd/root-login boolean true
+d-i passwd/root-password-crypted password $1$0mt4gtHj$xE.exk8pMkOSHCFbsRkRJ0
+d-i passwd/make-user boolean false
+
+d-i passwd/user-fullname string suporte
+d-i passwd/username string suporte
+d-i passwd/user-password-crypted password $1$0mt4gtHj$xE.exk8pMkOSHCFbsRkRJ0
+d-i pkgsel/update-policy select none
+
+#Pacotes padrao + ssh
+tasksel tasksel/first multiselect openssh-server
+#tasksel tasksel/first multiselect standard
+d-i pkgsel/include string vim rcconf iftop
+
+#Pacotes de instalação Nimbus
+#d-i pkgsel/include string dbconfig-common libpq5 postgresql-8.4 postgresql-client-8.4 postgresql-client-common postgresql-common ssl-cert ttf-dejavu-core fontconfig-config tsconf python-pkg-resources python-pycurl nginx python-setuptools pmount traceroute dmraid python-egenix-mxdatetime python-egenix-mxtools python-psycopg2 vim plymouth-theme-nimbus
+
+#nimbus nimbus-dependencies
+#bacula-nimbus bacula-nimbus/dbconfig-install boolean true
+#nimbus nimbus/dbconfig-install boolean true
+#d-i bacula-nimbus/pgsql/app-pass password $1$fCkf.L76$gZ8vLSlKRHc5cFog4iCpP0
+#d-i bacula-nimbus/app-password-confirm  password $1$fCkf.L76$gZ8vLSlKRHc5cFog4iCpP0
+#d-i finish-install/reboot_in_progress note
+#d-i debian-installer/exit/halt boolean true
+
+#Confs do GRUB - instalacao automatica com senha de acesso ao modificacao
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/password-crypted password $1$0mt4gtHj$xE.exk8pMkOSHCFbsRkRJ0
+
+#d-i preseed/late_command string cp /cdrom/clearenv.sh /target/root/; chroot /target chmod +x /root/clearenv.sh; chroot /target bash /root/clearenv.sh
+#d-i preseed/late_command string chroot /target apt-get -y install bacula-veezor
+#d-i preseed/late_command string chroot /target bash /etc/init.d/mysql start; chroot /target apt-get -y install bacula-veezor
+#d-i preseed/late_command string cp /cdrom/dists/nimbus/main/binary-i386/bacula-nimbus_5.0.2-3.deb /target/root/; cp /cdrom/dists/nimbus/main/binary-i386/nimbus-dependencies-1.0.4.deb /target/root/; cp /cdrom/dists/nimbus/main/binary-i386/nimbus-1.0.139.deb /target/root/; chroot /target bash rm -fr /etc/update-motd.d/*; chroot /target bash /cdrom/firstboot.sh 
+#d-i preseed/late_command string cp /cdrom/dists/nimbus/main/binary-i386/nimbus* /target/var/cache/apt/archives/; cp /cdrom/nimbus-license /target/etc/; cp /cdrom/nimbus_iso.version /target/etc/; chroot /target bash /cdrom/firstboot.sh; chroot /target service postgresql-8.4 start; apt-install bacula-nimbus

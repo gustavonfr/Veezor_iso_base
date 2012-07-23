@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>4.4. Preparing Files for Hard Disk Booting</title>
+<link rel="stylesheet" type="text/css" href="install.css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Ubuntu Installation Guide">
+<link rel="up" href="ch04.html" title="Chapter 4. Obtaining System Installation Media">
+<link rel="prev" href="ch04s03.html" title="4.3. Preparing Files for USB Memory Stick Booting">
+<link rel="next" href="ch04s05.html" title="4.5. Preparing Files for TFTP Net Booting">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">4.4. Preparing Files for Hard Disk Booting</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="ch04s03.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 4. Obtaining System Installation Media</th>
+<td width="20%" align="right"> <a accesskey="n" href="ch04s05.html">Next</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="4.4. Preparing Files for Hard Disk Booting">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="boot-drive-files"></a>4.4. Preparing Files for Hard Disk Booting</h2></div></div></div>
+<p>
+
+The installer may be booted using boot files placed on an
+existing hard drive partition, either launched from another operating
+system or by invoking a boot loader directly from the BIOS.
+
+</p>
+<p>
+
+A full, <span class="quote">“<span class="quote">pure network</span>”</span> installation can be achieved using this
+technique. This avoids all hassles of removable media, like finding
+and burning CD images or struggling with too numerous and
+unreliable floppy disks.
+
+</p>
+<p>
+
+The installer cannot boot from files on an NTFS file system.
+
+</p>
+<div class="sect2" title="4.4.1. Hard disk installer booting using LILO or GRUB">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="files-lilo"></a>4.4.1. Hard disk installer booting using <span class="command"><strong>LILO</strong></span> or
+  <span class="command"><strong>GRUB</strong></span>
+</h3></div></div></div>
+<p>
+
+This section explains how to add to or even replace an existing linux
+installation using either <span class="command"><strong>LILO</strong></span> or
+<span class="command"><strong>GRUB</strong></span>.
+
+</p>
+<p>
+
+At boot time, both bootloaders support loading in memory not
+only the kernel, but also a disk image. This RAM disk can be used as
+the root file-system by the kernel.
+
+</p>
+<p>
+
+Copy the following files from the Ubuntu archives to a
+convenient location on your hard drive, for instance to
+<code class="filename">/boot/newinstall/</code>.
+
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+
+<code class="filename">vmlinuz</code> (kernel binary)
+
+</p></li>
+<li class="listitem"><p>
+
+<code class="filename">initrd.gz</code> (ramdisk image)
+
+</p></li>
+</ul></div>
+<p>
+
+</p>
+<p>
+
+Finally, to configure the bootloader proceed to
+<a class="xref" href="ch05s01.html#boot-initrd" title="5.1.2. Booting from Linux Using LILO or GRUB">Section 5.1.2, “Booting from Linux Using <span class="command"><strong>LILO</strong></span> or
+  <span class="command"><strong>GRUB</strong></span>”</a>.
+
+</p>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="ch04s03.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="ch04s05.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">4.3. Preparing Files for USB Memory Stick Booting </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 4.5. Preparing Files for TFTP Net Booting</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

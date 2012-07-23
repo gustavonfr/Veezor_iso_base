@@ -1,0 +1,168 @@
+F1Willkommen bei Ubuntu!Dies ist ein Installationssystem für Ubuntu
+12.04. Es wurde am 20120424.1 erstellt.
+
+HILFEINDEX
+
+SCHLAGWORTTHEMA
+
+<F1F1>   Diese Seite, das Inhaltsverzeichnis der Hilfe.
+<F2F2>   Voraussetzungen für die Installation von Ubuntu.
+<F3F3>   Boot-Methoden für die speziellen Anwendungsbereiche dieses Systems.
+<F4F4>   Zusätzliche Startmethoden; Ein defektes System retten.
+<F5F5>   Spezielle Bootparameter, Übersicht.
+<F6F6>   Spezielle Startparameter für spezielle Rechner.
+<F7F7>   Spezielle Startparameter für ausgewählte Festplatten-Controller.
+<F8F8>   Spezielle Startparameter für das Installationssystem.
+<F9F9>   Wie man Hilfe findet.
+<F10F10>  Urheberrecht und Garantie.
+
+Drücken Sie F2 bis F10 für Einzelheiten, oder Esc, um die Hilfe zu
+verlassen.F2VORAUSSETZUNGEN FÜR DIE INSTALLATION VON UBUNTUYou must have at least 44 megabytes of RAM to use this Ubuntu installer.
+
+Sie sollten auf Ihrer Festplatte ausreichend Platz zum Erstellen einer neuen
+Partition von 5 Gigabyte Größe für einen typischen Ubuntu-
+Arbeitsplatzrechner bzw. 500 Megabyte für eine minimale Serverinstallation
+haben. Abhängig vom geplanten Einsatzzweck Ihres neuen Ubuntu-Systems werden
+Sie weiteren Festplattenplatz zum Installieren zusätzlicher Pakete
+benötigen.
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Vielen Dank, dass Sie sich für Ubuntu entschieden haben!
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F3STARTMETHODENVerfügbare Startmethoden:
+
+Ubuntu installieren
+  Die Installation beginnen -- Das ist die vorgegebene Methode.
+Speicher testen
+  Arbeitsspeicher überprüfen
+
+(»Ubuntu« kann durch andere verwandte Betriebssystemnamen ersetzt werden.
+Diese Hilfe ist allgemein.)
+
+Wählen Sie mit den Pfeiltasten eine Startmethode aus dem Menü aus. Drücken
+Sie F4, um alternative Start- und Installationsmodi auszuwählen. Drücken Sie
+F6, um die Startparameter zu bearbeiten. Drücken Sie nochmals F6, um aus
+einem Menü häufig verwendete Startparameter auszuwählen.
+
+Unkritische Startmeldungen werden, außer im Expertenmodus, unterdrückt.
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F4EIN DEFEKTES SYTEM RETTENVerwenden Sie eine dieser Startmethoden, um eine vorhandene Installation zu
+reparieren.
+
+Ein defektes System retten
+  Rettungsmodus starten.
+
+Wählen Sie mit den Pfeiltasten eine Startmethode aus dem Menü aus. Drücken
+Sie F4, um alternative Start- und Installationsmodi auszuwählen. Drücken Sie
+F6, um die Startparameter zu bearbeiten. Drücken Sie nochmals F6, um aus
+einem Menü häufig verwendete Startparameter auszuwählen.
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F5SPEZIELLE STARTPARAMETER - ÜBERSICHTAuf manchen Systemen müssen Sie vielleicht durch Drücken von F6 einen
+Parameter angeben, damit das System starten kann. Beispielsweise könnte es
+sein, dass Linux Ihre Hardware nicht automatisch erkennt und Sie explizit
+deren Art und Ort festlegen müssen, damit diese erkannt wird.
+
+Um weitere Informationen abzurufen, welche Startparameter angegeben werden
+können, drücken Sie:
+
+<F6F6>   Startparameter für spezielle Rechner
+<F7F7>   Startparameter für verschiedene Festplatten-Controller
+<F8F8>   Startparameter, die vom Installationssystem verstanden werden
+
+Viele Kernelmodule werden vom Installationssystem dynamisch geladen; deren
+Parameter können nicht auf der Befehlszeile angegeben werden. Um Parameter
+einzugeben, wenn Module geladen werden, müssen Sie im Expertenmodus starten
+(siehe <F3F3>).
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F6SPEZIELLE STARTPARAMETER - VERSCHIEDENE HARDWARESie können folgende Startparameter durch Drücken von F6 in Kombination mit
+der Startmethode (siehe <F3F3>) verwenden. Wenn Sie hexadezimale Zahlen
+verwenden, müssen Sie das Präfix 0x verwenden (z.B. 0x300).
+
+HARDWARE                               PARAMETER ZUM FESTLEGEN VON
+
+IBM PS/1 oder ValuePoint (IDE Festplatte)
+                                       hd=Zylinder,Köpfe,Sektoren
+Einige IBM ThinkPads                   floppy.floppy=thinkpad
+Geschützte I/O-Port-Bereiche           reserve=iobase,extent[,...]
+Laptops mit Darstellungsproblemen des Bildschirms
+                                       vga=771
+Den ersten seriellen Port mit 9600 Baud verwenden
+                                       console=ttyS0,9600n8
+Die Verwendung des generischen IDE-Treibers erzwingen
+                                       all_generic_ide=1
+
+Mögliche (zeitweise) Zwischenlösungen für Hardware-Blockaden oder andere
+Hardware-Fehler:
+
+Fehlerhaftes APIC-Interrupt-Routing deaktivieren
+                                       noapic nolapic
+ACPI (teilweise) deaktivieren          acpi=noirq oder acpi=off
+USB deaktivieren                       nousb
+Abfrage nach Interrupts                irqpoll
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F7SPEZIELLE STARTPARAMETER - VERSCHIEDENE FESTPLATTENSie können folgende Startparameter durch Drücken von F6 in Kombination mit
+der Startmethode (siehe <F3F3>) verwenden.
+
+HARDWARE                     PARAMETER ZUM FESTLEGEN VON
+
+Adaptec 151x, 152x           aha152x.aha152x=iobase[,irq[,scsi-id[,reconnect]]]
+Adaptec 1542                 aha1542.aha1542=iobase[,buson,busoff[,dmaspeed]]
+Adaptec 274x, 284x           aic7xxx.aic7xxx=no_reset (aktiviert, wenn nicht Null)
+BusLogic SCSI-Hosts          BusLogic.BusLogic=iobase
+Einige Dell-Rechner          aic7xxx.aic7xxx=no_probe
+
+Diese Liste ist unvollständig; weitere Informationen finden Sie im Dokument
+»kernel-parameters.txt« des Kernels.
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F8SPEZIELLE STARTPARAMETER - INSTALLATIONSSYSTEMSie können folgende Startparameter durch Drücken von F6 in Kombination mit
+der Startmethode (siehe <F3F3>) verwenden. Diese Parameter legen fest,
+wie die Installation abläuft.
+
+ERGEBNIS                                PARAMETER
+
+Framebuffer abschalten                  vga=normal fb=false
+PCMCIA nicht starten                    hw-detect/start_pcmcia=false
+Statische Netzwerk-Konfiguration erzwingen
+                                        netcfg/disable_dhcp=true
+Tastaturbelegung festlegen              bootkbd=de
+Kubuntu-Arbeitsfläche auswählen         tasks=kubuntu-desktop
+Ein Thema mit hohem Kontrast verwenden  theme=dark
+Braille tty verwenden                   brltty=driver,device,texttable
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F9HILFE ERHALTENWenn Sie Ubuntu nicht installieren können, verzweifeln Sie nicht! Das
+Ubuntu-Team hilft Ihnen gern! Wir sind sehr daran interessiert, von den
+Problemen bei der Installation zu erfahren, da sie im Allgemeinen nicht nur
+bei einer Person auftreten. Entweder haben wir schon von Ihrem speziellen
+Problem gehört; dann können wir Ihnen eine schnelle Lösung liefern.
+Andernfalls würden wir gerne mehr darüber wissen und das Problem mit Ihnen
+durchgehen; der nächste Anwender, der auf dasselbe Problem stößt, wird dann
+von Ihrer Erfahrung profitieren!
+
+See the Installation Guide or the FAQ for more information; both documents
+are available at the Ubuntu web site, http://www.ubuntu.com/
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen.F10Urheberrecht und GarantieUbuntu unterliegt dem Copyright (C) 2004-2010 Canonical Ltd., und umfasst
+die Werke vieler Originalautoren und Mitwirkender.
+
+Das Ubuntu-System darf frei weiter verteilt werden. Nach der Installation
+sind die genauen Bedingungen zur Verbreitung für jedes einzelne Paket in der
+entsprechenden Datei /usr/share/doc/Paketname/copyright beschrieben.
+
+Ubuntu kommt OHNE JEGLICHE GARANTIE, soweit rechtlich zulässig.
+
+Dieses Installationssystem basiert auf dem Debian-Installationsprogramm.
+Unter http://www.debian.org/ finden Sie weitere Informationen über das
+Debian-Projekt.
+
+Drücken Sie F1 für das Inhaltsverzeichnis der Hilfe oder Esc, um die Hilfe
+zu verlassen. 
